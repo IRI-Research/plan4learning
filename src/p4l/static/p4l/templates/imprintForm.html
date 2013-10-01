@@ -1,0 +1,18 @@
+<form class="form-inline well" role="form">
+  <div class="form-group">
+    <label for="imprint-city-{{$id}}">{{'City'|translate}}</label>
+    <input type="text" placeholder="{{'City'|translate}}" ng_model="editedObj.imprintCity" id="imprint-city-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="imprint-publisher-{{$id}}">{{'Publisher'|translate}}</label>
+    <input type="text" placeholder="{{'Publisher'|translate}}" ng_model="editedObj.publisher" id="imprint-publisher-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="imprint-date-{{$id}}">{{'Date'|translate}}</label>
+    <input type="text" placeholder="{{'Date'|translate}}" ng_model="editedObj.imprintDate" id="imprint-date-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="imprint-lang-{{$id}}">{{'Language'|translate}}</label>
+    <languages-list-input obj="editedObj.lang"></languages-list-input>
+  </div>
+</form>

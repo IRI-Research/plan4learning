@@ -1,0 +1,31 @@
+{% extends "p4l/base.html" %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'login' %}{% endblock %}
+
+{% block content %}
+{% if form.errors %}
+    <p class="error">{% trans "Sorry, that's not a valid username or password." %}</p>
+{% endif %}
+    <form action="{% url 'login' %}" method='post' class="form-horizontal" role="form">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{% if next %}{{ next }}{% else %}{% url 'p4l_home' %}{% endif %}" />
+        <div class="form-group">
+    		<label class="col-lg-2 control-label" for="id_username">{% trans 'Username' %} :</label>
+    		<div class="col-lg-10">
+                <input id="id_username" type="text" name="username" maxlength="254" class="form-control" placeholder="{% trans 'Username' %}" required="required">
+			</div>
+    	</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="id_password">{% trans 'Password' %} :</label>
+			<div class="col-lg-10">
+                <input id="id_password" type="password" name="password" class="form-control" placeholder="{% trans 'Password' %}" required="required">
+            </div>
+		</div>
+        <div class="form-group">
+           <div class="col-lg-offset-2 col-lg-10">
+               <button type="submit" class="btn btn-default">{% trans "login" %}</button>
+           </div>
+        </div>
+    </form>
+{% endblock %}

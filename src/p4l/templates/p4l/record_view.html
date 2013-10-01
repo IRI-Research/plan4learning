@@ -1,0 +1,240 @@
+{% extends "p4l/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load p4lstringfilters %}
+{% load p4lutils %}
+
+{% block page_title %}{% trans 'Record' %} {{ record.identifier }} - {% trans 'View' %}{% endblock %}
+
+{% block content %}
+<div class="row text-right">
+    <a class="btn btn-default" href="{% url 'p4l_record_edit' slug=record.identifier %}?previous={{request.get_full_path|urlencode}}">{% trans 'Edit the record' %} <i class="glyphicon glyphicon-pencil"></i></a>
+    <a class="btn btn-default" href="{% url 'p4l_record_delete' slug=record.identifier %}" onclick="return confirm('{% trans 'Are your sure you want to delete this record ? This action is irreversible.' %}')">{% trans 'Delete the record' %} <i class="glyphicon glyphicon-trash"></i></a>
+</div>
+<table class="table record-table">
+  <thead>
+    <tr><td>{% trans 'property' %}</td><td>{% trans 'value' %}</td></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>URI</td>
+      <td>{{ record.uri|default:'' }}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'subjects' %}</td>
+      <td><ul>{% for k in record.subjects.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'themes' %}</td>
+      <td><ul>{% for k in record.themes.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'countries' %}</td>
+      <td><ul>{% for k in record.countries.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'identifier' %}</td>
+      <td>{{ record.identifier }}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'notes' %}</td>
+      <td>{{ record.notes|default:'' }}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'issns' %}</td>
+      <td><ul>{% for i in record.issns.all %}<li>{{ i.issn|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'isbns' %}</td>
+      <td><ul>{% for i in record.isbns.all %}<li>{{ i.isbn|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'document code' %}</td>
+      <td><ul>{% for i in record.documentCodes.all %}<li>{{ i.documentCode|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'language' %}</td>
+      <td>{% if record.language %}{{ uri_labels | get_item:record.language.uri }} <small class="text-muted">({{ record.language.uri|default:'' }})</small>{% endif %}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'other languages' %}</td>
+      <td><ul>{% for k in record.otherLanguages.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'titles' %}</td>
+      <td><ul>{% for i in record.titles.all %}<li>{{ i.title|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'abstracts' %}</td>
+      <td><ul>{% for i in record.abstracts.all %}<li>{{ i.abstract|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'added titles' %}</td>
+      <td><ul>{% for i in record.addedTitles.all %}<li>{{ i.title|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'titles main document' %}</td>
+      <td><ul>{% for i in record.titlesMainDocument.all %}<li>{{ i.title|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'edition statement' %}</td>
+      <td>{{ record.editionStatement|default:'' }}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'imprints' %}</td>
+      <td>
+        <ul>
+          {% for i in record.imprints.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{% trans 'City' %} : {{ i.imprintCity|default:'' }}</li>
+              <li>{% trans 'Publisher' %} : {{ i.publisher|default:'' }}</li>
+              <li>{% trans 'Date' %} : {{ i.imprintDate|default:'' }}</li>
+              <li>{% trans 'Language' %} : {{ i.lang|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'collations' %}</td>
+      <td><ul>{% for i in record.collations.all %}<li>{{ i.collation|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'volume issues' %}</td>
+      <td>
+        <ul>
+          {% for i in record.volumeIssues.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{% trans 'Volume' %} : {{ i.volume|default:'' }}</li>
+              <li>{% trans 'Number' %} : {{ i.number|default:'' }}</li>
+              <li>{% trans 'Language' %} : {{ i.lang|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'project names' %}</td>
+      <td><ul>{% for k in record.projects.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'periodicals' %}</td>
+      <td><ul>{% for i in record.periodicals.all %}<li>{{ i.label|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'meetings' %}</td>
+      <td>
+        <ul>
+          {% for i in record.meetings.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{{ i.label|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>
+              <li>{% trans 'Number' %} : {{ i.meetingNumber|default:'' }}</li>
+              <li>{% trans 'Place' %} : {{ i.meetingPlace|default:'' }}</li>
+              <li>{% trans 'Date' %} : {{ i.meetingDate|default:'' }}</li>
+              <li>{% trans 'Year' %} : {{ i.meetingYear|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'series' %}</td>
+      <td>
+        <ul>
+          {% for i in record.series.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{{ i.title|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>
+              {% if i.volume %}<li>{% trans 'Volume' %} : {{ i.volume|default:'' }}</li>{% endif %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'authors' %}</td>
+      <td><ul>{% for i in record.authors.all %}<li>{{ i.name|default:'' }}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'subject persons' %}</td>
+      <td><ul>{% for i in record.subjectPersons.all %}<li>{{ i.name|default:'' }}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'subject corporate bodies' %}</td>
+      <td><ul>{% for k in record.subjectCorporateBodies.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'subject meetings' %}</td>
+      <td>
+        <ul>
+          {% for i in record.subjectMeetings.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{{ i.label|default:'' }}</li>
+              <li>{% trans 'Number' %} : {{ i.meetingNumber|default:'' }}</li>
+              <li>{% trans 'Place' %} : {{ i.meetingPlace|default:'' }}</li>
+              <li>{% trans 'Date' %} : {{ i.meetingDate|default:'' }}</li>
+              <li>{% trans 'Year' %} : {{ i.meetingYear|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'corporate authors' %}</td>
+      <td><ul>{% for k in record.corporateAuthors.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'corporate author label' %}</td>
+      <td>{{ record.corporateAuthorLabel|default:'' }}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'Urls' %}</td>
+      <td>
+        <ul>
+          {% for i in record.urls.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{% trans 'Address' %} : {% if i.address %}<a href="{{ i.address }}" target="_blank">{{ i.address }}</a>{% endif %}</li>
+              <li>{% trans 'Display' %} : {{ i.display|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'record type' %}</td>
+      <td>{{ uri_labels | get_item:record.recordType }} <small class="text-muted">({{ record.recordType|default:'' }})</small></td>
+    </tr>
+    <tr>
+      <td>{% trans 'audiences' %}</td>
+      <td><ul>{% for k in record.audiences.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'is document part' %}</td>
+      <td><input type="checkbox" disabled="disabled" {% if record.isDocumentPart %}checked="checked"{% endif %} /></td>
+    </tr>
+    <tr>
+      <td>{% trans 'is hidden' %}</td>
+      <td><input type="checkbox" disabled="disabled" {% if record.hidden %}checked="checked"{% endif %} /></td>
+    </tr>
+    <tr>
+      <td>{% trans 'is restricted' %}</td>
+      <td><input type="checkbox" disabled="disabled" {% if record.restricted %}checked="checked"{% endif %} /></td>
+    </tr>
+  </tbody>
+</table>
+<div class="row text-right">
+    <a class="btn btn-default" href="{% url 'p4l_record_edit' slug=record.identifier %}?previous={{request.get_full_path|urlencode}}">{% trans 'Edit the record' %} <i class="glyphicon glyphicon-pencil"></i></a>
+    <a class="btn btn-default" href="{% url 'p4l_record_delete' slug=record.identifier %}" onclick="return confirm('{% trans 'Are your sure you want to delete this record ? This action is irreversible.' %}')">{% trans 'Delete the record' %} <i class="glyphicon glyphicon-trash"></i></a>
+</div>
+{% endblock %}

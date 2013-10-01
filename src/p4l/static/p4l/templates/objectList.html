@@ -1,0 +1,15 @@
+<div>
+  <ul>
+    <li ng-repeat="obj in list">
+        <!--ng-include src="getStaticTemplateUrl(dispTemplate)"></ng-include-->
+        <object-disp obj="obj" disp-template="dispTemplate"></object-disp>
+        <a ng-click='removeFromList($index)' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+        <a ng-click='setEditedObject(obj, $index)' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></a>
+    </li>
+  </ul>
+  <a ng-click='newEditedObject()' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-plus-sign"></i></a>
+  <div class="after-plus" ng-show="editedObj!==null">
+    <ng-include src="getStaticTemplateUrl(formTemplate)"></ng-include>
+    <button ng-click="onOk()" class="btn btn-primary">{{'OK' | translate}}</button><button ng-click="onCancel()" class="btn btn-primary">{{'Cancel' | translate}}</button>
+  </div>
+</div>

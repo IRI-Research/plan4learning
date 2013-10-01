@@ -1,0 +1,26 @@
+<form class="form-inline well" role="form">
+  <div class="form-group">
+    <label for="label-{{$id}}">{{'label'|translate}}</label>
+    <input type="text" placeholder="{{'Label'|translate}}" ng_model="editedObj.label" id="label-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="meeting-number-{{$id}}">{{'Number'|translate}}</label>
+    <input type="text" placeholder="{{'Number'|translate}}" ng_model="editedObj.meetingNumber" id="meeting-number-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="meeting-place-{{$id}}">{{'Place'|translate}}</label>
+    <input type="text" placeholder="{{'Place'|translate}}" ng_model="editedObj.meetingPlace" id="meeting-place-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="meeting-date-{{$id}}">{{'Date'|translate}}</label>
+    <input type="text" placeholder="{{'Date'|translate}}" ng_model="editedObj.meetingDate" id="meeting-date-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="meeting-year-{{$id}}">{{'Year'|translate}}</label>
+    <input type="text" placeholder="{{'Year'|translate}}" ng_model="editedObj.meetingYear" id="meeting-year-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="lang-{{$id}}">{{'lang'|translate}}</label>
+    <languages-list-input obj="editedObj.lang"></languages-list-input>
+  </div>
+</form>

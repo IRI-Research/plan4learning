@@ -1,0 +1,410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-24 06:09-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:10 forms.py:34 templates/p4l/record_view.html:56
+msgid "language"
+msgstr "language"
+
+#: settings.py:42
+msgid "French"
+msgstr "French"
+
+#: settings.py:43
+msgid "English"
+msgstr "English"
+
+#: settings.py:44
+msgid "Spanish"
+msgstr "Spanish"
+
+#: semantictree/forms/widgets.py:39
+msgid "Search"
+msgstr "Search"
+
+#: semantictree/forms/widgets.py:43 semantictree/forms/widgets.py:80
+msgid ""
+"\"data-url\", \"data-query\", \"data-root-query\", \"data-childs-query\" and "
+"\"data-child-count-query\" must be set in CharField configuration"
+msgstr ""
+"\"data-url\", \"data-query\", \"data-root-query\", \"data-childs-query\" and "
+"\"data-child-count-query\" must be set in CharField configuration"
+
+#: semantictree/forms/widgets.py:44 semantictree/forms/widgets.py:81
+msgid "Browse"
+msgstr "Browse"
+
+#: semantictree/forms/widgets.py:49 semantictree/forms/widgets.py:86
+msgid "or"
+msgstr "or"
+
+#: templates/p4l/base.html:35
+msgid "logout"
+msgstr "logout"
+
+#: templates/p4l/base.html:37 templates/registration/login.html:4
+#: templates/registration/login.html:27
+msgid "login"
+msgstr "login"
+
+#: templates/p4l/home.html:6 templates/p4l/home.html.py:10
+msgid "Record List"
+msgstr "Record list"
+
+#: templates/p4l/home.html:6 templates/p4l/home.html.py:30
+#: templates/p4l/home.html:70
+msgid "Page"
+msgstr "Page"
+
+#: templates/p4l/home.html:14
+msgid "Query"
+msgstr "Query"
+
+#: templates/p4l/home.html:19
+msgid "New record"
+msgstr "New record"
+
+#: templates/p4l/home.html:27 templates/p4l/home.html.py:67
+msgid "Previous"
+msgstr "Previous"
+
+#: templates/p4l/home.html:30 templates/p4l/home.html.py:70
+msgid "on"
+msgstr "on"
+
+#: templates/p4l/home.html:33 templates/p4l/home.html.py:73
+msgid "Next"
+msgstr "Next"
+
+#: templates/p4l/home.html:43 templates/p4l/record_view.html:36
+msgid "identifier"
+msgstr "identifier"
+
+#: templates/p4l/home.html:43 templates/p4l/record_view.html:64
+msgid "titles"
+msgstr "titles"
+
+#: templates/p4l/home.html:43
+msgid "dates"
+msgstr "dates"
+
+#: templates/p4l/home.html:43
+msgid "actions"
+msgstr "actions"
+
+#: templates/p4l/home.html:59
+msgid "No record"
+msgstr "No record"
+
+#: templates/p4l/record_update_form.html:5 templates/p4l/record_view.html:7
+msgid "Record"
+msgstr "Record"
+
+#: templates/p4l/record_update_form.html:5 templates/p4l/record_view.html:7
+msgid "View"
+msgstr "View"
+
+#: templates/p4l/record_update_form.html:52 templates/p4l/translations.html:4
+msgid "Save"
+msgstr "Save"
+
+#: templates/p4l/record_update_form.html:56
+msgid "Cancel"
+msgstr "Cancel"
+
+#: templates/p4l/record_update_form.html:60
+#: templates/p4l/record_update_form.html:248
+#: templates/p4l/translations.html:20
+msgid "View the record"
+msgstr "View the record"
+
+#: templates/p4l/record_update_form.html:61
+#: templates/p4l/record_update_form.html:249 templates/p4l/record_view.html:12
+#: templates/p4l/record_view.html.py:238
+msgid ""
+"Are your sure you want to delete this record ? This action is irreversible."
+msgstr ""
+"Are your sure you want to delete this record ? This action is irreversible."
+
+#: templates/p4l/record_update_form.html:61
+#: templates/p4l/record_update_form.html:249 templates/p4l/record_view.html:12
+#: templates/p4l/record_view.html.py:238
+msgid "Delete the record"
+msgstr "Delete the record"
+
+#: templates/p4l/record_view.html:11 templates/p4l/record_view.html.py:237
+#: templates/p4l/translations.html:21
+msgid "Edit the record"
+msgstr "Edit the record"
+
+#: templates/p4l/record_view.html:16
+msgid "property"
+msgstr "property"
+
+#: templates/p4l/record_view.html:16
+msgid "value"
+msgstr "value"
+
+#: templates/p4l/record_view.html:24
+msgid "subjects"
+msgstr "subjects"
+
+#: templates/p4l/record_view.html:28
+msgid "themes"
+msgstr "themes"
+
+#: templates/p4l/record_view.html:32
+msgid "countries"
+msgstr "countries"
+
+#: templates/p4l/record_view.html:40
+msgid "notes"
+msgstr "notes"
+
+#: templates/p4l/record_view.html:44
+msgid "issns"
+msgstr "issns"
+
+#: templates/p4l/record_view.html:48
+msgid "isbns"
+msgstr "isbns"
+
+#: templates/p4l/record_view.html:52
+msgid "document code"
+msgstr "document code"
+
+#: templates/p4l/record_view.html:60
+msgid "other languages"
+msgstr "other languages"
+
+#: templates/p4l/record_view.html:68
+msgid "abstracts"
+msgstr "abstracts"
+
+#: templates/p4l/record_view.html:72
+msgid "added titles"
+msgstr "addes titles"
+
+#: templates/p4l/record_view.html:76
+msgid "titles main document"
+msgstr "titles main document"
+
+#: templates/p4l/record_view.html:80
+msgid "edition statement"
+msgstr "edition statement"
+
+#: templates/p4l/record_view.html:84
+msgid "imprints"
+msgstr "imprints"
+
+#: templates/p4l/record_view.html:90
+msgid "City"
+msgstr "City"
+
+#: templates/p4l/record_view.html:91
+msgid "Publisher"
+msgstr "Publisher"
+
+#: templates/p4l/record_view.html:92 templates/p4l/record_view.html.py:138
+#: templates/p4l/record_view.html:183
+msgid "Date"
+msgstr "Date"
+
+#: templates/p4l/record_view.html:93 templates/p4l/record_view.html.py:113
+msgid "Language"
+msgstr "Language"
+
+#: templates/p4l/record_view.html:101
+msgid "collations"
+msgstr "collations"
+
+#: templates/p4l/record_view.html:105
+msgid "volume issues"
+msgstr "volume issues"
+
+#: templates/p4l/record_view.html:111 templates/p4l/record_view.html.py:154
+msgid "Volume"
+msgstr "Volume"
+
+#: templates/p4l/record_view.html:112 templates/p4l/record_view.html.py:136
+#: templates/p4l/record_view.html:181
+msgid "Number"
+msgstr "Number"
+
+#: templates/p4l/record_view.html:121
+msgid "project names"
+msgstr "project names"
+
+#: templates/p4l/record_view.html:125
+msgid "periodicals"
+msgstr "periodicals"
+
+#: templates/p4l/record_view.html:129
+msgid "meetings"
+msgstr "meetings"
+
+#: templates/p4l/record_view.html:137 templates/p4l/record_view.html.py:182
+msgid "Place"
+msgstr "Place"
+
+#: templates/p4l/record_view.html:139 templates/p4l/record_view.html.py:184
+msgid "Year"
+msgstr "Year"
+
+#: templates/p4l/record_view.html:147
+msgid "series"
+msgstr "series"
+
+#: templates/p4l/record_view.html:162
+msgid "authors"
+msgstr "authors"
+
+#: templates/p4l/record_view.html:166
+msgid "subject persons"
+msgstr "subject persons"
+
+#: templates/p4l/record_view.html:170
+msgid "subject corporate bodies"
+msgstr "subject corporate bodies"
+
+#: templates/p4l/record_view.html:174
+msgid "subject meetings"
+msgstr "subject meetings"
+
+#: templates/p4l/record_view.html:192
+msgid "corporate authors"
+msgstr "corporate authors"
+
+#: templates/p4l/record_view.html:196
+msgid "corporate author label"
+msgstr "corporate author label"
+
+#: templates/p4l/record_view.html:200
+msgid "Urls"
+msgstr "Urls"
+
+#: templates/p4l/record_view.html:206
+msgid "Address"
+msgstr "Address"
+
+#: templates/p4l/record_view.html:207
+msgid "Display"
+msgstr "Display"
+
+#: templates/p4l/record_view.html:215
+msgid "record type"
+msgstr "record type"
+
+#: templates/p4l/record_view.html:219
+msgid "audiences"
+msgstr "audiences"
+
+#: templates/p4l/record_view.html:223
+msgid "is document part"
+msgstr "is document part"
+
+#: templates/p4l/record_view.html:227
+msgid "is hidden"
+msgstr "is hidden"
+
+#: templates/p4l/record_view.html:231
+msgid "is restricted"
+msgstr "is restricted"
+
+#: templates/p4l/translations.html:3
+msgid "Add"
+msgstr "Add"
+
+#: templates/p4l/translations.html:5
+msgid "Update"
+msgstr "Update"
+
+#: templates/p4l/translations.html:6
+msgid "Add a new subject"
+msgstr "Add a new subject"
+
+#: templates/p4l/translations.html:7
+msgid "Add a new theme"
+msgstr "Add a new theme"
+
+#: templates/p4l/translations.html:8
+msgid "Add a new country"
+msgstr "Add a new country"
+
+#: templates/p4l/translations.html:9
+msgid "Add a new language"
+msgstr "Add a new language"
+
+#: templates/p4l/translations.html:10
+msgid "Add a new project"
+msgstr "Add a new project"
+
+#: templates/p4l/translations.html:11
+msgid "Add a new organization"
+msgstr "Add a new organization"
+
+#: templates/p4l/translations.html:12
+msgid "Add a new audience"
+msgstr "Add a new audience"
+
+#: templates/p4l/translations.html:13
+msgid "Modify the language"
+msgstr "Modify the language"
+
+#: templates/p4l/translations.html:14
+msgid "Modify the record type"
+msgstr "Modify the record type"
+
+#: templates/p4l/translations.html:15
+msgid "title"
+msgstr "title"
+
+#: templates/p4l/translations.html:16
+msgid "abstract"
+msgstr "abstract"
+
+#: templates/p4l/translations.html:17
+msgid "collation"
+msgstr "collation"
+
+#: templates/p4l/translations.html:18
+msgid "label"
+msgstr "label"
+
+#: templates/p4l/translations.html:19
+msgid "name"
+msgstr "name"
+
+#: templates/p4l/translations.html:22
+msgid "An error occured. Somes datas may be incorrect or incomplete."
+msgstr "An error occured. Somes fields may be incorrect or incomplete."
+
+#: templates/registration/login.html:8
+msgid "Sorry, that's not a valid username or password."
+msgstr "Sorry, that's not a valid username or password."
+
+#: templates/registration/login.html:14 templates/registration/login.html:16
+msgid "Username"
+msgstr "Username"
+
+#: templates/registration/login.html:20 templates/registration/login.html:22
+msgid "Password"
+msgstr "Password"
+
+#~ msgid "Title"
+#~ msgstr "Title"

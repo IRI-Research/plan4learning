@@ -1,0 +1,82 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{LANGUAGE_CODE}}"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{{LANGUAGE_CODE}}"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{{LANGUAGE_CODE}}"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{LANGUAGE_CODE}}"> <!--<![endif]-->
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  {% endblock %}
+  <title>Plan4Learning - {% block page_title %}{% endblock %}</title>
+  {% block css_common %}
+  <link rel="stylesheet" href="{% static 'p4l/lib/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'p4l/css/p4l.css' %}">
+  {% endblock %}
+  {% block css_page %}
+  {% endblock %}
+</head>
+<body>
+{% block body %}
+    <div id="wrapper">
+	<header class="navbar navbar-inverse" role="banner">
+	  {% block header %}
+	  <div class="container">
+	    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+	      <ul class="nav navbar-nav">
+	        <li>
+	          <a href="{% url 'p4l_home' %}">Plan 4 Learning</a>
+	        </li>
+	      </ul>
+          <ul class="nav navbar-nav" style="float:right;">
+            {% if user.is_authenticated %}
+              <li><a>{{ user.username }}</a></li>
+              {% if user.is_staff %}<li><a href="{% url 'admin:index' %}" >admin</a></li>{% endif %}
+              <li><a href="{% url 'logout' %}?next={% url 'p4l_home' %}" >{% trans 'logout' %}</a></li>
+            {% else %}
+              <li><a href="{% url 'login' %}" >{% trans 'login' %}</a></li>
+            {% endif %}
+          </ul>
+	    </nav>
+	  </div>
+	  {% endblock %}
+	</header>
+	<div class="container">
+    {% block content %}
+    {% endblock %}
+	</div>
+    <div id="push"></div>
+    </div>
+    <footer>
+      <div class="container row">
+      {% block footer %}
+        <div class="footer-img col-md-6">
+            <a href="http://www.iri.centrepompidou.fr" target="_blank"><img src="{% static 'p4l/img/logo_IRI_footer.png' %}" alt="Logo IRI" /></a>
+        </div>
+        <div class="col-md-6">
+          <div class="text-right" id='langselect'>
+              <form action="{% url 'django.views.i18n.set_language' %}" method="post" id="lang_form">
+              {% csrf_token %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              {% for language in languages %}
+                  <input type="submit" name="language" class="flag flag-{{ language.code }}{% if language.code == LANGUAGE_CODE %} selected{% endif %}" value="{{ language.code }}" title="{{ language.name_local }}" />
+              {% endfor %}
+              </form>
+          </div>
+          <div class="text-right" id="copyright-version">
+              <div>©2013 <a href="http://www.iri.centrepompidou.fr" target="_blank">IRI</a></div>
+              <div id="versionwrapper"><span class="version" id="version">{{VERSION}}</span></div>
+          </div>
+        </div>
+      {% endblock %}
+      </div>
+    </footer>
+    {% block js_common %}
+    <!--script type="text/javascript" src="{% static 'p4l/js/bootstrap.min.js' %}"></script-->
+    {% endblock %}
+    {% block js_page %}
+    {% endblock %}
+{% endblock %}
+</body>
+</html>

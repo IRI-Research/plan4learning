@@ -1,0 +1,19 @@
+<div>
+    <p>{{uriLabels[val]}} <small class="text-muted">({{val}})</small></p>
+    <a ng-click='formVisible=!formVisible' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></a>
+	<form class="form-inline after-plus" role="form" ng-show="formVisible==true">
+	    <div class="form-group col-md-8">
+	        <input id="id_{{ $id }}" ng-model="addUriText" class="semantic-tree form-control col-md-10" type="text" placeholder="{{ placeholder }}"
+	               data-url="{{ dataurl }}" data-query="{{ dataquery }}" data-root-query="{{ datarootquery }}"
+	               data-childs-query="{{ datachildsquery }}" data-child-count-query="{{ datachildcountquery }}" />
+	        {{ 'or' | translate}}
+	        <span id="dialog-link-container-{{ $id }}" class="dialog-link-container ui-state-default ui-corner-all">
+	            <a href="#" id="dialog-link-{{ $id }}" class="btn dialog-link" title="Browse">{{'Browse' | translate}}</a>
+	        </span>
+	        <span id="dialog-{{ $id }}" class="dialog" title="Select term"><span id="term-tree-{{ $id }}"></span></span>
+	    </div>
+	    <div class="form-group">
+	        <button type="submit" class="btn btn-primary" ng-click="updateVal()" ng-class="{disabled: !uriInDict }">{{'Update' | translate}}</button>
+	    </div>
+	</form>
+</div>

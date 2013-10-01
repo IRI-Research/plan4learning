@@ -1,0 +1,14 @@
+<form class="form-inline well" role="form">
+  <div class="form-group">
+    <label for="imprint-volume-{{$id}}">{{'Volume'|translate}}</label>
+    <input type="text" placeholder="{{'Volume'|translate}}" ng_model="editedObj.volume" id="imprint-volume-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="imprint-number-{{$id}}">{{'Number'|translate}}</label>
+    <input type="text" placeholder="{{'Number'|translate}}" ng_model="editedObj.number" id="imprint-number-{{$id}}" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="imprint-lang-{{$id}}">{{'Language'|translate}}</label>
+    <languages-list-input obj="editedObj.lang"></languages-list-input>
+  </div>
+</form>

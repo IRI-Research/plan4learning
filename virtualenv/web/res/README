@@ -1,0 +1,22 @@
+README - Platform virtualenv lib modifications
+-------------------------------------------------
+
+1. DJANGO-PISTON 
+https://bitbucket.org/jespern/django-piston/overview
+------------------------------------------------------
+Model name collision with python-oauth.
+Described here: https://bitbucket.org/david/django-oauth/issue/3/collision-with-django-piston-on-syncdb
+
+Piston and Django-oauth use the same model for Tokens, and same related name to their ForeignKey User.
+One of the related_name has to be modified.
+See platform/virtualenv/web/res/patch/piston.diff
+
+
+2. PYTHON-OAUTH2
+https://github.com/simplegeo/python-oauth2
+---------------------------------------------
+Request paramters are not handled correctly, and sometimes appear twice in the request query_string.
+Described here: https://github.com/simplegeo/python-oauth2/issues#issue/21
+
+Modification made in get_normalized_parameters in order to avoid doubling the parameters, and making the request non-valid.
+See platform/virtualenv/web/res/patch/oauth2.diff

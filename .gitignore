@@ -27,9 +27,24 @@ pip-log.txt
 nosetests.xml
 
 # Translations
-*.mo
+#*.mo
 
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
+
+# mercurial
+.hg
+.hgcheck
+.hgignore
+.hgtags
+.metadata
+.settings
+
+doc/_build
+virtualenv/web/env/
+virtualenv/web/project-boot.py
+web/static/
+run/
+src/p4l/config.py

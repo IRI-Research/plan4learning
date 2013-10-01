@@ -1,0 +1,155 @@
+/*!
+ * modif from bootstrap for p4l
+ */
+
+html,
+body {
+	height: 100%;
+	/* The html and body elements cannot have any padding or margin. */
+}
+
+.container {
+  margin: 0 auto;
+  width: 950px;
+}
+
+.record-table thead td:first-child {
+    width: 190px;
+}
+.record-table tbody td:first-child:first-letter {
+    text-transform: uppercase;
+}
+.table thead td:first-letter {
+    text-transform: uppercase;
+}
+.table thead {
+    font-weight: bold;
+}
+.two_buttons{
+	min-width: 100px;
+}
+
+footer {
+    padding-bottom: 20px;
+    border-top: 1px solid gray;
+}
+.bottom-5 {
+    margin-bottom: 5px;
+}
+.after-plus {
+    margin-top: 5px;
+}
+.after-plus button {
+    margin-right: 5px;
+}
+
+.rotate{
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+}
+
+.spinner {
+    width: 14px;
+    height: 14px;
+    float: left;
+	background:url(./img/ajax-loader.gif) no-repeat center center;
+	border-radius: 50%;
+	opacity: .7;
+	margin-right: 4px;
+}
+
+.grey-bottom {
+    border-bottom: 1px dotted #CCC;
+}
+
+.well {
+    margin-bottom: 5px;
+    padding: 4px 5px 8px 8px;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.edit-form-row:nth-child(odd) {
+     background: #EEE;
+}
+
+.break-word {
+	word-wrap: break-word;
+}
+
+/* Flags */
+.flag {
+    width: 16px;
+    height: 11px;
+    padding: 0;
+    border: none;
+    background:url(./img/flags.png) no-repeat;
+    /* hack to hide the button text */
+    text-indent: -999em; /* Hide the text, works in most modern browsers */
+    font-size: 0px; /* works well in IE7. still a black line (basically the text) in IE6. */
+    /*display: block;*/ /* Negative text-indent works in IE(6? worked fine in 7) only if this is added. */
+    line-height: 0px; /* Another fix for IE6. */
+}
+.flag.flag-es {background-position: -16px 0}
+.flag.flag-fr {background-position: 0 -11px}
+.flag.flag-en {background-position: -16px -11px}
+
+/* css class to avoid angular flicker */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+.version {
+    text-align: right;
+    color: white;
+    font-size:9px;
+}
+
+.version:hover {
+    color: inherit;
+	text-decoration: none;
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: 0 auto -70px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+footer {
+    height: 70px;
+}
+
+.footer-img {
+	padding: 10px 0;
+}
+
+#search-input {
+	padding-right: 24px;
+}
+
+#search-input-cancel {
+    text-indent: -1000em;
+    top: 3px;
+    right: 0.5em;
+}
+
+#langselect {
+	padding-bottom: 10px;
+}
+
+
+#copyright-version a {
+	text-decoration: none;
+	color: inherit;
+}

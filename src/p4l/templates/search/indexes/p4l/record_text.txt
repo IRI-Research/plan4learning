@@ -1,0 +1,4 @@
+{% load p4lstringfilters %}
+{{object.identifier}}
+{% for t in object.titles.all %}{{t.title | strip_accents }}{% if not forloop.last %} | {% endif %}{% endfor %}
+{% for a in object.all_authors %}{{a}}{% if not forloop.last %} | {% endif %}{% endfor %}

@@ -1,0 +1,83 @@
+{% extends "p4l/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load p4lstringfilters %}
+
+{% block page_title %}{% trans 'Record List' %} - {% trans 'Page' %} {{ page.number }}{% endblock %}
+
+{% block js_page %}
+<script type="text/javascript" src="{% static 'p4l/lib/jquery-1.9.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'p4l/js/p4l_home.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+	<h3 class="col-md-6">{% trans 'Record List' %}</h3>
+	<div class="col-md-6 text-right">
+	  <form method="GET" class="form-inline" role="form">
+	    <div class="form-group">
+	        <input id="search-input" class="form-control" type="search" placeholder="{% trans 'Query' %}" name="q" value="{{query}}"></input><span id="search-input-cancel" class="glyphicon glyphicon-remove" {% if not query %}style="display: none;"{% endif %}></span>
+	    </div>
+	    <div class="form-group">
+	      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+	    </div>
+      - <a class="btn btn-default" href="{% url 'p4l_record_new' %}?previous={{request.get_full_path|urlencode}}">{% trans 'New record' %} <i class="glyphicon glyphicon-plus-sign"></i></a>
+	  </form>
+	</div>
+</div>
+ <div class="pagination pull-right">
+ {% if page.has_previous or page.has_next %}
+    <span class="page-links">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}&q={{query}}">{% trans 'Previous' %}</a>
+        {% endif %}
+        <span class="page-current">
+            {% trans 'Page' %} {{ page.number }} {% trans 'on' %} {{ paginator.num_pages }}
+        </span>
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}&q={{query}}">{% trans 'Next' %}</a>
+        {% endif %}
+    </span>
+{% else %}
+    <span>&nbsp;</span>
+{% endif %}    
+</div>
+
+<table class="table">
+  <thead>
+    <tr><td>{% trans 'identifier' %}</td><td>{% trans 'titles' %}</td><td>{% trans 'dates' %}</td><td class="two_buttons">{% trans 'actions' %}</td></tr>
+  </thead>
+  <tbody>
+  {% for result in page.object_list %}
+    <tr>
+      <td>{{ result.get_stored_fields.identifier }}</td>
+      <td><ul>{% for t in result.get_stored_fields.titles_src %}
+          <li>{{ t }}</li>
+          {% endfor %}</ul></td>
+      <td>{{ result.get_stored_fields.years|join:", "}}</td>
+      <td>
+        <a class="btn btn-default" href="{% url 'p4l_record_view' slug=result.get_stored_fields.identifier %}?previous={{request.get_full_path|urlencode}}"><i class="glyphicon glyphicon-eye-open"></i></a>
+        <a class="btn btn-default" href="{% url 'p4l_record_edit' slug=result.get_stored_fields.identifier %}?previous={{request.get_full_path|urlencode}}"><i class="glyphicon glyphicon-pencil"></i></a>
+      </td>
+    </tr>
+  {% empty %}
+    <tr><td>{% trans 'No record' %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% if is_paginated %}
+<div class="pagination pull-right">
+    <span class="page-links">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}{% for k,v in filter_params.items %}&{{k}}={{v}}{% endfor %}">{% trans 'Previous' %}</a>
+        {% endif %}
+        <span class="page-current">
+            {% trans 'Page' %} {{ page.number }} {% trans 'on' %} {{ page.paginator.num_pages }}
+        </span>
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}{% for k,v in filter_params.items %}&{{k}}={{v}}{% endfor %}">{% trans 'Next' %}</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
+{% endblock %}

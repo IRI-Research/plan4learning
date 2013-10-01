@@ -1,0 +1,22 @@
+<div>
+    <div class="row grey-bottom" ng-if="list.length>0">
+        <div ng-repeat="l in headLabels" class="col-md-{{ headSizes[$index] }}">{{l | translate}}</div>
+        <div class="col-md-2">{{'Actions' | translate}}</div>
+    </div>
+    <div class="row edit-form-row" ng-repeat="obj in list">
+        <span ng-if="dispTemplate==''">
+			<div ng-repeat="f in headFields" class="col-md-{{ headSizes[$index] }}">{{ obj[f] }}</div>
+        </span>
+        <object-disp ng-if="dispTemplate!=''" obj="obj" disp-template="dispTemplate"></object-disp>
+        <div class="col-md-2">
+	        <a ng-click='removeFromList($index)' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+	        <a ng-click='setEditedObject(obj, $index)' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></a>
+	    </div>
+    </div>
+</table>
+<a ng-click='newEditedObject()' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-plus-sign"></i></a>
+<div class="after-plus" ng-show="editedObj!==null">
+    <ng-include src="getStaticTemplateUrl(formTemplate)"></ng-include>
+    <button ng-click="onOk()" class="btn btn-primary">{{'OK' | translate }}</button><button ng-click="onCancel()" class="btn btn-primary">{{'Cancel' | translate}}</button>
+</div>
+</div>

@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+.ui-dialog {
+    height: 415px !important;
+}
+.ui-dialog-content {
+    padding: 0 !important;
+}
+.jstree ul:first-child {
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.ui-autocomplete { max-height: 200px; overflow-y: scroll; overflow-x: hidden;}
+.ui-autocomplete .ui-menu-item a {
+    font-size: 0.9em;
+    padding: 0 0.4em;
+}
+ul .ui-autocomplete {
+    max-height: 300px;
+}
+.thin-button{
+	padding-top: 3px;
+}
+/*
+.ng-scope {
+    border: 1px dashed red;
+}
+.large_25 {
+    width: 25px;
+}
+.text_centered {
+    text-align: center;
+}
+.text_left_aligned { 
+    text-align: left;
+}
+.text_right_aligned { 
+    text-align: right;
+}
+
+.unsemantized {
+    color: #ba0000;
+}
+.result_counter {
+    color: #C6C6C6;
+}
+
+.term-list-label {
+    width : 500px;
+}
+
+.searchmatch {
+    color: #c000c0;
+}
+
+.jstree-error {
+    font-weight: bold;
+    color: red;
+}
+*/

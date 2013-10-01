@@ -1,0 +1,24 @@
+<div>
+    <ul class="bottom-5">
+        <li ng-repeat="item in list">{{uriLabels[item]}} <small class="text-muted">({{item}})</small> <a ng-click='removeFromList(item)' class="btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></a></li>
+    </ul>
+    <a ng-click='formVisible=!formVisible' class="btn btn-default btn-xs">
+        <i class="glyphicon glyphicon-plus-sign"></i>
+        <i class="glyphicon glyphicon-play" ng-class="{rotate: formVisible}"></i>
+    </a>
+	<form class="form-inline after-plus" role="form" ng-show="formVisible">
+	    <div class="form-group col-md-8">
+	        <input id="id_{{ $id }}" ng-model="addUriText" class="semantic-tree form-control col-md-10" type="text" placeholder="{{ placeholder }}"
+	               data-url="{{ dataurl }}" data-query="{{ dataquery }}" data-root-query="{{ datarootquery }}"
+	               data-childs-query="{{ datachildsquery }}" data-child-count-query="{{ datachildcountquery }}" ng-disabled="dataquery==''" />
+	        {{ 'or' | translate}}
+	        <span id="dialog-link-container-{{ $id }}" class="dialog-link-container ui-state-default ui-corner-all">
+	            <a href="#" id="dialog-link-{{ $id }}" class="btn dialog-link thin-button" title="Browse" ng-class="{disabled: datarootquery==''}" >{{'Browse' | translate}}</a>
+	        </span>
+	        <span id="dialog-{{ $id }}" class="dialog" title="Select term"><span id="term-tree-{{ $id }}"></span></span>
+	    </div>
+	    <div class="form-group">
+	        <button type="submit" class="btn btn-primary" ng-click="addUriToList()" ng-class="{disabled: !uriInDict }">{{'Add' | translate}}</button>
+	    </div>
+	</form>
+</div>
