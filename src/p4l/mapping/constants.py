@@ -33,7 +33,7 @@
 
 
 from rdflib.graph import Graph
-from rdflib.namespace import Namespace, RDF
+from rdflib.namespace import Namespace, RDF, RDFS
 
 
 DCT = Namespace("http://purl.org/dc/terms/")
@@ -43,7 +43,8 @@ UNESCO = Namespace("http://www.iiep.unesco.org/Ontology/")
 GRAPH_NAMESPACES = {
     'iiep': IIEP,
     'dct': DCT,
-    'rdf': RDF
+    'rdf': RDF,
+    'rdfs': RDFS
 }
 
 def get_empty_graph():

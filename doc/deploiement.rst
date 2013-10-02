@@ -5,7 +5,7 @@ Déploiement
 La documentation de déploiement suivante est sur la base d'une Debian 7.0 (Wheezy).
 
 
-options de déployement
+options de déploiement
 ======================
 
 De nombreuses options de déploiement existe. Les plus populaires sont décrite sur le site Django à l'adresse suivante : https://docs.djangoproject.com/en/1.5/howto/deployment/.
@@ -23,6 +23,7 @@ Liste des prérequis
 - postgresql
 - elasticsearch
 - build tools
+- sesame
 
 Le reste des dépendances est fourni dans les sources.
 Toute les commandes ci dessous doivent se faire entant que ``root``, typiquement en prefixant toute les commandes avec ``sudo``.
@@ -33,7 +34,11 @@ Python 2.7
 
 C'est la version par défaut de la distribution debian 7. Si python n'est pas déjà installé::
 
-    apt-get install python 
+    apt-get install python
+    
+Dans tous les cas, il faut installer les outils de développement python::
+
+    apt-get install python-dev
 
 
 Apache et mod-wsgi
@@ -53,6 +58,7 @@ La aussi nous utilisons la version distribuée avec la debian 7, c'est à dire l
 ::
 
     apt-get install postgresql
+    apt-get install postgresql-server-dev-9.1
 
 
 Elasticsearch
@@ -72,6 +78,12 @@ La création de l'environement virtuel nécessite l'installation des outils de b
 
     apt-get install build-essential
 
+Sesame
+------
+
+Attention, l'application "BO Plan4Learning" nécessite la présence d'un serveur Sesame comprenant l'ensemble des référentiels et thésaurus de l'application.
+L'installation d'un tel erveur est hors du scope de cette documentation.
+
 
 Etapes de déploiement
 =====================
@@ -88,8 +100,11 @@ Les fichiers du projets peuvent être organisés en 4 groupes correspondant à d
   - ``run`` : répertoire contenant les logs de l'application
 
 Django fournit un utilitaire en ligne de commande permettant l'execution de tâche d'administration. La documentation se trouve à l'adresse suivante : https://docs.djangoproject.com/en/1.5/ref/django-admin/ .
-cet
 
+Les resources statiques sont tous les fichiers additionnels qui constituent un site web : images, javascript, css,... .
+
+
+.. _deployment-virtualenv:
 
 Virtualenv
 ----------
@@ -126,7 +141,7 @@ La base est crée en plusieurs étapes. D'abord il faut créer la base de donné
 
     CREATE DATABASE p4l
       WITH ENCODING='UTF8'
-           OWNER=iri
+           OWNER=<db user>
            TEMPLATE=template0
            LC_COLLATE='en_US.UTF-8'
            LC_CTYPE='en_US.UTF-8'
@@ -143,7 +158,7 @@ Enfin on crée un "super" utilisateur pouvant accéder à l'admininistration du 
     python manage.py createsuperuser
 
 
-deployement des resources statiques
+Déploiement des resources statiques
 -----------------------------------
 
 Le déploiement des resources statiques du site se font à l'aide de la commande suivante:

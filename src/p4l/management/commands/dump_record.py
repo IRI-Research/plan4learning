@@ -76,7 +76,7 @@ class Command(BaseCommand):
             dest= 'batch',
             type='int',
             default=100,
-            help= 'query batch default 500.' 
+            help= 'query batch default 100.' 
         ),
         make_option('-j', '--bzip2',
             dest= 'bzip2',
@@ -130,16 +130,18 @@ class Command(BaseCommand):
         
         open_method = None
         open_args = []
+        decode_method = lambda s: s
         
         if bzip2:
             open_method = bz2.BZ2File
-            open_args = [filepath, 'wb', 9] 
+            open_args = [filepath, 'wb', 9]
         elif gzip_opt:
             open_method = gzip.GzipFile
             open_args = [filepath, 'wb', 9]
         else:
             open_method = codecs.open
             open_args = [filepath, 'wb', "utf-8"]
+            decode_method = lambda s: s.decode("utf-8")
         
         total_records = qs.count()
         
@@ -162,7 +164,7 @@ class Command(BaseCommand):
                         if "<iiep:Record" in line:
                             do_write = True
                         if do_write:
-                            dest_file.write(line.decode("utf-8"))
+                            dest_file.write(decode_method(line))
                         if "</iiep:Record>" in line:
                             break
                 
