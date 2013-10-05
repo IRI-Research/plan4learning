@@ -84,6 +84,14 @@ def get_code_from_language_uri(lang_uri):
 
 
 def get_labels_for_uris(uri_list, scheme_uri, lang, acronyms=False):
+    '''
+    This methods gathers labels for concept in thesaurus.
+    
+    :param uri_list: The list of uris of thesaurus entries.    
+    :param scheme_uri: The scheme (uri) of the thesaurus 
+    :param lang: The language for the label
+    :param acronyms: do the labels must include the acronym (altLabel) 
+    '''
     query_without_acronym = """
 PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>

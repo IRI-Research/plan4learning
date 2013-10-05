@@ -81,8 +81,14 @@ La création de l'environement virtuel nécessite l'installation des outils de b
 Sesame
 ------
 
-Attention, l'application "BO Plan4Learning" nécessite la présence d'un serveur Sesame comprenant l'ensemble des référentiels et thésaurus de l'application.
-L'installation d'un tel erveur est hors du scope de cette documentation.
+L'application "BO Plan4Learning" nécessite la présence d'un serveur Sesame comprenant l'ensemble des référentiels et thésaurus de l'application.
+
+L'installation d'un tel serveur est hors du scope de cette documentation.
+
+Une partie de l'application accède au serveur Sesame directement en javascript depuis le navigateur de l'utilisateur.
+Si le serveur Sesame est sur un autre domaine que l'application Back-Office (même si seulement le numéro de port change), 
+il est nécessaire qu'il supporte les en-têtes CORS (c.f. http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) en autorisant le domaine de l'application Back-Office. 
+
 
 
 Etapes de déploiement
@@ -128,8 +134,11 @@ Si la version de python est mise à jour, l'environement virtuel devra lui aussi
 Configuration
 -------------
 
-La configuration du système se fait dans le fichier ``src/config.py``. Ce fichier doit être créé à partir du fichier ``src/config.py.tmpl``.
-La plupart des configurations sont soit documentées directement dans le fichier, soit documentés à l'adresse suivante : https://docs.djangoproject.com/en/1.5/ref/settings/
+La configuration du système se fait dans le fichier ``src/p4l/config.py``. Ce fichier doit être créé à partir du fichier ``src/config.py.tmpl``.
+La plupart des configurations sont soit documentées directement dans le fichier, soit documentés à l'adresse suivante : https://docs.djangoproject.com/en/1.5/ref/settings/)
+
+Il existe un autre fichier de configuration : ``src/p4l/settings.py``. C'est en fait le fichier "normal" de configuration de Django (cf. https://docs.djangoproject.com/en/1.5/topics/settings/) .
+Techniquement, les propriétés de ``config.py`` viennent redéfinir une partie de celles de ``settings.py``. Néanmoins lors d'un déploiement, seule le fichier ``config.py`` doit être modifié.
 
 
 Création de la base

@@ -68,11 +68,35 @@ class RecordParser(object):
         if self.query_cache is None:
             self.query_cache = QueryCache()        
     
+        
     def extract_single_value_form_graph(self, graph, q, bindings={}, index=0, convert=lambda v:unicode(v) if v is not None else None, default=None):
+        '''
+        Extract a single value form an rdf graph.
+        
+        :param graph: the rdflib.Graph object to parse
+        :param q: the SPARQL query used to extact the data from the graph
+        :param bindings: Optional binding values for the query
+        :param index: zero based index of the result to extract
+        :param convert: Either a single method of a map of method to apply to the data to extract 
+        :param default: The default value to return if no result is returned by the query
+        
+        @return: None or a single value        
+        '''
         return next(self.extract_multiple_values_from_graph(graph, q, bindings, index, convert), default)
 
-    def extract_multiple_values_from_graph(self, graph, q, bindings={}, index=0, convert=lambda v:unicode(v) if v is not None else None):
 
+    def extract_multiple_values_from_graph(self, graph, q, bindings={}, index=0, convert=lambda v:unicode(v) if v is not None else None):
+        '''
+        Extract multiple values from a rdf graph.
+        
+        :param graph: the rdflib.Graph object to parse
+        :param q: the SPARQL query used to extact the data from the graph
+        :param bindings: Optional binding values for the query
+        :param index:  zero based index of the result to extract
+        :param convert: The default value to return if no result is returned by the query
+        
+        @return: an iterator on the extracted values
+        '''
         index_list = index
         if isinstance(index, int):
             index_list = range(index+1)
@@ -111,6 +135,18 @@ class RecordParser(object):
 
 
     def add_to_related_collection(self, coll, graph, fields, q, bindings={},  convert=lambda v: unicode(v) if v is not None else None, through_fields=None):
+        '''
+        This method add new object to a related object collection by extracting data from an rdflib.Graph.
+        
+        
+        :param coll: The collection to add the new objects into. This must be a related collection (cf. django)
+        :param graph: The graph from wich data is extracted
+        :param fields: The list of fields to extract
+        :param q: The SPAQL query. The order and number of the binding parameters of the query must be equals to the one descibed in the ``fields`` parameter.
+        :param bindings: Binding for the SPARQL qery
+        :param convert: map of methods or simple method  to convert data extracted form the graph.
+        :param through_fields: the list (in order) of the througt table used to make a relation between the main object and an "external" object.
+        '''
         
         for val in self.extract_multiple_values_from_graph(graph, q, bindings=bindings, index=fields, convert=convert):
 

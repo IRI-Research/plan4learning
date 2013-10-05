@@ -1,5 +1,5 @@
 **************
-administration
+Administration
 **************
 
 Django et ses modules d'extensions propose de nombreuses commande d'administration. Le but est ici d'en lister les plus utiles pour l'administration de l'application.
@@ -28,6 +28,9 @@ Commande d'administration
 =========================
 
 Voici une liste des commandes ser vant à gérer l'import et l'export des notices (``Record``). 
+
+
+.. _admin-import-record:
 
 ``import_record``
 -----------------
@@ -84,6 +87,10 @@ Les points suivants sont à noter:
      Donc en cas d'erreur d'import il est possible que certaine notice ait été indexée mais ne se retrouve pas finalement en base.
      Il est à noté que dans ce cas, ces notices apparaîtrons dans la page de liste des notices.
 
+  #. Pour des imports massif, il est souvent plus interessant de desactiver l'indexation à la volée et de lancer si c'est possible une mise à jour de l'index (cf. `update_index`_) et sinon sa reconstruction. (cf. `rebuild_index`_) 
+
+
+.. _admin-dump-record:
 
 ``dump_record``
 ---------------
@@ -201,7 +208,7 @@ Cette commande est fournie par le module Django ``Haystack``. Sa documentation s
                             Verbosity level; 0=minimal output, 1=normal output,
                             2=verbose output, 3=very verbose output
       --settings=SETTINGS   The Python path to a settings module, e.g.
-                            "myproject.settings.main". If this isn't provided, the
+                            "myproject.settings.main". If this is not provided, the
                             DJANGO_SETTINGS_MODULE environment variable will be
                             used.
       --pythonpath=PYTHONPATH

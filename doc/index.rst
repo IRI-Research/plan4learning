@@ -9,7 +9,7 @@ Documentation Back office Plan4Learning
 Contenu:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :numbered:
 
    architecture

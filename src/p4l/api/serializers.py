@@ -140,7 +140,6 @@ class P4lModelSerializer(serializers.ModelSerializer):
 
 
 
-#class RecordSerializer(serializers.ModelSerializer):
 class RecordSerializer(P4lModelSerializer):
     '''
     Serializer for record
