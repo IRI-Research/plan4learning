@@ -284,4 +284,6 @@ Ce sont des templates Angularjs (c.f. http://docs.angularjs.org/guide/dev_guide.
 Pour les template ``form-template``, l'objet édité est dans la variable ``editedObj``.
 Pour les template ``disp-template``, l'objet édité est dans la variable ``obj``. 
 Les templates existant donneront des exemples d'utilisation et pourront servir de base pour l'ajout d'un nouveau champ.
+Attention, ce sont des ressources statiques pour l'application.
+Si ils sont modifiés, la commande ``collectstatic`` doit être lancée afin qu'ils soient correctement déployés et pris en compte par Angular.
 

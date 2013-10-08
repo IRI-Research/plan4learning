@@ -3,4 +3,8 @@
     <label for="document-code-{{$id}}">{{'document code'|translate}}</label>
      <input type="text" placeholder="{{'document code'|translate}}" ng_model="editedObj.documentCode" id="document-code-{{$id}}" class="form-control"/>
   </div>
+  <div class="form-group">
+    <label for="lang-{{$id}}">{{'lang'|translate}}</label>
+    <languages-list-input obj="editedObj.lang"></languages-list-input>
+  </div>
 </form>
