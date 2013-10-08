@@ -32,11 +32,18 @@
 #
 
 from rdflib.namespace import RDFS
+from rdflib.term import URIRef, Literal
 
 from p4l.mapping.constants import IIEP, DCT
 from p4l.mapping.serializers import (ModelSerializer, SimpleFieldSerializer, 
     BooleanFieldSerializer, RelatedFieldSerializer)
 
+
+def uri_convert(s):
+    try:
+        return URIRef(unicode(s)) if s else None
+    except:
+        return Literal(unicode(s)) if s else None
 
 class ImprintSerializer(ModelSerializer):
     
@@ -82,20 +89,20 @@ class RecordSerializer(ModelSerializer):
     notes = SimpleFieldSerializer(predicate=IIEP.notes)
     editionStatement = SimpleFieldSerializer(predicate=IIEP.editionStatement)
     corporateAuthorLabel = SimpleFieldSerializer(predicate=IIEP.corporateAuthorLabel)
-    recordType = SimpleFieldSerializer(predicate=DCT.type)
+    recordType = SimpleFieldSerializer(predicate=DCT.type, convert=uri_convert)
     isDocumentPart = BooleanFieldSerializer(predicate=IIEP.isDocumentPart)
     hidden = BooleanFieldSerializer(predicate=IIEP.hidden)
     restricted = BooleanFieldSerializer(predicate=IIEP.restricted)    
 
-    language = RelatedFieldSerializer(many=False, value_field='uri', predicate=DCT.language) 
-    otherLanguages = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.otherLanguage)
-    subjects = RelatedFieldSerializer(many=True, value_field='uri', predicate=DCT.subject)
-    themes = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.theme)
-    countries = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.country)
-    projectNames = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.projectName)
-    subjectCorporateBodies = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.subjectCorporateBody) 
-    corporateAuthors = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.corporateAuthor)
-    audiences = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.audience)
+    language = RelatedFieldSerializer(many=False, value_field='uri', predicate=DCT.language, convert=uri_convert) 
+    otherLanguages = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.otherLanguage, convert=uri_convert)
+    subjects = RelatedFieldSerializer(many=True, value_field='uri', predicate=DCT.subject, convert=uri_convert)
+    themes = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.theme, convert=uri_convert)
+    countries = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.country, convert=uri_convert)
+    projectNames = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.projectName, convert=uri_convert)
+    subjectCorporateBodies = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.subjectCorporateBody, convert=uri_convert) 
+    corporateAuthors = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.corporateAuthor, convert=uri_convert)
+    audiences = RelatedFieldSerializer(many=True, value_field='uri', predicate=IIEP.audience, convert=uri_convert)
     
     isbns = RelatedFieldSerializer(many=True, value_field='isbn', predicate=IIEP.isbn, lang_field='lang')
     issns = RelatedFieldSerializer(many=True, value_field='issn', predicate=IIEP.issn, lang_field='lang')

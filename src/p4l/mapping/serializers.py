@@ -31,11 +31,11 @@
 # knowledge of the CeCILL-B license and that you accept its terms.
 #
 
+from collections import OrderedDict
 import logging
 
 from rdflib.namespace import RDF
-from rdflib.term import URIRef, Literal, BNode
-from collections import OrderedDict
+from rdflib.term import URIRef, Literal, BNode, Identifier
 
 
 logger = logging.getLogger(__name__)
@@ -80,8 +80,9 @@ class SimpleFieldSerializer(FieldSerializer):
         res = self.convert(getattr(obj, self.source or fieldname))
         if res is None:
             return
-        if not isinstance(res, Literal):
+        if not isinstance(res, Identifier):
             res = Literal(unicode(res))        
+        
         lang = getattr(obj, self.lang_field, None) if self.lang_field else None
         
         return Literal(res.value, lang) if lang else res
@@ -99,7 +100,7 @@ class BooleanFieldSerializer(SimpleFieldSerializer):
 class RelatedFieldSerializer(SimpleFieldSerializer):
         
     def __init__(self, value_field, predicate=None, convert=None, source=None, many=False, lang_field=None):
-        super(RelatedFieldSerializer, self).__init__(predicate, convert, source, lang_field=lang_field)
+        super(RelatedFieldSerializer, self).__init__(predicate=predicate, convert=convert, source=source, lang_field=lang_field)
         self.many = many
         self.value_field = value_field
 
