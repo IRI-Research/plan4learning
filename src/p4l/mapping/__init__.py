@@ -48,7 +48,7 @@ def uri_convert(s):
 class ImprintSerializer(ModelSerializer):
     
     imprintCity = SimpleFieldSerializer(predicate=IIEP.imprintCity, lang_field='lang')
-    publisher = SimpleFieldSerializer(predicate=IIEP.publisher, lang_field='lang')
+    publisher = SimpleFieldSerializer(predicate=DCT.publisher, lang_field='lang')
     imprintDate = SimpleFieldSerializer(predicate=IIEP.imprintDate, lang_field='lang')
 
 
@@ -108,10 +108,10 @@ class RecordSerializer(ModelSerializer):
     issns = RelatedFieldSerializer(many=True, value_field='issn', predicate=IIEP.issn, lang_field='lang')
     collations = RelatedFieldSerializer(many=True, value_field='collation', predicate=IIEP.collation, lang_field='lang')
     documentCodes = RelatedFieldSerializer(many=True, value_field='documentCode', predicate=IIEP.documentCode, lang_field='lang')
-    titles = RelatedFieldSerializer(many=True, value_field='title', predicate=IIEP.title, lang_field='lang')
+    titles = RelatedFieldSerializer(many=True, value_field='title', predicate=DCT.title, lang_field='lang')
     addedTitles = RelatedFieldSerializer(many=True, value_field='title', predicate=IIEP.addedTitle, lang_field='lang')
     titlesMainDocument = RelatedFieldSerializer(many=True, value_field='title', predicate=IIEP.titleMainDocument, lang_field='lang')
-    abstracts = RelatedFieldSerializer(many=True, value_field='abstract', predicate=IIEP.abstract, lang_field='lang')
+    abstracts = RelatedFieldSerializer(many=True, value_field='abstract', predicate=DCT.abstract, lang_field='lang')
     periodicals = RelatedFieldSerializer(many=True, value_field='label', predicate=IIEP.periodical, lang_field='lang')
     authors = RelatedFieldSerializer(many=True, value_field='name', predicate=IIEP.author)
     subjectPersons = RelatedFieldSerializer(many=True, value_field='name', predicate=IIEP.subjectPerson)
