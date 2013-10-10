@@ -35,7 +35,7 @@ msgstr "Spanish"
 
 #: semantictree/forms/widgets.py:39
 msgid "Search"
-msgstr "Search"
+msgstr "Buscar"
 
 #: semantictree/forms/widgets.py:43 semantictree/forms/widgets.py:80
 msgid ""
@@ -51,7 +51,7 @@ msgstr "Browse"
 
 #: semantictree/forms/widgets.py:49 semantictree/forms/widgets.py:86
 msgid "or"
-msgstr "or"
+msgstr "o"
 
 #: templates/p4l/base.html:35
 msgid "logout"
@@ -97,11 +97,11 @@ msgstr "identifier"
 
 #: templates/p4l/home.html:43 templates/p4l/record_view.html:64
 msgid "titles"
-msgstr "titles"
+msgstr "Título"
 
 #: templates/p4l/home.html:43
 msgid "dates"
-msgstr "dates"
+msgstr "Año"
 
 #: templates/p4l/home.html:43
 msgid "actions"
@@ -162,55 +162,55 @@ msgstr "value"
 
 #: templates/p4l/record_view.html:24
 msgid "subjects"
-msgstr "subjects"
+msgstr "Palabras clave"
 
 #: templates/p4l/record_view.html:28
 msgid "themes"
-msgstr "themes"
+msgstr "Temas"
 
 #: templates/p4l/record_view.html:32
 msgid "countries"
-msgstr "countries"
+msgstr "Países"
 
 #: templates/p4l/record_view.html:40
 msgid "notes"
-msgstr "notes"
+msgstr "Notas"
 
 #: templates/p4l/record_view.html:44
 msgid "issns"
-msgstr "issns"
+msgstr "ISSN"
 
 #: templates/p4l/record_view.html:48
 msgid "isbns"
-msgstr "isbns"
+msgstr "ISBN"
 
 #: templates/p4l/record_view.html:52
 msgid "document code"
-msgstr "document code"
+msgstr "Código del documento"
 
 #: templates/p4l/record_view.html:60
 msgid "other languages"
-msgstr "other languages"
+msgstr "Disponible en"
 
 #: templates/p4l/record_view.html:68
 msgid "abstracts"
-msgstr "abstracts"
+msgstr "Resumen"
 
 #: templates/p4l/record_view.html:72
 msgid "added titles"
-msgstr "addes titles"
+msgstr "Incluye"
 
 #: templates/p4l/record_view.html:76
 msgid "titles main document"
-msgstr "titles main document"
+msgstr "In"
 
 #: templates/p4l/record_view.html:80
 msgid "edition statement"
-msgstr "edition statement"
+msgstr "Edición"
 
 #: templates/p4l/record_view.html:84
 msgid "imprints"
-msgstr "imprints"
+msgstr "Publicado por"
 
 #: templates/p4l/record_view.html:90
 msgid "City"
@@ -227,76 +227,76 @@ msgstr "Date"
 
 #: templates/p4l/record_view.html:93 templates/p4l/record_view.html.py:113
 msgid "Language"
-msgstr "Language"
+msgstr "Idioma"
 
 #: templates/p4l/record_view.html:101
 msgid "collations"
-msgstr "collations"
+msgstr "Páginas"
 
 #: templates/p4l/record_view.html:105
 msgid "volume issues"
-msgstr "volume issues"
+msgstr "Volumen"
 
 #: templates/p4l/record_view.html:111 templates/p4l/record_view.html.py:154
 msgid "Volume"
-msgstr "Volume"
+msgstr "Volumen"
 
 #: templates/p4l/record_view.html:112 templates/p4l/record_view.html.py:136
 #: templates/p4l/record_view.html:181
 msgid "Number"
-msgstr "Number"
+msgstr "Número"
 
 #: templates/p4l/record_view.html:121
 msgid "project names"
-msgstr "project names"
+msgstr "Proyectos"
 
 #: templates/p4l/record_view.html:125
 msgid "periodicals"
-msgstr "periodicals"
+msgstr "Revista"
 
 #: templates/p4l/record_view.html:129
 msgid "meetings"
-msgstr "meetings"
+msgstr "Seminario"
 
 #: templates/p4l/record_view.html:137 templates/p4l/record_view.html.py:182
 msgid "Place"
-msgstr "Place"
+msgstr "Lugar"
 
 #: templates/p4l/record_view.html:139 templates/p4l/record_view.html.py:184
 msgid "Year"
-msgstr "Year"
+msgstr "Año"
 
 #: templates/p4l/record_view.html:147
 msgid "series"
-msgstr "series"
+msgstr "Colección"
 
 #: templates/p4l/record_view.html:162
 msgid "authors"
-msgstr "authors"
+msgstr "Autor(es)"
 
 #: templates/p4l/record_view.html:166
 msgid "subject persons"
-msgstr "subject persons"
+msgstr "Autor personal (materia)"
 
 #: templates/p4l/record_view.html:170
 msgid "subject corporate bodies"
-msgstr "subject corporate bodies"
+msgstr "Otras entidades"
 
 #: templates/p4l/record_view.html:174
 msgid "subject meetings"
-msgstr "subject meetings"
+msgstr "Otros seminarios"
 
 #: templates/p4l/record_view.html:192
 msgid "corporate authors"
-msgstr "corporate authors"
+msgstr "Entidad(es)"
 
 #: templates/p4l/record_view.html:196
 msgid "corporate author label"
-msgstr "corporate author label"
+msgstr "Entidad(es) bibliographical label"
 
 #: templates/p4l/record_view.html:200
 msgid "Urls"
-msgstr "Urls"
+msgstr "Versión electrónica"
 
 #: templates/p4l/record_view.html:206
 msgid "Address"
@@ -372,15 +372,15 @@ msgstr "Modify the record type"
 
 #: templates/p4l/translations.html:15
 msgid "title"
-msgstr "title"
+msgstr "título"
 
 #: templates/p4l/translations.html:16
 msgid "abstract"
-msgstr "abstract"
+msgstr "resumen"
 
 #: templates/p4l/translations.html:17
 msgid "collation"
-msgstr "collation"
+msgstr "páginas"
 
 #: templates/p4l/translations.html:18
 msgid "label"
