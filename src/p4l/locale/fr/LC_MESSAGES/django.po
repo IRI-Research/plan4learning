@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-11 10:22+0200\n"
+"POT-Creation-Date: 2013-10-11 14:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Anglais"
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: admin/components.py:50 admin/forms.py:62 templates/p4l/record_view.html:56
+#: admin/components.py:50 admin/forms.py:62 templates/p4l/record_view.html:126
 msgid "language"
 msgstr "langue"
 
@@ -122,11 +122,11 @@ msgstr "sur"
 msgid "Next"
 msgstr "Suiv."
 
-#: templates/p4l/home.html:48 templates/p4l/record_view.html:36
+#: templates/p4l/home.html:48 templates/p4l/record_view.html:24
 msgid "identifier"
 msgstr "Identifiant"
 
-#: templates/p4l/home.html:48 templates/p4l/record_view.html:64
+#: templates/p4l/home.html:48 templates/p4l/record_view.html:28
 msgid "titles"
 msgstr "Titre"
 
@@ -192,151 +192,151 @@ msgstr "Propriété"
 msgid "value"
 msgstr "Valeur"
 
-#: templates/p4l/record_view.html:24
-msgid "subjects"
-msgstr "Descripteurs"
-
-#: templates/p4l/record_view.html:28
-msgid "themes"
-msgstr "Thèmes"
-
 #: templates/p4l/record_view.html:32
-msgid "countries"
-msgstr "Pays"
-
-#: templates/p4l/record_view.html:40
-msgid "notes"
-msgstr "Notes"
-
-#: templates/p4l/record_view.html:44
-msgid "issns"
-msgstr "ISSN"
-
-#: templates/p4l/record_view.html:48
-msgid "isbns"
-msgstr "ISBN"
-
-#: templates/p4l/record_view.html:52
-msgid "document code"
-msgstr "Code du document"
-
-#: templates/p4l/record_view.html:60
-msgid "other languages"
-msgstr "Disponible aussi en"
-
-#: templates/p4l/record_view.html:68
-msgid "abstracts"
-msgstr "Résumé"
-
-#: templates/p4l/record_view.html:72
 msgid "added titles"
 msgstr "Contient"
 
-#: templates/p4l/record_view.html:76
+#: templates/p4l/record_view.html:36
 msgid "titles main document"
 msgstr "In"
 
-#: templates/p4l/record_view.html:80
-msgid "edition statement"
-msgstr "Edition"
-
-#: templates/p4l/record_view.html:84
-msgid "imprints"
-msgstr "Publié par"
-
-#: templates/p4l/record_view.html:90
-msgid "City"
-msgstr "Ville"
-
-#: templates/p4l/record_view.html:91
-msgid "Publisher"
-msgstr "Éditeur"
-
-#: templates/p4l/record_view.html:92 templates/p4l/record_view.html.py:138
-#: templates/p4l/record_view.html:183
-msgid "Date"
-msgstr "Date"
-
-#: templates/p4l/record_view.html:93 templates/p4l/record_view.html.py:113
-msgid "Language"
-msgstr "Langue"
-
-#: templates/p4l/record_view.html:101
-msgid "collations"
-msgstr "Pages"
-
-#: templates/p4l/record_view.html:105
-msgid "volume issues"
-msgstr "Volume"
-
-#: templates/p4l/record_view.html:111 templates/p4l/record_view.html.py:154
-msgid "Volume"
-msgstr "Volume"
-
-#: templates/p4l/record_view.html:112 templates/p4l/record_view.html.py:136
-#: templates/p4l/record_view.html:181
-msgid "Number"
-msgstr "Numéro"
-
-#: templates/p4l/record_view.html:121
-msgid "project names"
-msgstr "Projets"
-
-#: templates/p4l/record_view.html:125
-msgid "periodicals"
-msgstr "Périodique"
-
-#: templates/p4l/record_view.html:129
-msgid "meetings"
-msgstr "Conférence"
-
-#: templates/p4l/record_view.html:137 templates/p4l/record_view.html.py:182
-msgid "Place"
-msgstr "Lieu"
-
-#: templates/p4l/record_view.html:139 templates/p4l/record_view.html.py:184
-msgid "Year"
-msgstr "Année"
-
-#: templates/p4l/record_view.html:147
-msgid "series"
-msgstr "Collection"
-
-#: templates/p4l/record_view.html:162
+#: templates/p4l/record_view.html:40
 msgid "authors"
 msgstr "Auteur(s)"
 
-#: templates/p4l/record_view.html:166
-msgid "subject persons"
-msgstr "Personnes (sujet)"
-
-#: templates/p4l/record_view.html:170
-msgid "subject corporate bodies"
-msgstr "Autres institutions"
-
-#: templates/p4l/record_view.html:174
-msgid "subject meetings"
-msgstr "Autres conférences"
-
-#: templates/p4l/record_view.html:192
+#: templates/p4l/record_view.html:44
 msgid "corporate authors"
 msgstr "Institution(s)"
 
-#: templates/p4l/record_view.html:196
+#: templates/p4l/record_view.html:48
 msgid "corporate author label"
 msgstr "Institution (pour bibliographie)"
 
-#: templates/p4l/record_view.html:200
+#: templates/p4l/record_view.html:52
+msgid "meetings"
+msgstr "Conférence"
+
+#: templates/p4l/record_view.html:59 templates/p4l/record_view.html.py:96
+#: templates/p4l/record_view.html:180
+msgid "Number"
+msgstr "Numéro"
+
+#: templates/p4l/record_view.html:60 templates/p4l/record_view.html.py:181
+msgid "Place"
+msgstr "Lieu"
+
+#: templates/p4l/record_view.html:61 templates/p4l/record_view.html.py:113
+#: templates/p4l/record_view.html:182
+msgid "Date"
+msgstr "Date"
+
+#: templates/p4l/record_view.html:62 templates/p4l/record_view.html.py:183
+msgid "Year"
+msgstr "Année"
+
+#: templates/p4l/record_view.html:70
+msgid "series"
+msgstr "Collection"
+
+#: templates/p4l/record_view.html:77 templates/p4l/record_view.html.py:95
+msgid "Volume"
+msgstr "Volume"
+
+#: templates/p4l/record_view.html:85
+msgid "periodicals"
+msgstr "Périodique"
+
+#: templates/p4l/record_view.html:89
+msgid "volume issues"
+msgstr "Volume"
+
+#: templates/p4l/record_view.html:97 templates/p4l/record_view.html.py:114
+msgid "Language"
+msgstr "Langue"
+
+#: templates/p4l/record_view.html:105
+msgid "imprints"
+msgstr "Publié par"
+
+#: templates/p4l/record_view.html:111
+msgid "City"
+msgstr "Ville"
+
+#: templates/p4l/record_view.html:112
+msgid "Publisher"
+msgstr "Éditeur"
+
+#: templates/p4l/record_view.html:122
+msgid "collations"
+msgstr "Pages"
+
+#: templates/p4l/record_view.html:130
+msgid "other languages"
+msgstr "Disponible aussi en"
+
+#: templates/p4l/record_view.html:134
 msgid "Urls"
 msgstr "Texte intégral"
 
-#: templates/p4l/record_view.html:206
+#: templates/p4l/record_view.html:140
 msgid "Address"
 msgstr "Adresse"
 
-#: templates/p4l/record_view.html:207
+#: templates/p4l/record_view.html:141
 msgid "Display"
 msgstr "Affichage"
+
+#: templates/p4l/record_view.html:149
+msgid "abstracts"
+msgstr "Résumé"
+
+#: templates/p4l/record_view.html:153
+msgid "themes"
+msgstr "Thèmes"
+
+#: templates/p4l/record_view.html:157
+msgid "countries"
+msgstr "Pays"
+
+#: templates/p4l/record_view.html:161
+msgid "subjects"
+msgstr "Descripteurs"
+
+#: templates/p4l/record_view.html:165
+msgid "subject persons"
+msgstr "Personnes (sujet)"
+
+#: templates/p4l/record_view.html:169
+msgid "subject corporate bodies"
+msgstr "Autres institutions"
+
+#: templates/p4l/record_view.html:173
+msgid "subject meetings"
+msgstr "Autres conférences"
+
+#: templates/p4l/record_view.html:191
+msgid "project names"
+msgstr "Projets"
+
+#: templates/p4l/record_view.html:195
+msgid "edition statement"
+msgstr "Edition"
+
+#: templates/p4l/record_view.html:199
+msgid "notes"
+msgstr "Notes"
+
+#: templates/p4l/record_view.html:203
+msgid "isbns"
+msgstr "ISBN"
+
+#: templates/p4l/record_view.html:207
+msgid "issns"
+msgstr "ISSN"
+
+#: templates/p4l/record_view.html:211
+msgid "document code"
+msgstr "Code du document"
 
 #: templates/p4l/record_view.html:215
 msgid "record type"
@@ -440,8 +440,8 @@ msgid ""
 "The ADMIN_SCRIPT setting is not correctly configured. Please configure it to "
 "launch commands."
 msgstr ""
-"La propriété ADMIN_SCRIPT n'est pas correctement configuré. Configurez la avant "
-"de lancer la commande."
+"La propriété ADMIN_SCRIPT n'est pas correctement configuré. Configurez la "
+"avant de lancer la commande."
 
 #: templates/p4l/admin/confirm_run_script.html:24
 msgid "Are you sure you want to run the script"
