@@ -191,59 +191,59 @@ msgstr "value"
 
 #: templates/p4l/record_view.html:24
 msgid "subjects"
-msgstr "subjects"
+msgstr "Keywords"
 
 #: templates/p4l/record_view.html:28
 msgid "themes"
-msgstr "themes"
+msgstr "Themes"
 
 #: templates/p4l/record_view.html:32
 msgid "countries"
-msgstr "countries"
+msgstr "Countries"
 
 #: templates/p4l/record_view.html:40
 msgid "notes"
-msgstr "notes"
+msgstr "Notes"
 
 #: templates/p4l/record_view.html:44
 msgid "issns"
-msgstr "issns"
+msgstr "ISSN"
 
 #: templates/p4l/record_view.html:48
 msgid "isbns"
-msgstr "isbns"
+msgstr "ISBN"
 
 #: templates/p4l/record_view.html:52
 msgid "document code"
-msgstr "document code"
+msgstr "Document Code"
 
 #: templates/p4l/record_view.html:60
 msgid "other languages"
-msgstr "other languages"
+msgstr "Also available in"
 
 #: templates/p4l/record_view.html:68
 msgid "abstracts"
-msgstr "abstracts"
+msgstr "Abstract"
 
 #: templates/p4l/record_view.html:72
 msgid "added titles"
-msgstr "addes titles"
+msgstr "Contents title"
 
 #: templates/p4l/record_view.html:76
 msgid "titles main document"
-msgstr "titles main document"
+msgstr "In"
 
 #: templates/p4l/record_view.html:80
 msgid "edition statement"
-msgstr "edition statement"
+msgstr "Edition"
 
 #: templates/p4l/record_view.html:84
 msgid "imprints"
-msgstr "imprints"
+msgstr "Imprint"
 
 #: templates/p4l/record_view.html:90
 msgid "City"
-msgstr "City"
+msgstr "Publisher city"
 
 #: templates/p4l/record_view.html:91
 msgid "Publisher"
@@ -260,11 +260,11 @@ msgstr "Language"
 
 #: templates/p4l/record_view.html:101
 msgid "collations"
-msgstr "collations"
+msgstr "Pages"
 
 #: templates/p4l/record_view.html:105
 msgid "volume issues"
-msgstr "volume issues"
+msgstr "Volume"
 
 #: templates/p4l/record_view.html:111 templates/p4l/record_view.html.py:154
 msgid "Volume"
@@ -277,15 +277,15 @@ msgstr "Number"
 
 #: templates/p4l/record_view.html:121
 msgid "project names"
-msgstr "project names"
+msgstr "Projects"
 
 #: templates/p4l/record_view.html:125
 msgid "periodicals"
-msgstr "periodicals"
+msgstr "Periodical"
 
 #: templates/p4l/record_view.html:129
 msgid "meetings"
-msgstr "meetings"
+msgstr "Meeting"
 
 #: templates/p4l/record_view.html:137 templates/p4l/record_view.html.py:182
 msgid "Place"
@@ -297,63 +297,63 @@ msgstr "Year"
 
 #: templates/p4l/record_view.html:147
 msgid "series"
-msgstr "series"
+msgstr "Series"
 
 #: templates/p4l/record_view.html:162
 msgid "authors"
-msgstr "authors"
+msgstr "Author(s)"
 
 #: templates/p4l/record_view.html:166
 msgid "subject persons"
-msgstr "subject persons"
+msgstr "Personal name (subject)"
 
 #: templates/p4l/record_view.html:170
 msgid "subject corporate bodies"
-msgstr "subject corporate bodies"
+msgstr "Related institutions"
 
 #: templates/p4l/record_view.html:174
 msgid "subject meetings"
-msgstr "subject meetings"
+msgstr "Related meetings"
 
 #: templates/p4l/record_view.html:192
 msgid "corporate authors"
-msgstr "corporate authors"
+msgstr "Institution(s)"
 
 #: templates/p4l/record_view.html:196
 msgid "corporate author label"
-msgstr "corporate author label"
+msgstr "Institution(s) bibliographical label"
 
 #: templates/p4l/record_view.html:200
 msgid "Urls"
-msgstr "Urls"
+msgstr "URL"
 
 #: templates/p4l/record_view.html:206
 msgid "Address"
-msgstr "Address"
+msgstr "URL"
 
 #: templates/p4l/record_view.html:207
 msgid "Display"
-msgstr "Display"
+msgstr "Full text"
 
 #: templates/p4l/record_view.html:215
 msgid "record type"
-msgstr "record type"
+msgstr "Type of document"
 
 #: templates/p4l/record_view.html:219
 msgid "audiences"
-msgstr "audiences"
+msgstr "Audiences"
 
 #: templates/p4l/record_view.html:223
 msgid "is document part"
-msgstr "is document part"
+msgstr "Is document part"
 
 #: templates/p4l/record_view.html:227
 msgid "is hidden"
-msgstr "is hidden"
+msgstr "Hidden record"
 
 #: templates/p4l/record_view.html:231
 msgid "is restricted"
-msgstr "is restricted"
+msgstr "Restricted access"
 
 #: templates/p4l/translations.html:3
 msgid "Add"
@@ -365,7 +365,7 @@ msgstr "Update"
 
 #: templates/p4l/translations.html:6
 msgid "Add a new subject"
-msgstr "Add a new subject"
+msgstr "Add a new keyword"
 
 #: templates/p4l/translations.html:7
 msgid "Add a new theme"

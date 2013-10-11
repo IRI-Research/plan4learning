@@ -79,53 +79,9 @@
       <td>{{record.identifier}}</td>
     </tr>
     <tr>
-      <td>{{ 'subjects' | translate}}</td>
-      <td><add-sem-uri list="record.subjects" listname="subjects" placeholder="{{'Add a new subject' | translate}}"></add-sem-uri></td>
-    </tr>
-    <tr>
-      <td>{{ 'themes' | translate}}</td>
-      <td><add-sem-uri list="record.themes" listname="themes" placeholder="{{'Add a new theme' | translate}}"></add-sem-uri></td>
-    </tr>
-    <tr>
-      <td>{{ 'countries' | translate}}</td>
-      <td><add-sem-uri list="record.countries" listname="countries" placeholder="{{'Add a new country' | translate}}"></add-sem-uri></td>
-    </tr>
-    <tr>
-        <td>{{ 'notes' | translate}}</td>
-        <td><textarea id="record-notes-input" class="form-control" ng-model="record.notes"></textarea></td>
-    </tr>
-    <tr>
-      <td>{{ 'issns' | translate }}</td>
-      <td><object-list form-template="issnForm" disp-template="" object-list="record.issns" 
-                       object-fields='["issn", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Issns","Language"]'></object-list></td>
-    </tr>
-    <tr>
-        <td>{{ 'isbns' | translate }}</td>
-        <td><object-list form-template="isbnForm" disp-template="" object-list="record.isbns" 
-                         object-fields='["isbn", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Isbns","Language"]'></object-list></td>
-    </tr>
-    <tr>
-      <td>{{ 'document code' | translate }}</td>
-      <td><object-list form-template="documentCodeForm" disp-template="" object-list="record.documentCodes" 
-                       object-fields='["documentCode", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Document code", "Language"]'></object-list></td>
-    </tr>
-    <tr>
-      <td>{{ 'language' | translate }}</td>
-      <td><simple-sem-uri val="record.language" listname="languages" placeholder="{{'Modify the language' | translate}}"></simple-sem-uri></td>
-    </tr>
-    <tr>
-      <td>{{ 'other languages' | translate }}</td>
-      <td><add-sem-uri list="record.otherLanguages" listname="languages" placeholder="{{'Add a new language' | translate}}"></add-sem-uri></td>
-    </tr>
-    <tr>
       <td>{{ 'titles' | translate }}</td>
       <td><object-list form-template="titleForm" disp-template="" object-list="record.titles"
                        object-fields='["title", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Title","Language"]'></object-list></td>
-    </tr>
-    <tr>
-      <td>{{ 'abstracts' | translate }}</td>
-      <td><object-list form-template="abstractForm" disp-template="" object-list="record.abstracts"
-                       object-fields='["abstract", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Abstract","Language"]'></object-list></td>
     </tr>
     <tr>
       <td>{{ 'added titles' | translate }}</td>
@@ -138,34 +94,17 @@
                        object-fields='["title", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Title","Language"]'></object-list></td>
     </tr>
     <tr>
-      <td>{{ 'edition statement' | translate }}</td>
-      <td><textarea id="record-editionStatement-input" class="form-control" ng-model="record.editionStatement"></textarea></td>
+      <td>{{ 'authors' | translate }}</td>
+      <td><object-list form-template="personForm" disp-template="" object-list="record.authors"
+                       object-fields='["name"]' table="true" size-fields='[9]'></object-list></td>
     </tr>
     <tr>
-      <td>{{ 'imprints' | translate }}</td>
-      <td><object-list form-template="imprintForm" disp-template="" object-list="record.imprints" 
-                       object-fields='["imprintCity","publisher","imprintDate", "lang"]' table="true" 
-                       size-fields='[3,2,2,2]' label-fields='["City","Publisher","Date","Language"]' ></object-list></td>
+      <td>{{ 'corporate authors' | translate }}</td>
+      <td><add-sem-uri list="record.corporateAuthors" listname="organizations" placeholder="{{'Add a new organization' | translate}}"></add-sem-uri></td>
     </tr>
     <tr>
-      <td>{{ 'collations' | translate }}</td>
-      <td><object-list form-template="collationForm" disp-template="" object-list="record.collations"
-                       object-fields='["collation", "lang"]' table="true" size-fields='[7, 2]' label-fields='["collation","Language"]'></object-list></td>
-    </tr>
-    <tr>
-      <td>{{ 'volume issues' | translate }}</td>
-      <td><object-list form-template="volumeIssueForm" disp-template="" object-list="record.volumeIssues"
-                       object-fields='["volume", "number", "lang"]' table="true" 
-                       size-fields='[4, 3, 2]' label-fields='["Volume","Number","Language"]'></object-list></td>
-    </tr>
-    <tr>
-      <td>{{ 'project names' | translate }}</td>
-      <td><add-sem-uri list="record.projectNames" listname="projects" placeholder="{{'Add a new project' | translate}}"></add-sem-uri></td>
-    </tr>
-    <tr>
-      <td>{{ 'periodicals' | translate }}</td>
-      <td><object-list form-template="periodicalForm" disp-template="" object-list="record.periodicals"
-                       object-fields='["label", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Label","Language"]'></object-list></td>
+      <td>{{ 'corporate author label' | translate }}</td>
+      <td><input type="text" class="form-control" ng-model="record.corporateAuthorLabel" /></td>
     </tr>
     <tr>
       <td>{{ 'meetings' | translate }}</td>
@@ -180,9 +119,57 @@
                        size-fields='[5, 2, 2]' label-fields='["Title","Volume","Language"]'></object-list></td>
     </tr>
     <tr>
-      <td>{{ 'authors' | translate }}</td>
-      <td><object-list form-template="personForm" disp-template="" object-list="record.authors"
-                       object-fields='["name"]' table="true" size-fields='[9]'></object-list></td>
+      <td>{{ 'periodicals' | translate }}</td>
+      <td><object-list form-template="periodicalForm" disp-template="" object-list="record.periodicals"
+                       object-fields='["label", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Label","Language"]'></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'volume issues' | translate }}</td>
+      <td><object-list form-template="volumeIssueForm" disp-template="" object-list="record.volumeIssues"
+                       object-fields='["volume", "number", "lang"]' table="true" 
+                       size-fields='[4, 3, 2]' label-fields='["Volume","Number","Language"]'></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'imprints' | translate }}</td>
+      <td><object-list form-template="imprintForm" disp-template="" object-list="record.imprints" 
+                       object-fields='["imprintCity","publisher","imprintDate", "lang"]' table="true" 
+                       size-fields='[3,2,2,2]' label-fields='["City","Publisher","Date","Language"]' ></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'collations' | translate }}</td>
+      <td><object-list form-template="collationForm" disp-template="" object-list="record.collations"
+                       object-fields='["collation", "lang"]' table="true" size-fields='[7, 2]' label-fields='["collation","Language"]'></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'language' | translate }}</td>
+      <td><simple-sem-uri val="record.language" listname="languages" placeholder="{{'Modify the language' | translate}}"></simple-sem-uri></td>
+    </tr>
+    <tr>
+      <td>{{ 'other languages' | translate }}</td>
+      <td><add-sem-uri list="record.otherLanguages" listname="languages" placeholder="{{'Add a new language' | translate}}"></add-sem-uri></td>
+    </tr>
+    <tr>
+      <td>{{ 'Urls' | translate }}</td>
+      <td><object-list form-template="urlForm" disp-template="urlDisp" object-list="record.urls" 
+                       object-fields='["address", "display"]' table="true"
+                       size-fields='[7, 2]' label-fields='["Address", "Display"]'></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'abstracts' | translate }}</td>
+      <td><object-list form-template="abstractForm" disp-template="" object-list="record.abstracts"
+                       object-fields='["abstract", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Abstract","Language"]'></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'themes' | translate}}</td>
+      <td><add-sem-uri list="record.themes" listname="themes" placeholder="{{'Add a new theme' | translate}}"></add-sem-uri></td>
+    </tr>
+    <tr>
+      <td>{{ 'countries' | translate}}</td>
+      <td><add-sem-uri list="record.countries" listname="countries" placeholder="{{'Add a new country' | translate}}"></add-sem-uri></td>
+    </tr>
+    <tr>
+      <td>{{ 'subjects' | translate}}</td>
+      <td><add-sem-uri list="record.subjects" listname="subjects" placeholder="{{'Add a new subject' | translate}}"></add-sem-uri></td>
     </tr>
     <tr>
       <td>{{ 'subject persons' | translate }}</td>
@@ -200,18 +187,31 @@
                        size-fields='[3, 1, 2, 1, 1, 1]' label-fields='["Label","Number","Place","Date","Year","Language"]' ></object-list></td>
     </tr>
     <tr>
-      <td>{{ 'corporate authors' | translate }}</td>
-      <td><add-sem-uri list="record.corporateAuthors" listname="organizations" placeholder="{{'Add a new organization' | translate}}"></add-sem-uri></td>
+      <td>{{ 'project names' | translate }}</td>
+      <td><add-sem-uri list="record.projectNames" listname="projects" placeholder="{{'Add a new project' | translate}}"></add-sem-uri></td>
     </tr>
     <tr>
-      <td>{{ 'corporate author label' | translate }}</td>
-      <td><input type="text" class="form-control" ng-model="record.corporateAuthorLabel" /></td>
+      <td>{{ 'edition statement' | translate }}</td>
+      <td><textarea id="record-editionStatement-input" class="form-control" ng-model="record.editionStatement"></textarea></td>
     </tr>
     <tr>
-      <td>{{ 'Urls' | translate }}</td>
-      <td><object-list form-template="urlForm" disp-template="urlDisp" object-list="record.urls" 
-                       object-fields='["address", "display"]' table="true"
-                       size-fields='[7, 2]' label-fields='["Address", "Display"]'></object-list></td>
+        <td>{{ 'notes' | translate}}</td>
+        <td><textarea id="record-notes-input" class="form-control" ng-model="record.notes"></textarea></td>
+    </tr>
+    <tr>
+        <td>{{ 'isbns' | translate }}</td>
+        <td><object-list form-template="isbnForm" disp-template="" object-list="record.isbns" 
+                         object-fields='["isbn", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Isbns","Language"]'></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'issns' | translate }}</td>
+      <td><object-list form-template="issnForm" disp-template="" object-list="record.issns" 
+                       object-fields='["issn", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Issns","Language"]'></object-list></td>
+    </tr>
+    <tr>
+      <td>{{ 'document code' | translate }}</td>
+      <td><object-list form-template="documentCodeForm" disp-template="" object-list="record.documentCodes" 
+                       object-fields='["documentCode", "lang"]' table="true" size-fields='[7, 2]' label-fields='["Document code", "Language"]'></object-list></td>
     </tr>
     <tr>
       <td>{{ 'record type' | translate }}</td>

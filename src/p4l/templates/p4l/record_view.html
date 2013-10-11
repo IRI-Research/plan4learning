@@ -21,52 +21,12 @@
       <td>{{ record.uri|default:'' }}</td>
     </tr>
     <tr>
-      <td>{% trans 'subjects' %}</td>
-      <td><ul>{% for k in record.subjects.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'themes' %}</td>
-      <td><ul>{% for k in record.themes.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'countries' %}</td>
-      <td><ul>{% for k in record.countries.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
       <td>{% trans 'identifier' %}</td>
       <td>{{ record.identifier }}</td>
     </tr>
     <tr>
-      <td>{% trans 'notes' %}</td>
-      <td>{{ record.notes|default:'' }}</td>
-    </tr>
-    <tr>
-      <td>{% trans 'issns' %}</td>
-      <td><ul>{% for i in record.issns.all %}<li>{{ i.issn|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'isbns' %}</td>
-      <td><ul>{% for i in record.isbns.all %}<li>{{ i.isbn|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'document code' %}</td>
-      <td><ul>{% for i in record.documentCodes.all %}<li>{{ i.documentCode|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'language' %}</td>
-      <td>{% if record.language %}{{ uri_labels | get_item:record.language.uri }} <small class="text-muted">({{ record.language.uri|default:'' }})</small>{% endif %}</td>
-    </tr>
-    <tr>
-      <td>{% trans 'other languages' %}</td>
-      <td><ul>{% for k in record.otherLanguages.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
       <td>{% trans 'titles' %}</td>
       <td><ul>{% for i in record.titles.all %}<li>{{ i.title|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'abstracts' %}</td>
-      <td><ul>{% for i in record.abstracts.all %}<li>{{ i.abstract|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
     </tr>
     <tr>
       <td>{% trans 'added titles' %}</td>
@@ -77,53 +37,16 @@
       <td><ul>{% for i in record.titlesMainDocument.all %}<li>{{ i.title|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
     </tr>
     <tr>
-      <td>{% trans 'edition statement' %}</td>
-      <td>{{ record.editionStatement|default:'' }}</td>
+      <td>{% trans 'authors' %}</td>
+      <td><ul>{% for i in record.authors.all %}<li>{{ i.name|default:'' }}</li>{% endfor %}</ul></td>
     </tr>
     <tr>
-      <td>{% trans 'imprints' %}</td>
-      <td>
-        <ul>
-          {% for i in record.imprints.all %}
-          <li>
-            <ul class="list-unstyled">
-              <li>{% trans 'City' %} : {{ i.imprintCity|default:'' }}</li>
-              <li>{% trans 'Publisher' %} : {{ i.publisher|default:'' }}</li>
-              <li>{% trans 'Date' %} : {{ i.imprintDate|default:'' }}</li>
-              <li>{% trans 'Language' %} : {{ i.lang|default:'' }}</li>
-            </ul>
-          </li>
-          {% endfor %}
-        </ul>
-      </td>
+      <td>{% trans 'corporate authors' %}</td>
+      <td><ul>{% for k in record.corporateAuthors.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
     </tr>
     <tr>
-      <td>{% trans 'collations' %}</td>
-      <td><ul>{% for i in record.collations.all %}<li>{{ i.collation|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'volume issues' %}</td>
-      <td>
-        <ul>
-          {% for i in record.volumeIssues.all %}
-          <li>
-            <ul class="list-unstyled">
-              <li>{% trans 'Volume' %} : {{ i.volume|default:'' }}</li>
-              <li>{% trans 'Number' %} : {{ i.number|default:'' }}</li>
-              <li>{% trans 'Language' %} : {{ i.lang|default:'' }}</li>
-            </ul>
-          </li>
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>{% trans 'project names' %}</td>
-      <td><ul>{% for k in record.projects.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
-    </tr>
-    <tr>
-      <td>{% trans 'periodicals' %}</td>
-      <td><ul>{% for i in record.periodicals.all %}<li>{{ i.label|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+      <td>{% trans 'corporate author label' %}</td>
+      <td>{{ record.corporateAuthorLabel|default:'' }}</td>
     </tr>
     <tr>
       <td>{% trans 'meetings' %}</td>
@@ -159,8 +82,84 @@
       </td>
     </tr>
     <tr>
-      <td>{% trans 'authors' %}</td>
-      <td><ul>{% for i in record.authors.all %}<li>{{ i.name|default:'' }}</li>{% endfor %}</ul></td>
+      <td>{% trans 'periodicals' %}</td>
+      <td><ul>{% for i in record.periodicals.all %}<li>{{ i.label|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'volume issues' %}</td>
+      <td>
+        <ul>
+          {% for i in record.volumeIssues.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{% trans 'Volume' %} : {{ i.volume|default:'' }}</li>
+              <li>{% trans 'Number' %} : {{ i.number|default:'' }}</li>
+              <li>{% trans 'Language' %} : {{ i.lang|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'imprints' %}</td>
+      <td>
+        <ul>
+          {% for i in record.imprints.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{% trans 'City' %} : {{ i.imprintCity|default:'' }}</li>
+              <li>{% trans 'Publisher' %} : {{ i.publisher|default:'' }}</li>
+              <li>{% trans 'Date' %} : {{ i.imprintDate|default:'' }}</li>
+              <li>{% trans 'Language' %} : {{ i.lang|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'collations' %}</td>
+      <td><ul>{% for i in record.collations.all %}<li>{{ i.collation|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'language' %}</td>
+      <td>{% if record.language %}{{ uri_labels | get_item:record.language.uri }} <small class="text-muted">({{ record.language.uri|default:'' }})</small>{% endif %}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'other languages' %}</td>
+      <td><ul>{% for k in record.otherLanguages.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'Urls' %}</td>
+      <td>
+        <ul>
+          {% for i in record.urls.all %}
+          <li>
+            <ul class="list-unstyled">
+              <li>{% trans 'Address' %} : {% if i.address %}<a href="{{ i.address }}" target="_blank">{{ i.address }}</a>{% endif %}</li>
+              <li>{% trans 'Display' %} : {{ i.display|default:'' }}</li>
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans 'abstracts' %}</td>
+      <td><ul>{% for i in record.abstracts.all %}<li>{{ i.abstract|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'themes' %}</td>
+      <td><ul>{% for k in record.themes.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'countries' %}</td>
+      <td><ul>{% for k in record.countries.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'subjects' %}</td>
+      <td><ul>{% for k in record.subjects.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
     </tr>
     <tr>
       <td>{% trans 'subject persons' %}</td>
@@ -189,27 +188,28 @@
       </td>
     </tr>
     <tr>
-      <td>{% trans 'corporate authors' %}</td>
-      <td><ul>{% for k in record.corporateAuthors.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+      <td>{% trans 'project names' %}</td>
+      <td><ul>{% for k in record.projects.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
     </tr>
     <tr>
-      <td>{% trans 'corporate author label' %}</td>
-      <td>{{ record.corporateAuthorLabel|default:'' }}</td>
+      <td>{% trans 'edition statement' %}</td>
+      <td>{{ record.editionStatement|default:'' }}</td>
     </tr>
     <tr>
-      <td>{% trans 'Urls' %}</td>
-      <td>
-        <ul>
-          {% for i in record.urls.all %}
-          <li>
-            <ul class="list-unstyled">
-              <li>{% trans 'Address' %} : {% if i.address %}<a href="{{ i.address }}" target="_blank">{{ i.address }}</a>{% endif %}</li>
-              <li>{% trans 'Display' %} : {{ i.display|default:'' }}</li>
-            </ul>
-          </li>
-          {% endfor %}
-        </ul>
-      </td>
+      <td>{% trans 'notes' %}</td>
+      <td>{{ record.notes|default:'' }}</td>
+    </tr>
+    <tr>
+      <td>{% trans 'isbns' %}</td>
+      <td><ul>{% for i in record.isbns.all %}<li>{{ i.isbn|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'issns' %}</td>
+      <td><ul>{% for i in record.issns.all %}<li>{{ i.issn|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
+    </tr>
+    <tr>
+      <td>{% trans 'document code' %}</td>
+      <td><ul>{% for i in record.documentCodes.all %}<li>{{ i.documentCode|default:'' }}{% if i.lang %} <small class="text-muted">({{ i.lang }})</small>{% endif %}</li>{% endfor %}</ul></td>
     </tr>
     <tr>
       <td>{% trans 'record type' %}</td>

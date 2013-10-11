@@ -86,7 +86,7 @@ msgstr "Lancer"
 
 #: templates/p4l/base.html:36
 msgid "logout"
-msgstr "deconnection"
+msgstr "déconnection"
 
 #: templates/p4l/base.html:38 templates/registration/login.html:4
 #: templates/registration/login.html:27
@@ -95,7 +95,7 @@ msgstr "connection"
 
 #: templates/p4l/home.html:6 templates/p4l/home.html.py:15
 msgid "Record List"
-msgstr "Liste notice"
+msgstr "Liste des Notices"
 
 #: templates/p4l/home.html:6 templates/p4l/home.html.py:35
 #: templates/p4l/home.html:75
@@ -104,7 +104,7 @@ msgstr "Page"
 
 #: templates/p4l/home.html:19
 msgid "Query"
-msgstr "Requête"
+msgstr "Chercher..."
 
 #: templates/p4l/home.html:24
 msgid "New record"
@@ -124,19 +124,19 @@ msgstr "Suiv."
 
 #: templates/p4l/home.html:48 templates/p4l/record_view.html:36
 msgid "identifier"
-msgstr "identifiant"
+msgstr "Identifiant"
 
 #: templates/p4l/home.html:48 templates/p4l/record_view.html:64
 msgid "titles"
-msgstr "titres"
+msgstr "Titre"
 
 #: templates/p4l/home.html:48
 msgid "dates"
-msgstr "dates"
+msgstr "Date"
 
 #: templates/p4l/home.html:48
 msgid "actions"
-msgstr "actions"
+msgstr "Actions"
 
 #: templates/p4l/home.html:64
 msgid "No record"
@@ -186,63 +186,63 @@ msgstr "Modifier la notice"
 
 #: templates/p4l/record_view.html:16
 msgid "property"
-msgstr "propriété"
+msgstr "Propriété"
 
 #: templates/p4l/record_view.html:16
 msgid "value"
-msgstr "valeur"
+msgstr "Valeur"
 
 #: templates/p4l/record_view.html:24
 msgid "subjects"
-msgstr "sujets"
+msgstr "Descripteurs"
 
 #: templates/p4l/record_view.html:28
 msgid "themes"
-msgstr "thèmes"
+msgstr "Thèmes"
 
 #: templates/p4l/record_view.html:32
 msgid "countries"
-msgstr "pays"
+msgstr "Pays"
 
 #: templates/p4l/record_view.html:40
 msgid "notes"
-msgstr "notes"
+msgstr "Notes"
 
 #: templates/p4l/record_view.html:44
 msgid "issns"
-msgstr "issns"
+msgstr "ISSN"
 
 #: templates/p4l/record_view.html:48
 msgid "isbns"
-msgstr "isbns"
+msgstr "ISBN"
 
 #: templates/p4l/record_view.html:52
 msgid "document code"
-msgstr "code document"
+msgstr "Code du document"
 
 #: templates/p4l/record_view.html:60
 msgid "other languages"
-msgstr "autres langues"
+msgstr "Disponible aussi en"
 
 #: templates/p4l/record_view.html:68
 msgid "abstracts"
-msgstr "résumés"
+msgstr "Résumé"
 
 #: templates/p4l/record_view.html:72
 msgid "added titles"
-msgstr "titres ajoutés"
+msgstr "Contient"
 
 #: templates/p4l/record_view.html:76
 msgid "titles main document"
-msgstr "titre doc. principal"
+msgstr "In"
 
 #: templates/p4l/record_view.html:80
 msgid "edition statement"
-msgstr "déclatation pub."
+msgstr "Edition"
 
 #: templates/p4l/record_view.html:84
 msgid "imprints"
-msgstr "impressions"
+msgstr "Publié par"
 
 #: templates/p4l/record_view.html:90
 msgid "City"
@@ -263,11 +263,11 @@ msgstr "Langue"
 
 #: templates/p4l/record_view.html:101
 msgid "collations"
-msgstr "paginations"
+msgstr "Pages"
 
 #: templates/p4l/record_view.html:105
 msgid "volume issues"
-msgstr "volume de parution"
+msgstr "Volume"
 
 #: templates/p4l/record_view.html:111 templates/p4l/record_view.html.py:154
 msgid "Volume"
@@ -276,19 +276,19 @@ msgstr "Volume"
 #: templates/p4l/record_view.html:112 templates/p4l/record_view.html.py:136
 #: templates/p4l/record_view.html:181
 msgid "Number"
-msgstr "Nombre"
+msgstr "Numéro"
 
 #: templates/p4l/record_view.html:121
 msgid "project names"
-msgstr "noms de projet"
+msgstr "Projets"
 
 #: templates/p4l/record_view.html:125
 msgid "periodicals"
-msgstr "périodiques"
+msgstr "Périodique"
 
 #: templates/p4l/record_view.html:129
 msgid "meetings"
-msgstr "réunion"
+msgstr "Conférence"
 
 #: templates/p4l/record_view.html:137 templates/p4l/record_view.html.py:182
 msgid "Place"
@@ -300,35 +300,35 @@ msgstr "Année"
 
 #: templates/p4l/record_view.html:147
 msgid "series"
-msgstr "séries"
+msgstr "Collection"
 
 #: templates/p4l/record_view.html:162
 msgid "authors"
-msgstr "auteurs"
+msgstr "Auteur(s)"
 
 #: templates/p4l/record_view.html:166
 msgid "subject persons"
-msgstr "personnes sujets"
+msgstr "Personnes (sujet)"
 
 #: templates/p4l/record_view.html:170
 msgid "subject corporate bodies"
-msgstr "personne morale sujets"
+msgstr "Autres institutions"
 
 #: templates/p4l/record_view.html:174
 msgid "subject meetings"
-msgstr "réunion sujets"
+msgstr "Autres conférences"
 
 #: templates/p4l/record_view.html:192
 msgid "corporate authors"
-msgstr "entités auteurs"
+msgstr "Institution(s)"
 
 #: templates/p4l/record_view.html:196
 msgid "corporate author label"
-msgstr "Libellé de l'auteur institutionnel"
+msgstr "Institution (pour bibliographie)"
 
 #: templates/p4l/record_view.html:200
 msgid "Urls"
-msgstr "Urls"
+msgstr "Texte intégral"
 
 #: templates/p4l/record_view.html:206
 msgid "Address"
@@ -340,23 +340,23 @@ msgstr "Affichage"
 
 #: templates/p4l/record_view.html:215
 msgid "record type"
-msgstr "type de notice"
+msgstr "Type de notice"
 
 #: templates/p4l/record_view.html:219
 msgid "audiences"
-msgstr "audiences"
+msgstr "Audience"
 
 #: templates/p4l/record_view.html:223
 msgid "is document part"
-msgstr "document partiel"
+msgstr "Document partiel"
 
 #: templates/p4l/record_view.html:227
 msgid "is hidden"
-msgstr "caché"
+msgstr "Caché"
 
 #: templates/p4l/record_view.html:231
 msgid "is restricted"
-msgstr "restreint"
+msgstr "Restreint"
 
 #: templates/p4l/translations.html:3
 msgid "Add"
@@ -388,7 +388,7 @@ msgstr "Ajouter un nouveau projet"
 
 #: templates/p4l/translations.html:11
 msgid "Add a new organization"
-msgstr "Ajouter une nouvelle organisation"
+msgstr "Ajouter une nouvelle institution"
 
 #: templates/p4l/translations.html:12
 msgid "Add a new audience"
@@ -420,7 +420,7 @@ msgstr "label"
 
 #: templates/p4l/translations.html:19
 msgid "name"
-msgstr "Nom"
+msgstr "nom"
 
 #: templates/p4l/translations.html:22
 msgid "An error occured. Somes datas may be incorrect or incomplete."
