@@ -30,6 +30,18 @@ Deux commandes d'administration sont fournies par Django pour gérer les fichier
   * ``compilemessages`` : Compile les fichiers ``.po`` contitués par la commande précédente afin que les traduction soit prise en compte.
     cette commande produit les fichier ``.mo``. 
 
+Ces commandes peuvent être lancées de plusieurs façon. Le plus simple est de les lancer depuis le répertoire ``src/p4l`` et avec l'utilitaire ``django-admin.py``.
+Ce dernier est installé lors de l'installation de Django.
+Dans le cas de l'utilisation d'un environement virtuel, il se trouve dans le répertoire ``bin``, et de fait dans le "PATH" lorsque l'environement virtuel est activé.
+La suite des commandes pour 
+
+.. code-block:: bash
+
+    $ cd src/p4l
+    $ django-admin.py makemessages -a
+    <edition des fichiers .po>
+    $ django-admin.py compilemessages 
+
 
 modification des champs
 =======================
