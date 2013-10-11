@@ -19,7 +19,7 @@ msgstr ""
 
 #: admin.py:10 forms.py:34 templates/p4l/record_view.html:56
 msgid "language"
-msgstr "language"
+msgstr "idioma"
 
 #: settings.py:42
 msgid "French"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: semantictree/forms/widgets.py:44 semantictree/forms/widgets.py:81
 msgid "Browse"
-msgstr "Browse"
+msgstr "Consultar"
 
 #: semantictree/forms/widgets.py:49 semantictree/forms/widgets.py:86
 msgid "or"
@@ -64,24 +64,24 @@ msgstr "login"
 
 #: templates/p4l/home.html:6 templates/p4l/home.html.py:10
 msgid "Record List"
-msgstr "Record list"
+msgstr "Lista de registros"
 
 #: templates/p4l/home.html:6 templates/p4l/home.html.py:30
 #: templates/p4l/home.html:70
 msgid "Page"
-msgstr "Page"
+msgstr "Página"
 
 #: templates/p4l/home.html:14
 msgid "Query"
-msgstr "Query"
+msgstr "Buscar"
 
 #: templates/p4l/home.html:19
 msgid "New record"
-msgstr "New record"
+msgstr "Nuevo registro"
 
 #: templates/p4l/home.html:27 templates/p4l/home.html.py:67
 msgid "Previous"
-msgstr "Previous"
+msgstr "Atrás"
 
 #: templates/p4l/home.html:30 templates/p4l/home.html.py:70
 msgid "on"
@@ -89,49 +89,49 @@ msgstr "on"
 
 #: templates/p4l/home.html:33 templates/p4l/home.html.py:73
 msgid "Next"
-msgstr "Next"
+msgstr "Siguiente"
 
 #: templates/p4l/home.html:43 templates/p4l/record_view.html:36
 msgid "identifier"
-msgstr "identifier"
+msgstr "MFN"
 
 #: templates/p4l/home.html:43 templates/p4l/record_view.html:64
 msgid "titles"
-msgstr "Título"
+msgstr "título"
 
 #: templates/p4l/home.html:43
 msgid "dates"
-msgstr "Año"
+msgstr "año"
 
 #: templates/p4l/home.html:43
 msgid "actions"
-msgstr "actions"
+msgstr "acciones"
 
 #: templates/p4l/home.html:59
 msgid "No record"
-msgstr "No record"
+msgstr "No hay respuesta"
 
 #: templates/p4l/record_update_form.html:5 templates/p4l/record_view.html:7
 msgid "Record"
-msgstr "Record"
+msgstr "Registro"
 
 #: templates/p4l/record_update_form.html:5 templates/p4l/record_view.html:7
 msgid "View"
-msgstr "View"
+msgstr "Ver"
 
 #: templates/p4l/record_update_form.html:52 templates/p4l/translations.html:4
 msgid "Save"
-msgstr "Save"
+msgstr "Guardar"
 
 #: templates/p4l/record_update_form.html:56
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Cancelar"
 
 #: templates/p4l/record_update_form.html:60
 #: templates/p4l/record_update_form.html:248
 #: templates/p4l/translations.html:20
 msgid "View the record"
-msgstr "View the record"
+msgstr "Ver el registro"
 
 #: templates/p4l/record_update_form.html:61
 #: templates/p4l/record_update_form.html:249 templates/p4l/record_view.html:12
@@ -139,26 +139,26 @@ msgstr "View the record"
 msgid ""
 "Are your sure you want to delete this record ? This action is irreversible."
 msgstr ""
-"Are your sure you want to delete this record ? This action is irreversible."
+"¿Confirma la supresión? Es irreversible."
 
 #: templates/p4l/record_update_form.html:61
 #: templates/p4l/record_update_form.html:249 templates/p4l/record_view.html:12
 #: templates/p4l/record_view.html.py:238
 msgid "Delete the record"
-msgstr "Delete the record"
+msgstr "Suprimir el registro"
 
 #: templates/p4l/record_view.html:11 templates/p4l/record_view.html.py:237
 #: templates/p4l/translations.html:21
 msgid "Edit the record"
-msgstr "Edit the record"
+msgstr "Modificar el registro"
 
 #: templates/p4l/record_view.html:16
 msgid "property"
-msgstr "property"
+msgstr "campo"
 
 #: templates/p4l/record_view.html:16
 msgid "value"
-msgstr "value"
+msgstr "valor"
 
 #: templates/p4l/record_view.html:24
 msgid "subjects"
@@ -223,7 +223,7 @@ msgstr "Publisher"
 #: templates/p4l/record_view.html:92 templates/p4l/record_view.html.py:138
 #: templates/p4l/record_view.html:183
 msgid "Date"
-msgstr "Date"
+msgstr "Fecha"
 
 #: templates/p4l/record_view.html:93 templates/p4l/record_view.html.py:113
 msgid "Language"
@@ -260,7 +260,7 @@ msgstr "Seminario"
 
 #: templates/p4l/record_view.html:137 templates/p4l/record_view.html.py:182
 msgid "Place"
-msgstr "Lugar"
+msgstr "Lugar del seminario"
 
 #: templates/p4l/record_view.html:139 templates/p4l/record_view.html.py:184
 msgid "Year"
@@ -312,27 +312,27 @@ msgstr "record type"
 
 #: templates/p4l/record_view.html:219
 msgid "audiences"
-msgstr "audiences"
+msgstr "Público"
 
 #: templates/p4l/record_view.html:223
 msgid "is document part"
-msgstr "is document part"
+msgstr "Analítico"
 
 #: templates/p4l/record_view.html:227
 msgid "is hidden"
-msgstr "is hidden"
+msgstr "registro oculto"
 
 #: templates/p4l/record_view.html:231
 msgid "is restricted"
-msgstr "is restricted"
+msgstr "acceso restringido"
 
 #: templates/p4l/translations.html:3
 msgid "Add"
-msgstr "Add"
+msgstr "Añadir"
 
 #: templates/p4l/translations.html:5
 msgid "Update"
-msgstr "Update"
+msgstr "Actualizar"
 
 #: templates/p4l/translations.html:6
 msgid "Add a new subject"
@@ -340,35 +340,35 @@ msgstr "Add a new subject"
 
 #: templates/p4l/translations.html:7
 msgid "Add a new theme"
-msgstr "Add a new theme"
+msgstr "Añadir un nuevo tema"
 
 #: templates/p4l/translations.html:8
 msgid "Add a new country"
-msgstr "Add a new country"
+msgstr "Añadir un nuevo país"
 
 #: templates/p4l/translations.html:9
 msgid "Add a new language"
-msgstr "Add a new language"
+msgstr "Añadir un nuevo idioma"
 
 #: templates/p4l/translations.html:10
 msgid "Add a new project"
-msgstr "Add a new project"
+msgstr "Añadir un nuevo proyecto"
 
 #: templates/p4l/translations.html:11
 msgid "Add a new organization"
-msgstr "Add a new organization"
+msgstr "Añadir un nuevo entidad"
 
 #: templates/p4l/translations.html:12
 msgid "Add a new audience"
-msgstr "Add a new audience"
+msgstr "Añadir un nuevo público"
 
 #: templates/p4l/translations.html:13
 msgid "Modify the language"
-msgstr "Modify the language"
+msgstr "Modificar idioma"
 
 #: templates/p4l/translations.html:14
 msgid "Modify the record type"
-msgstr "Modify the record type"
+msgstr "Modificar tipo de registro"
 
 #: templates/p4l/translations.html:15
 msgid "title"

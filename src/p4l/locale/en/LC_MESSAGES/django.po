@@ -209,15 +209,15 @@ msgstr "Edition"
 
 #: templates/p4l/record_view.html:84
 msgid "imprints"
-msgstr "imprints"
+msgstr "Imprint"
 
 #: templates/p4l/record_view.html:90
 msgid "City"
-msgstr "City"
+msgstr "Publisher city"
 
 #: templates/p4l/record_view.html:91
 msgid "Publisher"
-msgstr "Published by"
+msgstr "Publisher"
 
 #: templates/p4l/record_view.html:92 templates/p4l/record_view.html.py:138
 #: templates/p4l/record_view.html:183
@@ -234,7 +234,7 @@ msgstr "Pages"
 
 #: templates/p4l/record_view.html:105
 msgid "volume issues"
-msgstr "volume issues"
+msgstr "Volume"
 
 #: templates/p4l/record_view.html:111 templates/p4l/record_view.html.py:154
 msgid "Volume"
@@ -295,19 +295,19 @@ msgstr "Institution(s) bibliographical label"
 
 #: templates/p4l/record_view.html:200
 msgid "Urls"
-msgstr "Full text"
+msgstr "URL"
 
 #: templates/p4l/record_view.html:206
 msgid "Address"
-msgstr "Address"
+msgstr "URL"
 
 #: templates/p4l/record_view.html:207
 msgid "Display"
-msgstr "Display"
+msgstr "Full text"
 
 #: templates/p4l/record_view.html:215
 msgid "record type"
-msgstr "Record type"
+msgstr "Type of document"
 
 #: templates/p4l/record_view.html:219
 msgid "audiences"
@@ -319,11 +319,11 @@ msgstr "Is document part"
 
 #: templates/p4l/record_view.html:227
 msgid "is hidden"
-msgstr "Is hidden"
+msgstr "Hidden record"
 
 #: templates/p4l/record_view.html:231
 msgid "is restricted"
-msgstr "Is restricted"
+msgstr "Restricted access"
 
 #: templates/p4l/translations.html:3
 msgid "Add"
@@ -335,7 +335,7 @@ msgstr "Update"
 
 #: templates/p4l/translations.html:6
 msgid "Add a new subject"
-msgstr "Add a new subject"
+msgstr "Add a new keyword"
 
 #: templates/p4l/translations.html:7
 msgid "Add a new theme"
