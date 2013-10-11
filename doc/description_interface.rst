@@ -27,7 +27,8 @@ Liste des notices
 Cet écram donne la liste des notices et permet la recherche.
 La recherche se fait sur l'identifiant d'une notice, le(s) titre(s) d'une notice et les autheurs (personnes ou institutions).
 
-Les notices sont toujours affichés dans l'ordre de leur identifiant (tri lexicographique ascendant).
+Sans recherche, les notices sont affichées dans l'ordre de leur identifiant (tri lexicographique ascendant).
+Par contre lorsque'une recherche à été lancée, les notices sont affichées dans l'ordre retourné par le moteur d'indexation.
 
 En haut de la liste un bouton permet l'ouverture du dialogue de création d'une nouvelle notice.
 Pour chaque notice de la liste 2 boutons sont proposés : vue de du détail de la liste ou bien édition. 

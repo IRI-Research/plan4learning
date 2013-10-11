@@ -43,7 +43,7 @@ from p4l.search.forms import RecordSearchForm
 class RecordSearchView(SearchView):
     
     def __init__(self, template=None, load_all=True, form_class=None, searchqueryset=None, context_class=RequestContext, results_per_page=None):
-        record_searchQuerySet = SearchQuerySet().order_by('identifier')
+        record_searchQuerySet = SearchQuerySet()
         template = "p4l/home.html"
         results_per_page= settings.NB_RECORDS_BY_PAGE
         form_class = RecordSearchForm

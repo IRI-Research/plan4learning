@@ -45,7 +45,7 @@ class RecordSearchForm(SearchForm):
         SearchForm.__init__(self, *args, **kwargs)
         
     def no_query_found(self):
-        return self.searchqueryset.all()
+        return self.searchqueryset.order_by('identifier').all()
     
     def search(self):
         if not self.is_valid():
