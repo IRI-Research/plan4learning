@@ -142,8 +142,12 @@ label {
 }
 
 /* Set the fixed height of the footer here */
-#push,footer {
+footer {
   height: 70px;
+}
+
+#push {
+  height: 90px;
 }
 
 .footer-img {
