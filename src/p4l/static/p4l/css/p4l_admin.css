@@ -1,0 +1,41 @@
+.literal {
+    background-color: #eeeeec;
+    padding: 1px;
+    font-family: monospace;
+}
+
+.terminal {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    width: 60%;
+    height: 30em;
+    border: 1px solid black;
+    margin-top: 1em;
+    overflow: auto;
+    display: none;
+}
+
+
+
+#done {
+  display: none;
+  margin-top: 2px;
+}
+
+#done h1 {
+    color: red;
+}
+
+.script-control {
+  float: left;
+  margin-left: 10px;
+}
+
+.clear {
+  clear: both;
+}
+

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-24 06:09-0500\n"
+"POT-Creation-Date: 2013-10-11 10:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: admin.py:10 forms.py:34 templates/p4l/record_view.html:56
-msgid "language"
-msgstr "langue"
-
-#: settings.py:42
+#: settings.py:76
 msgid "French"
 msgstr "Français"
 
-#: settings.py:43
+#: settings.py:77
 msgid "English"
 msgstr "Anglais"
 
-#: settings.py:44
+#: settings.py:78
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: semantictree/forms/widgets.py:39
+#: admin/components.py:50 admin/forms.py:62 templates/p4l/record_view.html:56
+msgid "language"
+msgstr "langue"
+
+#: admin/views.py:143
+msgid "No active process to kill"
+msgstr "Pas de processus actif à tuer"
+
+#: admin/views.py:154
+msgid "Success: The process was killed successfully."
+msgstr "Réussi : le process a été tué avec succès."
+
+#: semantictree/forms/widgets.py:68
 msgid "Search"
 msgstr "Chercher"
 
-#: semantictree/forms/widgets.py:43 semantictree/forms/widgets.py:80
+#: semantictree/forms/widgets.py:72 semantictree/forms/widgets.py:109
 msgid ""
 "\"data-url\", \"data-query\", \"data-root-query\", \"data-childs-query\" and "
 "\"data-child-count-query\" must be set in CharField configuration"
@@ -46,69 +54,91 @@ msgstr ""
 "\"data-child-count-query\" doivent être renseignés dans la configuration "
 "CharField"
 
-#: semantictree/forms/widgets.py:44 semantictree/forms/widgets.py:81
+#: semantictree/forms/widgets.py:73 semantictree/forms/widgets.py:110
 msgid "Browse"
 msgstr "Parcourir"
 
-#: semantictree/forms/widgets.py:49 semantictree/forms/widgets.py:86
+#: semantictree/forms/widgets.py:78 semantictree/forms/widgets.py:115
 msgid "or"
 msgstr "ou"
 
-#: templates/p4l/base.html:35
+#: templates/admin/app_index.html:7
+#: templates/p4l/admin/confirm_run_script.html:13
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/admin/app_index.html:10
+#, python-format
+msgid "%(name)s"
+msgstr "%(name)s"
+
+#: templates/admin/index.html:10
+msgid "Commands"
+msgstr "Commandes"
+
+#: templates/admin/index.html:12
+msgid "Launch Script"
+msgstr "Lancer Script"
+
+#: templates/admin/index.html:13
+msgid "Launch"
+msgstr "Lancer"
+
+#: templates/p4l/base.html:36
 msgid "logout"
 msgstr "deconnection"
 
-#: templates/p4l/base.html:37 templates/registration/login.html:4
+#: templates/p4l/base.html:38 templates/registration/login.html:4
 #: templates/registration/login.html:27
 msgid "login"
 msgstr "connection"
 
-#: templates/p4l/home.html:6 templates/p4l/home.html.py:10
+#: templates/p4l/home.html:6 templates/p4l/home.html.py:15
 msgid "Record List"
 msgstr "Liste notice"
 
-#: templates/p4l/home.html:6 templates/p4l/home.html.py:30
-#: templates/p4l/home.html:70
+#: templates/p4l/home.html:6 templates/p4l/home.html.py:35
+#: templates/p4l/home.html:75
 msgid "Page"
 msgstr "Page"
 
-#: templates/p4l/home.html:14
+#: templates/p4l/home.html:19
 msgid "Query"
 msgstr "Requête"
 
-#: templates/p4l/home.html:19
+#: templates/p4l/home.html:24
 msgid "New record"
 msgstr "Nouvelle notice"
 
-#: templates/p4l/home.html:27 templates/p4l/home.html.py:67
+#: templates/p4l/home.html:32 templates/p4l/home.html.py:72
 msgid "Previous"
 msgstr "Préc."
 
-#: templates/p4l/home.html:30 templates/p4l/home.html.py:70
+#: templates/p4l/home.html:35 templates/p4l/home.html.py:75
 msgid "on"
 msgstr "sur"
 
-#: templates/p4l/home.html:33 templates/p4l/home.html.py:73
+#: templates/p4l/home.html:38 templates/p4l/home.html.py:78
 msgid "Next"
 msgstr "Suiv."
 
-#: templates/p4l/home.html:43 templates/p4l/record_view.html:36
+#: templates/p4l/home.html:48 templates/p4l/record_view.html:36
 msgid "identifier"
 msgstr "identifiant"
 
-#: templates/p4l/home.html:43 templates/p4l/record_view.html:64
+#: templates/p4l/home.html:48 templates/p4l/record_view.html:64
 msgid "titles"
 msgstr "titres"
 
-#: templates/p4l/home.html:43
+#: templates/p4l/home.html:48
 msgid "dates"
 msgstr "dates"
 
-#: templates/p4l/home.html:43
+#: templates/p4l/home.html:48
 msgid "actions"
 msgstr "actions"
 
-#: templates/p4l/home.html:59
+#: templates/p4l/home.html:64
 msgid "No record"
 msgstr "Pas de notice"
 
@@ -120,22 +150,22 @@ msgstr "Notice"
 msgid "View"
 msgstr "Vue"
 
-#: templates/p4l/record_update_form.html:52 templates/p4l/translations.html:4
+#: templates/p4l/record_update_form.html:55 templates/p4l/translations.html:4
 msgid "Save"
 msgstr "Enregistrer"
 
-#: templates/p4l/record_update_form.html:56
+#: templates/p4l/record_update_form.html:59
 msgid "Cancel"
 msgstr "Annuler"
 
-#: templates/p4l/record_update_form.html:60
-#: templates/p4l/record_update_form.html:248
+#: templates/p4l/record_update_form.html:63
+#: templates/p4l/record_update_form.html:251
 #: templates/p4l/translations.html:20
 msgid "View the record"
 msgstr "Voir la notice"
 
-#: templates/p4l/record_update_form.html:61
-#: templates/p4l/record_update_form.html:249 templates/p4l/record_view.html:12
+#: templates/p4l/record_update_form.html:64
+#: templates/p4l/record_update_form.html:252 templates/p4l/record_view.html:12
 #: templates/p4l/record_view.html.py:238
 msgid ""
 "Are your sure you want to delete this record ? This action is irreversible."
@@ -143,8 +173,8 @@ msgstr ""
 "Êtes-vous sûr sur vouloir effacer cette notice ? Cette action est "
 "irréversible."
 
-#: templates/p4l/record_update_form.html:61
-#: templates/p4l/record_update_form.html:249 templates/p4l/record_view.html:12
+#: templates/p4l/record_update_form.html:64
+#: templates/p4l/record_update_form.html:252 templates/p4l/record_view.html:12
 #: templates/p4l/record_view.html.py:238
 msgid "Delete the record"
 msgstr "Effacer la notice"
@@ -396,6 +426,46 @@ msgstr "Nom"
 msgid "An error occured. Somes datas may be incorrect or incomplete."
 msgstr ""
 "Une erreur est survenue. Certaines données sont incorrectes ou incomplètes."
+
+#: templates/p4l/admin/confirm_run_script.html:14
+msgid "Run script"
+msgstr "Lancer script"
+
+#: templates/p4l/admin/confirm_run_script.html:20
+msgid "Are you sure ?"
+msgstr "Êtes-vous sûr ?"
+
+#: templates/p4l/admin/confirm_run_script.html:22
+msgid ""
+"The ADMIN_SCRIPT setting is not correctly configured. Please configure it to "
+"launch commands."
+msgstr ""
+"La propriété ADMIN_SCRIPT n'est pas correctement configuré. Configurez la avant "
+"de lancer la commande."
+
+#: templates/p4l/admin/confirm_run_script.html:24
+msgid "Are you sure you want to run the script"
+msgstr "Êtes-vous sûr que vous voulez bien lancer le script"
+
+#: templates/p4l/admin/confirm_run_script.html:25
+msgid "cwd:"
+msgstr "cwd :"
+
+#: templates/p4l/admin/confirm_run_script.html:25
+msgid "env:"
+msgstr "env :"
+
+#: templates/p4l/admin/confirm_run_script.html:28
+msgid "Yes, I'm sure"
+msgstr "Oui, je suis sûr(e)"
+
+#: templates/p4l/admin/confirm_run_script.html:30
+msgid "Click to stop process (sends SIGINT then SIGKILL)"
+msgstr "Cliquer pour arrêter le processus (envoie SIGINT puis SIGKILL)"
+
+#: templates/p4l/admin/confirm_run_script.html:31
+msgid "Done"
+msgstr "Terminé"
 
 #: templates/registration/login.html:8
 msgid "Sorry, that's not a valid username or password."

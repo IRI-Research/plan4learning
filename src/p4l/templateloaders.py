@@ -31,35 +31,41 @@
 # knowledge of the CeCILL-B license and that you accept its terms.
 #
 
+'''
+Created on Oct 9, 2013
 
-from django.conf import settings
-from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import (UserChangeForm as AuthUserChangeForm, 
-    UserCreationForm as AuthUserCreationForm)
-from django.core.exceptions import ValidationError
-from django.forms.fields import ChoiceField
-from django.utils.translation import ugettext as _
+From http://djangosnippets.org/snippets/1376/
+
+@author: ymh
+'''
+from os.path import dirname, join, abspath, isdir
+
+from django.core.exceptions import ImproperlyConfigured
+from django.db.models import get_app
+from django.template import TemplateDoesNotExist
+from django.template.loaders.filesystem import Loader as FilesystemLoader
 
 
-User = get_user_model()
-
-class UserCreationform(AuthUserCreationForm):
-    class Meta:
-        model = User
-        
-    def clean_username(self):
-        # Since User.username is unique, this check is redundant,
-        # but it sets a nicer error message than the ORM. See #13147.
-        username = self.cleaned_data["username"]
-        try:
-            User.objects.get(username=username)
-        except User.DoesNotExist:
-            return username
-        raise ValidationError(self.error_messages['duplicate_username'])    
+def get_template_vars(template_name):
+    app_name, template_name = template_name.split(":", 1)
+    try:
+        template_dir = abspath(join(dirname(get_app(app_name).__file__), 'templates'))
+    except ImproperlyConfigured:
+        raise TemplateDoesNotExist()
     
+    return template_name, template_dir
 
-class UserChangeForm(AuthUserChangeForm):
-    language = ChoiceField(label=_("language"), choices=[(k,_(v)) for k,v in settings.LANGUAGES], initial=settings.LANGUAGE_CODE[:2])
-    class Meta:
-        model = User
+class Loader(FilesystemLoader):
+    
+    is_usable = True
+    
+    def get_template_sources(self, template_name, template_dirs=None):
+        if ":" not in template_name:
+            raise TemplateDoesNotExist()
+        template_name, template_dir = get_template_vars(template_name)
+        
+        if not isdir(template_dir):
+            raise TemplateDoesNotExist()
 
+        return [join(template_dir, template_name)]
+ 

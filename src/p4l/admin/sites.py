@@ -31,15 +31,35 @@
 # knowledge of the CeCILL-B license and that you accept its terms.
 #
 
-__all__ = ['Imprint', 'Serie', 'ProjectName', 'CorporateAuthor', 'Url',
-        'Subject', 'Theme', 'Country', 'Isbn','Issn', 'DocumentCode',
-        'Language', 'Title', 'AddedTitle', 'TitleMainDocument', 'Abstract'
-        'Collation', 'VolumeIssue', 'Author', 'SubjectPerson', 'Periodical',
-        'Meeting', 'SubjectMeeting', 'Record', 'Audience', 'User']
 
-from p4l.models.data import (Imprint, Serie, ProjectName, CorporateAuthor, Url, 
-    Subject, Theme, Country, Isbn, Issn, DocumentCode, Language, Title, AddedTitle, 
-    TitleMainDocument, Abstract, Collation, VolumeIssue, Author, SubjectPerson, 
-    Periodical, Meeting, SubjectMeeting, Audience, Record)
-from p4l.models.user import User
+'''
+Created on Oct 9, 2013
+
+@author: ymh
+'''
+
+from django.conf.urls import patterns, url
+from django.contrib.admin import AdminSite as DjangoAdminSite
+
+from p4l.admin.views import RunScriptView, ConfirmScriptView, KillScriptView
+from p4l.decorators import is_staff
+
+
+class AdminSite(DjangoAdminSite):
+    
+    login_template = "registration/login.html"
+
+    
+    def get_urls(self):
+        urlpatterns = DjangoAdminSite.get_urls(self)
+        
+        urlpatterns += patterns('',
+            url(r'^confirm_script$', is_staff(ConfirmScriptView.as_view()), name='confirm_script'),
+            url(r'^run_script$', is_staff(RunScriptView.as_view()), name='run_script'),
+            url(r'^kill_script$', is_staff(KillScriptView.as_view()), name='kill_script')
+        )
+        
+        return urlpatterns
+
+site = AdminSite()
 

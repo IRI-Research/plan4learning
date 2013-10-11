@@ -31,15 +31,20 @@
 # knowledge of the CeCILL-B license and that you accept its terms.
 #
 
-__all__ = ['Imprint', 'Serie', 'ProjectName', 'CorporateAuthor', 'Url',
-        'Subject', 'Theme', 'Country', 'Isbn','Issn', 'DocumentCode',
-        'Language', 'Title', 'AddedTitle', 'TitleMainDocument', 'Abstract'
-        'Collation', 'VolumeIssue', 'Author', 'SubjectPerson', 'Periodical',
-        'Meeting', 'SubjectMeeting', 'Record', 'Audience', 'User']
 
-from p4l.models.data import (Imprint, Serie, ProjectName, CorporateAuthor, Url, 
-    Subject, Theme, Country, Isbn, Issn, DocumentCode, Language, Title, AddedTitle, 
-    TitleMainDocument, Abstract, Collation, VolumeIssue, Author, SubjectPerson, 
-    Periodical, Meeting, SubjectMeeting, Audience, Record)
-from p4l.models.user import User
+'''
+Created on Oct 9, 2013
 
+@author: ymh
+'''
+
+from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
+from django.utils.translation import gettext_lazy as _
+
+from p4l.admin.forms import UserChangeForm, UserCreationform
+
+
+class UserAdmin(AuthUserAdmin):
+    form = UserChangeForm
+    add_form = UserCreationform
+    fieldsets = tuple(list(AuthUserAdmin.fieldsets) + [(_('language'), {'fields':('language',)})])

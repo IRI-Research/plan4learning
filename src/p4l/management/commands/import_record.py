@@ -81,6 +81,12 @@ class Command(BaseCommand):
             default=False,
             help= 'index while importing' 
         ),
+        make_option('--newline',
+            dest= 'newline',
+            action='store_true',
+            default=False,
+            help= 'show progress with newlines' 
+        ),
     )
 
     def __init__(self, *args, **kwargs):
@@ -115,7 +121,7 @@ class Command(BaseCommand):
         for _,elem in context:
             if elem.tag == "{%s}Record" % IIEP:
                 i += 1
-                writer = show_progress(i, total_records, "Processing record nb %d " % i, 50, writer=writer)
+                writer = show_progress(i, total_records, "Processing record nb %d " % i, 40, writer=writer, newline=self.newline)
                 try:
                     record_graph = get_empty_graph()
                     record_graph.parse(data=ET.tostring(elem, encoding='utf-8'), format='xml')                    
@@ -128,7 +134,7 @@ class Command(BaseCommand):
                 else:
                     transaction.commit()
 
-                if i%self.batch_size == 0:                    
+                if i%self.batch_size == 0:
                     reset_queries()
 
         return errors
@@ -155,6 +161,7 @@ class Command(BaseCommand):
         self.batch_size = options.get('batch_size', 50)
         self.preserve = options.get("preserve", False)
         self.index = options.get("index", False)
+        self.newline = options.get("newline", False)
         
         if not self.index:
             old_realtime_indexing = getattr(settings, "REALTIME_INDEXING", None)

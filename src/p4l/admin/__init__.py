@@ -31,15 +31,16 @@
 # knowledge of the CeCILL-B license and that you accept its terms.
 #
 
-__all__ = ['Imprint', 'Serie', 'ProjectName', 'CorporateAuthor', 'Url',
-        'Subject', 'Theme', 'Country', 'Isbn','Issn', 'DocumentCode',
-        'Language', 'Title', 'AddedTitle', 'TitleMainDocument', 'Abstract'
-        'Collation', 'VolumeIssue', 'Author', 'SubjectPerson', 'Periodical',
-        'Meeting', 'SubjectMeeting', 'Record', 'Audience', 'User']
+__all__ = ['site']
 
-from p4l.models.data import (Imprint, Serie, ProjectName, CorporateAuthor, Url, 
-    Subject, Theme, Country, Isbn, Issn, DocumentCode, Language, Title, AddedTitle, 
-    TitleMainDocument, Abstract, Collation, VolumeIssue, Author, SubjectPerson, 
-    Periodical, Meeting, SubjectMeeting, Audience, Record)
-from p4l.models.user import User
+from django.contrib.auth.admin import GroupAdmin
+from django.contrib.auth.models import Group
+
+from p4l.admin.components import UserAdmin
+from p4l.admin.sites import site
+from p4l.models import User
+
+
+site.register(User, UserAdmin)
+site.register(Group, GroupAdmin)
 

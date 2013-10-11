@@ -1,0 +1,19 @@
+{% extends "admin:admin/index.html" %}
+{% load i18n %}
+
+{% block content %}
+<div style="float: left;">
+{{ block.super }}
+<div id="content-other">
+    <div class="module">
+        <table>
+            <caption>{% trans 'Commands' %}</caption>
+            <tr>
+                <th scope="row">{% trans 'Launch Script' %}</th>
+                <td><a href="{% url 'admin:confirm_script' %}" class="addlink">{% trans 'Launch' %}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

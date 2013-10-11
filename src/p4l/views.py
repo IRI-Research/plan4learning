@@ -52,7 +52,7 @@ QUERY_FIELDS_TRANSLATION = {
     'filter': 'dataquery',
     'root': 'datarootquery',
     'childs': 'datachildsquery',
-    'child-count': 'datachildcountquery'                            
+    'child-count': 'datachildcountquery'
 }
 
 
@@ -158,4 +158,5 @@ class RecordDeleteView(View):
         rec = get_object_or_404(Record, identifier=slug)
         rec.delete()
         return redirect('p4l_home')
-        
+
+

@@ -32,12 +32,13 @@
 #
 
 from django.conf.urls import patterns, include, url
-from django.contrib import admin
+#from django.contrib import admin
 from django.contrib.auth import urls as auth_urls
 from django.contrib.auth.decorators import login_required
 
 from p4l.search.views import RecordSearchView
 from p4l.views import RecordDetailView, RecordEditView, RecordDeleteView
+from p4l import admin
 
 
 js_info_dict = {
@@ -45,7 +46,7 @@ js_info_dict = {
     'domain': 'django',
 }
 
-admin.autodiscover()
+#admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', login_required(RecordSearchView.as_view()), name='p4l_home'),

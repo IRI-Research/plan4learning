@@ -1,0 +1,59 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrahead %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'p4l/lib/jquery-1.9.1.js' %}"></script>
+<link rel="stylesheet" href="{% static 'p4l/css/p4l_admin.css' %}">
+{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; {% trans 'Run script'  %}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block content %}
+<h1>{% trans 'Are you sure ?' %}</h1>
+{% if not command_line %}
+<p>{% blocktrans %}The ADMIN_SCRIPT setting is not correctly configured. Please configure it to launch commands.{% endblocktrans %}
+{% else %}
+<p>{% blocktrans %}Are you sure you want to run the script{% endblocktrans %} <span class="literal">{{ command_line }}</span> ?</p>
+<p>( {% trans 'cwd:' %} <span class="literal">{{ pwd }}</span>, {% trans 'env:' %} <span class="literal">{{ env }}</span> )</p>
+<div>
+    <form method="get" id="confirm-form" action="{% url 'admin:run_script' %}" target="script-output">
+        <div class="script-control" id="script-submit"><input type="submit" id="confirm-form-submit" value="{% trans "Yes, I'm sure" %}" /></div>
+    </form>
+    <div class="script-control" id="kill-button-div"><button id="kill-button" class="button" title="{% trans 'Click to stop process (sends SIGINT then SIGKILL)' %}">Control-C</button></div>
+    <div class="script-control" id="done"><h1>{% trans 'Done' %}</h1></div>
+</div>
+<div class="clear" id="kill-result">&nbsp;</div>
+<iframe name="script-output" class="terminal" scrolling="auto"></iframe>
+<script type="text/javascript">
+function launch_script() {
+    $("#confirm-form-submit").attr("disabled","disabled");
+    $("#kill-button").removeAttr("disabled");
+    $('.terminal').show();
+};
+
+function done() {
+    $('#done').show();
+    $('#kill-button').attr("disabled","disabled");
+};
+$(function() {
+    $('#confirm-form').submit(function(e) {
+        launch_script();
+     });
+    $('#kill-button').attr("disabled","disabled").click(function(e) {
+        $("#kill-result").load("{% url 'admin:kill_script' %}");
+    });
+    
+});
+</script>
+{% endif %}
+{% endblock %}
+
+

@@ -90,6 +90,12 @@ class Command(BaseCommand):
             default=False,
             help= 'gzip compress' 
         ),
+        make_option('--newline',
+            dest= 'newline',
+            action='store_true',
+            default=False,
+            help= 'show progress with newlines' 
+        ),
     )
 
 
@@ -120,6 +126,7 @@ class Command(BaseCommand):
         limit = options.get("limit", -1)
         skip = options.get("skip", 0)
         batch = options.get("batch", 100)
+        newline = options.get("newline", False)
         
         qs = Record.objects.all().select_related(*[field.name for field in Record._meta.fields if isinstance(field, ForeignKey)]).prefetch_related(*([field.name for field in Record._meta.many_to_many] + [obj.get_accessor_name() for obj in Record._meta.get_all_related_objects()])).order_by('identifier')  # @UndefinedVariable
         
@@ -157,7 +164,7 @@ class Command(BaseCommand):
             writer.characters("\n")
             for n in range((total_records/batch)+1):
                 for i,r in enumerate(qs[n*batch:((n+1)*batch)]):
-                    progress_writer = show_progress(i+(n*batch)+1, total_records, "Exporting record %s" % r.identifier, 50, progress_writer) 
+                    progress_writer = show_progress(i+(n*batch)+1, total_records, "Exporting record %s" % r.identifier, 40, writer=progress_writer, newline=newline) 
                     graph = self.get_graph_from_object(r)
                     do_write = False
                     for line in graph.serialize(format="pretty-xml", encoding="utf-8").splitlines(True):

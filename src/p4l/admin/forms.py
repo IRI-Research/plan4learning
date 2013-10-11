@@ -31,15 +31,34 @@
 # knowledge of the CeCILL-B license and that you accept its terms.
 #
 
-__all__ = ['Imprint', 'Serie', 'ProjectName', 'CorporateAuthor', 'Url',
-        'Subject', 'Theme', 'Country', 'Isbn','Issn', 'DocumentCode',
-        'Language', 'Title', 'AddedTitle', 'TitleMainDocument', 'Abstract'
-        'Collation', 'VolumeIssue', 'Author', 'SubjectPerson', 'Periodical',
-        'Meeting', 'SubjectMeeting', 'Record', 'Audience', 'User']
 
-from p4l.models.data import (Imprint, Serie, ProjectName, CorporateAuthor, Url, 
-    Subject, Theme, Country, Isbn, Issn, DocumentCode, Language, Title, AddedTitle, 
-    TitleMainDocument, Abstract, Collation, VolumeIssue, Author, SubjectPerson, 
-    Periodical, Meeting, SubjectMeeting, Audience, Record)
-from p4l.models.user import User
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import (UserChangeForm as AuthUserChangeForm, 
+    UserCreationForm as AuthUserCreationForm)
+from django.core.exceptions import ValidationError
+from django.forms.fields import ChoiceField
+from django.utils.translation import ugettext as _
 
+
+User = get_user_model()
+
+class UserCreationform(AuthUserCreationForm):
+    class Meta:
+        model = User
+        
+    def clean_username(self):
+        # Since User.username is unique, this check is redundant,
+        # but it sets a nicer error message than the ORM. See #13147.
+        username = self.cleaned_data["username"]
+        try:
+            User.objects.get(username=username)
+        except User.DoesNotExist:
+            return username
+        raise ValidationError(self.error_messages['duplicate_username'])    
+    
+
+class UserChangeForm(AuthUserChangeForm):
+    language = ChoiceField(label=_("language"), choices=[(k,_(v)) for k,v in settings.LANGUAGES], initial=settings.LANGUAGE_CODE[:2])
+    class Meta:
+        model = User

@@ -33,6 +33,7 @@
 
 # Django settings for p4l project.
 from django.conf import global_settings
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -129,6 +130,7 @@ STATICFILES_FINDERS = (
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+    'p4l.templateloaders.Loader'
 #     'django.template.loaders.eggs.Loader',
 )
 
@@ -156,6 +158,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.dirname(__file__), 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -454,6 +457,12 @@ LANGUAGES_LIST = [
 (u"Yoruba", "yo"),
 (u"Zhuang; Chuang", "za"),
 (u"Zulu", "zu")]
+
+# cf http://docs.python.org/2/library/subprocess.html#popen-constructor 
+ADMIN_SCRIPT = {}
+
+SCRIPT_WAIT = .250
+SCRIPT_MAX_WAIT = 40 # * SCRIPT_WAIT = 10 sec
 
 from config import *  # @UnusedWildImport
 

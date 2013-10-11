@@ -30,19 +30,26 @@
 # The fact that you are presently reading this means that you have had
 # knowledge of the CeCILL-B license and that you accept its terms.
 #
+from django.contrib.auth import REDIRECT_FIELD_NAME
 
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
-from django.utils.translation import gettext_lazy as _
-from p4l.models import User
-from p4l.forms import UserChangeForm, UserCreationform
+'''
+Created on Oct 10, 2013
 
-class UserAdmin(AuthUserAdmin):
-    form = UserChangeForm
-    add_form = UserCreationform
-    fieldsets = tuple(list(AuthUserAdmin.fieldsets) + [(_('language'), {'fields':('language',)})])
+@author: ymh
+'''
+from django.contrib.auth.decorators import user_passes_test
 
 
-admin.site.register(User, UserAdmin)
-
-
+def is_staff(function=None, redirect_field_name=REDIRECT_FIELD_NAME, login_url=None):
+    """
+    Decorator for views that checks that the user is logged in, redirecting
+    to the log-in page if necessary.
+    """
+    actual_decorator = user_passes_test(
+        lambda u: u.is_staff,
+        login_url=login_url,
+        redirect_field_name=redirect_field_name
+    )
+    if function:
+        return actual_decorator(function)
+    return actual_decorator

@@ -27,7 +27,7 @@ La deuxième sert à mettre à jour les resources statiques.
 Commande d'administration
 =========================
 
-Voici une liste des commandes ser vant à gérer l'import et l'export des notices (``Record``). 
+Voici une liste des commandes servant à gérer l'import et l'export des notices (``Record``). 
 
 
 .. _admin-import-record:
@@ -242,12 +242,15 @@ Cette date est la date d'import de la notice si elle n'a pas été mise à jour 
 Cette commande est fournie par le module Django ``Haystack``. Sa documentation se trouve à l'adresse suivante : http://django-haystack.readthedocs.org/en/v2.1.0/management_commands.html
 
 
-console d'administration / gestion des utilisateurs
-===================================================
+console d'administration
+========================
 
 Le back-office offre une console d'administration donnant accès en particulier à la gestion des utilisateurs.
 On y accède par le lien ``admin`` dans l'en-tête des pages si on est connecté en tant qu'administrateur ou bien en allant directement à l'adresse ``<racine du site>/p4l/admin/``.
 
+
+gestion des utilisateurs
+------------------------
 
 L'administration des utilisateurs se fait à l'adresse suivante : ``<racine du site>/p4l/admin/p4l/user/``.
 
@@ -263,4 +266,45 @@ Le champ ``Permission de l'utilisateur`` doit donc comporter toutes les entrées
 
 Pour faciliter la gestion de ces permissions, le plus simple est de créer un groupe ``utilisateurs``. On affectera à ce groupe toutes les permissions sur les objects de l'application ``p4l``.
 il suffira ensuite de mettre les utilisateurs dans ce groupe (champ ``Groupes`` dans l'interface d'édition des utilisateurs). L'utilisateur héritera alors des parmissions du groupe.
+
+
+Lancement d'un script
+---------------------
+Il est possible de lancer un script à partir de l'adresse suivante : ``<racine du site>/p4l/admin/confirm_script``.
+
+Le script qui est exécuté est configuré par la propriété ``ADMIN_SCRIPT`` dans la configuration de l'application (``src/p4l/config.py``).
+Cette propriété est un dictionnaire dont les clés sont les arguments du constructeur de subprocess.Popen.
+Tous les arguments et le fonctionnement de cet objet sont détaillés à l'adresse suivante : http://docs.python.org/2/library/subprocess.html#popen-constructor
+Tous les arguments sont configurables sauf les suivants : ``stdout``, ``stderr``, ``bufsize``, ``close_fds``, ``preexec_fn``.
+Cependant les quatres suivants seront les plus utiles:
+  * `args`: soit une séquence d'arguments de programme, soit une chaine de caractères
+  * `cwd`: le chemin du reepertoire de travail. Par défaut : ``None``
+  * `env`: dictionnire donnant les variables d'evironement positinnées durant l'éxeecution du script.
+
+Il est recommandé que ``args`` soit une liste d'arguments et non une simple chaîne de caractères.
+
+L'example suivant démontre comment on peut configurer cette propriété pour lancer le dump des notices avec la commande ``dump_record``.
+
+.. code-block :: python
+
+ADMIN_SCRIPT = {
+    'args' : [ sys.executable, "manage.py", "dump_record", "--newline", "-j", "/tmp/script_dump.rdf.bz2"],
+    'cwd' : "<chemin absolu des sources l'application>/src",
+    'env' : {'PYTHONPATH': '<chemin absolu de l'environement virtuel>/lib/python2.7/site-packages'}
+}
+
+
+Plusieurs points sont à noter:
+
+  * L'utilisation de cette fonctionnalité est à priori réservé pour une application installé sous Unix. (cela peut fonctionner sous Windows, mais cela n'a pas été testé)
+  * La fermeture de la fenêtre du navigateur ne stoppe pas la commande
+  * En particulier si la session de l'utilisateur expire ou bien que la fenêtre du browser est fermée, il n'y a plus possibilité de stopper le processus à partir d'un browser.
+    Le processus devra être interompu par les moyens habituels directement sur le serveur
+  * La commande est lancée dans le contexte du serveur web. Elle est donc executé par l'utilisateur du serveur web et hérite de ces droits d'accès.
+  * Tout démarrage du serveur web stoppe la commande.
+  * La commande partage les ressources du serveurs web. Attention donc à ne pas lancer des commandes trop gourmandes en ressources, cela peut avoir des conséquences sur la stabilité du serveur web et sa disponibilité.
+  * L'affichage de la sortie de la commande dans le browser se fait ligne par ligne.
+    Si la sortie de la commande ne comporte pas de caractère de retour à la ligne (``"\n"``) rien ne s'affichera avant la fin de la commande.
+  * Les sorties erreur et standard sont affichée ensemble sans différentiation.
+
  
