@@ -166,4 +166,9 @@ NB_RECORDS_BY_PAGE = 20
 SPARQL_QUERY_ENDPOINT = "http://localhost:8080/openrdf-sesame/repositories/plan4learning"
 
 # cf http://docs.python.org/2/library/subprocess.html#popen-constructor
-ADMIN_COMMAND_SCRIPT = {}
+ADMIN_SCRIPT = {
+    'args' : [ sys.executable, "manage.py", "dump_record", "--newline", "-j", "/tmp/script_dump.rdf.bz2"],
+    'cwd' : "/Users/ymh/dev/workspace/plan4learning/src",
+    'env' : {'PYTHONPATH': '/Users/ymh/dev/venvs/p4l/lib/python2.7/site-packages'}
+}
+

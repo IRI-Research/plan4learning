@@ -276,7 +276,7 @@ Le script qui est exécuté est configuré par la propriété ``ADMIN_SCRIPT`` d
 Cette propriété est un dictionnaire dont les clés sont les arguments du constructeur de subprocess.Popen.
 Tous les arguments et le fonctionnement de cet objet sont détaillés à l'adresse suivante : http://docs.python.org/2/library/subprocess.html#popen-constructor
 Tous les arguments sont configurables sauf les suivants : ``stdout``, ``stderr``, ``bufsize``, ``close_fds``, ``preexec_fn``.
-Cependant les quatres suivants seront les plus utiles:
+Cependant les trois suivants seront les plus utiles:
 
     * `args`: soit une séquence d'arguments de programme, soit une chaine de caractères
     * `cwd`: le chemin du reepertoire de travail. Par défaut : ``None``
@@ -284,7 +284,7 @@ Cependant les quatres suivants seront les plus utiles:
 
 Il est recommandé que ``args`` soit une liste d'arguments et non une simple chaîne de caractères.
 
-L'example suivant démontre comment on peut configurer cette propriété pour lancer le dump des notices avec la commande ``dump_record``.
+L'exemple suivant démontre comment on peut configurer cette propriété pour lancer le dump des notices avec la commande ``dump_record``.
 
 .. code-block:: python
 

@@ -54,7 +54,7 @@ class ConfirmScriptView(TemplateView):
     
     def get_context_data(self, **kwargs):
         return {
-            'command_line' : " ".join(getattr(settings,"ADMIN_SCRIPT", {}).get('command',"")),
+            'command_line' : " ".join(getattr(settings,"ADMIN_SCRIPT", {}).get('args',"")),
             'env' : repr(getattr(settings,"ADMIN_SCRIPT", {}).get('env',{})),
             'cwd' : repr(getattr(settings,"ADMIN_SCRIPT", {}).get('cwd',"")),
         }
