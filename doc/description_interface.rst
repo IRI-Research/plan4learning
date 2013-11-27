@@ -39,15 +39,35 @@ C'est une recherche de type full-text qui porte sur les champs suivants des noti
   
     * identifiant
     * titres (dans toutes les langues)
-    * années de publication
-    * autheurs (personnes et entités)
+    * auteurs (personnes et entités)
 
 Le champ de recherche permet l'utilisation d'un mini language de requête décrit à l'adresse suivante : http://pythonhosted.org/Whoosh/querylang.html
 Les points à noter à ce ce sujet sont :
   
+    * La recherche ne tient pas compte des accents
     * L'opérateur par défaut est le ``OR``.
     * la valeur du spécifieur ``field`` doit être dans la liste suivante : ``identifier``, ``titles``, ``years``, ``authors``.
 
+Opérateurs de recherche : AND, OR, NOT
+--------------------------------------
+
+    * ``032221`` cherche ``032221`` dans les titres et les auteurs et les identifiants.
+    * ``language education`` cherche les mots ``language`` OU ``education`` dans les titres et les auteurs et les identifiants.
+    * ``language AND education`` cherche les mots ``language`` ET ``education`` dans les titres et les auteurs et les identifiants.
+    * ``language NOT education`` cherche le mot ``language`` SANS le mot ``education`` dans les titres et les auteurs et les identifiants.
+
+Parenthèses
+-----------
+ 
+    * ``(language AND education) OR maternelle`` cherche les notices contenant soit les mots ``language`` ET ``education``, soit le mot ``maternelle``
+
+Champs de recherche
+-------------------
+
+    * ``titles:education`` cherche ``education`` uniquement dans les titres
+    * ``authors:caillods`` cherche ``caillods`` uniquement dans les auteurs
+    * ``years:2005`` cherche toutes les notices dont l'année est 2005 (ne cherche pas 2005 dans le titre)
+    * ``education AND years:2005`` cherche ``education`` pour toutes les notices dont la date est 2005
 
 .. _interface-detail:
 
@@ -57,7 +77,7 @@ Visionnage d'une notice
 .. image:: _static/p4l_detail.png
     :width: 600pt
 
-Cet écran donne accès à l'affichage du deetail d'une notice. Deux boutons permettent soit de passer à l'écran d'édition de la notice, soit de pouvoir l'éfacer.
+Cet écran donne accès à l'affichage du détail d'une notice. Deux boutons permettent soit de passer à l'écran d'édition de la notice, soit de pouvoir l'éfacer.
 Un dialogue de confirmation de l'effacement sera affiché préalablement à l'utilisateur.
 Par contre, tout effacement d'une notice est définitif.
 
@@ -79,6 +99,6 @@ Tout les changements non sauvegardés seront perdus.
 
 Tous les champs sont éditables, a part les champs "identifiant" et "URI" qui sont en lecture seule.
 
-Deux boutons sont disponibles pour accéder au deetail de la notice ou bien à son effacement. Dans ce dernier cas un dialogue de confirmation sera affiché anant l'effacement définitif de la notice.
+Deux boutons sont disponibles pour accéder au détail de la notice ou bien à son effacement. Dans ce dernier cas un dialogue de confirmation sera affiché anant l'effacement définitif de la notice.
 
   
