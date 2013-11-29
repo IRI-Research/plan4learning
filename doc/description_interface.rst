@@ -25,10 +25,9 @@ Liste des notices
     :width: 600pt
 
 Cet écram donne la liste des notices et permet la recherche.
-La recherche se fait sur l'identifiant d'une notice, le(s) titre(s) d'une notice et les autheurs (personnes ou institutions).
+La recherche se fait sur l'identifiant d'une notice, le(s) titre(s) d'une notice et les auteurs (personnes ou institutions).
 
-Sans recherche, les notices sont affichées dans l'ordre de leur identifiant (tri lexicographique ascendant).
-Par contre lorsque'une recherche à été lancée, les notices sont affichées dans l'ordre retourné par le moteur d'indexation.
+Les notices sont affichées dans l'ordre de leur identifiant (tri lexicographique ascendant) lorsque qu'aucune recherche n'est faite. Elles sont triées par tri de pertinence lorsqu'une recherche a été effectuée.
 
 En haut de la liste un bouton permet l'ouverture du dialogue de création d'une nouvelle notice.
 Pour chaque notice de la liste 2 boutons sont proposés : vue de du détail de la liste ou bien édition. 
@@ -51,15 +50,30 @@ Les points à noter à ce ce sujet sont :
 Opérateurs de recherche : AND, OR, NOT
 --------------------------------------
 
+    * Les opérateurs de recherche AND, OR et NOT doivent s'écrire en majuscules.
     * ``032221`` cherche ``032221`` dans les titres et les auteurs et les identifiants.
+    * ``032221 021099`` trouvera les deux notices avec ces deux identifiants.
     * ``language education`` cherche les mots ``language`` OU ``education`` dans les titres et les auteurs et les identifiants.
     * ``language AND education`` cherche les mots ``language`` ET ``education`` dans les titres et les auteurs et les identifiants.
     * ``language NOT education`` cherche le mot ``language`` SANS le mot ``education`` dans les titres et les auteurs et les identifiants.
+
+Guillemets
+----------
+
+    * On peut mettre entre guillemets deux ou plusieurs termes pour chercher exactement sur cette expression
+    * ``"school factors"`` cherche exactement l'expression "school factors" (et non pas "school OR factor", ni "school AND factor")
 
 Parenthèses
 -----------
  
     * ``(language AND education) OR maternelle`` cherche les notices contenant soit les mots ``language`` ET ``education``, soit le mot ``maternelle``
+
+Troncature et joker ('*' et '?')
+--------------------------------
+
+    * le caractère ``*`` remplace n'importe quel nombre de lettres à la fin d'un terme. Le caractère ``?`` remplace un caractère et un seul, à la fin ou au milieu d'un terme de recherche.
+    * ``lang*`` cherche tous les mots qui commencent par "lang" (language, langage, langagier, etc.)
+    * ``l?ng`` trouvera à la fois "lang" et "long"
 
 Champs de recherche
 -------------------
