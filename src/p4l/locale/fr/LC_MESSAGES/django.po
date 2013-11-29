@@ -86,12 +86,12 @@ msgstr "Lancer"
 
 #: templates/p4l/base.html:36
 msgid "logout"
-msgstr "déconnection"
+msgstr "déconnexion"
 
 #: templates/p4l/base.html:38 templates/registration/login.html:4
 #: templates/registration/login.html:27
 msgid "login"
-msgstr "connection"
+msgstr "connexion"
 
 #: templates/p4l/home.html:6 templates/p4l/home.html.py:15
 msgid "Record List"

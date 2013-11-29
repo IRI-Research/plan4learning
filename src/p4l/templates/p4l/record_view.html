@@ -7,6 +7,12 @@
 {% block page_title %}{% trans 'Record' %} {{ record.identifier }} - {% trans 'View' %}{% endblock %}
 
 {% block content %}
+<div class="col-md-6">
+    <a class="btn btn-primary" id="record-back" href="javascript: window.history.back();" target="_self">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        <span>{% trans 'Cancel' %}</span>
+    </a>
+</div>
 <div class="row text-right">
     <a class="btn btn-default" href="{% url 'p4l_record_edit' slug=record.identifier %}?previous={{request.get_full_path|urlencode}}">{% trans 'Edit the record' %} <i class="glyphicon glyphicon-pencil"></i></a>
     <a class="btn btn-default" href="{% url 'p4l_record_delete' slug=record.identifier %}" onclick="return confirm('{% trans 'Are your sure you want to delete this record ? This action is irreversible.' %}')">{% trans 'Delete the record' %} <i class="glyphicon glyphicon-trash"></i></a>
