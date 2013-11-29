@@ -338,7 +338,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                     "FILTER (lang(?label) = {lang}). " 
                     "FILTER NOT EXISTS {{ [skos:member ?uri] }}. "
                 "}} "
-                "ORDER BY ?label"
+                "ORDER BY str(?label)"
             ),
             "childs" : (
                 "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> "
@@ -354,7 +354,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                   "?uri skos:prefLabel|rdfs:label ?label. "
                   "FILTER (lang(?label) = {lang}). "
                 "}} "
-                "ORDER BY ?label"
+                "ORDER BY str(?label)"
             ),
             "child-count" : (
                 "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> "
@@ -403,7 +403,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                     "FILTER (lang(?label) = {lang}). " 
                     "FILTER NOT EXISTS {{ [skos:member ?uri] }} "
                 "}} "
-                "ORDER BY ?label"
+                "ORDER BY str(?label)"
             ),
             'childs' : (
                 "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> "
@@ -419,7 +419,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                   "?uri skos:prefLabel|rdfs:label ?label. "
                   "FILTER (lang(?label) = {lang}). "
                 "}} "
-                "ORDER BY ?label "
+                "ORDER BY str(?label)"
             ),
             'child-count' : (
                 "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> "
@@ -467,7 +467,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                     "FILTER (lang(?label) = {lang}). " 
                     "FILTER NOT EXISTS {{ [skos:narrower ?uri] }} "
                 "}} "
-                "ORDER BY ?label "
+                "ORDER BY str(?label)"
             ),
             'childs' : (
                 "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> "
@@ -483,7 +483,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                   "?uri skos:prefLabel|rdfs:label ?label. "
                   "FILTER (lang(?label) = {lang}). "
                 "}} "
-                "ORDER BY ?label"
+                "ORDER BY str(?label)"
             ),
             'child-count' : (
                 "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> "
@@ -531,7 +531,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                     "FILTER (lang(?label) = {lang}).  "
                     "FILTER NOT EXISTS {{ [skos:narrower ?uri] }} "
                 "}} "
-                "ORDER BY ?label"
+                "ORDER BY str(?label)"
             )
         },
         'projects': {
@@ -566,7 +566,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                     "skos:prefLabel ?label . "
                     "OPTIONAL {{ ?uri skos:altLabel ?acro }} "
                 "}} "
-                "ORDER BY ?label"
+                "ORDER BY str(?label)"
             )
         },
         'organizations': {
@@ -601,7 +601,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                          "skos:prefLabel ?label . "
                     "OPTIONAL {{ ?uri skos:altLabel ?acro }} "
                 "}} "
-                "ORDER BY ?label"
+                "ORDER BY str(?label)"
             )
         },
         'types': {
@@ -638,7 +638,7 @@ if not "SPARQL_REF_QUERIES" in locals():
                     "FILTER (lang(?label) = {lang}).  "
                     "FILTER NOT EXISTS {{ [skos:narrower ?uri] }} "
                 "}} "
-                "ORDER BY ?label "
+                "ORDER BY str(?label)"
             )
         },
         'audiences': {
