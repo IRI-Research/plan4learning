@@ -7,14 +7,14 @@ Ces écrans sont des pages html5.
 Ces pages utilisent le framework css Bootstrap (http://getbootstrap.com/).
 
 
-Connection
-==========
+Connexion
+=========
 
 .. image:: _static/p4l_connect.png
     :width: 600pt
 
 Toutes les pages de l'application sont protégées par un système de login/mot de passe.
-Ce dialogue de connection s'affiche lorsque l'utilisateur essaye d'accéder à une des pages de l'application et qu'il n'est pas connecté.
+Ce dialogue de connexion s'affiche lorsque l'utilisateur essaye d'accéder à une des pages de l'application et qu'il n'est pas connecté.
 
 
 
@@ -24,7 +24,7 @@ Liste des notices
 .. image:: _static/p4l_list.png
     :width: 600pt
 
-Cet écram donne la liste des notices et permet la recherche.
+Cet écran donne la liste des notices et permet la recherche.
 La recherche se fait sur l'identifiant d'une notice, le(s) titre(s) d'une notice et les auteurs (personnes ou institutions).
 
 Les notices sont affichées dans l'ordre de leur identifiant (tri lexicographique ascendant) lorsque qu'aucune recherche n'est faite. Elles sont triées par tri de pertinence lorsqu'une recherche a été effectuée.
@@ -40,8 +40,8 @@ C'est une recherche de type full-text qui porte sur les champs suivants des noti
     * titres (dans toutes les langues)
     * auteurs (personnes et entités)
 
-Le champ de recherche permet l'utilisation d'un mini language de requête décrit à l'adresse suivante : http://pythonhosted.org/Whoosh/querylang.html
-Les points à noter à ce ce sujet sont :
+Le champ de recherche permet l'utilisation d'un mini langage de requête décrit à l'adresse suivante : http://pythonhosted.org/Whoosh/querylang.html
+Les points à noter à ce sujet sont :
   
     * La recherche ne tient pas compte des accents
     * L'opérateur par défaut est le ``OR``.
@@ -91,7 +91,7 @@ Visionnage d'une notice
 .. image:: _static/p4l_detail.png
     :width: 600pt
 
-Cet écran donne accès à l'affichage du détail d'une notice. Deux boutons permettent soit de passer à l'écran d'édition de la notice, soit de pouvoir l'éfacer.
+Cet écran donne accès à l'affichage du détail d'une notice. Deux boutons permettent soit de passer à l'écran d'édition de la notice, soit de pouvoir l'effacer.
 Un dialogue de confirmation de l'effacement sera affiché préalablement à l'utilisateur.
 Par contre, tout effacement d'une notice est définitif.
 
@@ -106,13 +106,14 @@ Par contre, tout effacement d'une notice est définitif.
 
 Cet écran permet l'édition d'une notice (nouvelle ou bien existante).
 Un bouton d'annulation permet d'interrompre l'édition d'une fiche à tout moment.
-Les modifications d'une fiche (ou bien sa création) ne seront sauvegardées seulement après avoir appuyer sur le boouton de sauvegarde.
+Les modifications d'une fiche (ou bien sa création) ne seront sauvegardées seulement après avoir appuyer sur le bouton de sauvegarde.
 
-Toute navigation hors de cet écran que ce soit en cliquant sur l'un des lien ou un des boutons de l'interface ou que ce soit en utilisant les fonctionalité du navigateur annulera sans prévenir l'édition en cours.
-Tout les changements non sauvegardés seront perdus.
+Toute navigation hors de cet écran que ce soit en cliquant sur l'un des lien ou un des boutons de l'interface ou que ce soit en utilisant les fonctionnalités du navigateur annulera sans prévenir l'édition en cours.
+Tous les changements non sauvegardés seront perdus.
 
 Tous les champs sont éditables, a part les champs "identifiant" et "URI" qui sont en lecture seule.
 
-Deux boutons sont disponibles pour accéder au détail de la notice ou bien à son effacement. Dans ce dernier cas un dialogue de confirmation sera affiché anant l'effacement définitif de la notice.
+Deux boutons sont disponibles pour accéder au détail de la notice ou bien à son effacement. Dans ce dernier cas un dialogue de confirmation sera affiché avant l'effacement définitif de la notice.
 
-  
+
+

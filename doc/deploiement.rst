@@ -5,15 +5,15 @@ Déploiement
 La documentation de déploiement suivante est sur la base d'une Debian 7.0 (Wheezy).
 
 
-options de déploiement
+Options de déploiement
 ======================
 
-De nombreuses options de déploiement existe. Les plus populaires sont décrite sur le site Django à l'adresse suivante : https://docs.djangoproject.com/en/1.5/howto/deployment/.
+De nombreuses options de déploiement existent. Les plus populaires sont décrite sur le site Django à l'adresse suivante : https://docs.djangoproject.com/en/1.5/howto/deployment/.
 
 Nous décrivons ici l'installation de l'option apache + modwsgi : https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/
 
 
-installation des prérequis
+Installation des prérequis
 ==========================
 
 Liste des prérequis
@@ -26,7 +26,7 @@ Liste des prérequis
 - sesame
 
 Le reste des dépendances est fourni dans les sources.
-Toute les commandes ci dessous doivent se faire entant que ``root``, typiquement en prefixant toute les commandes avec ``sudo``.
+Toute les commandes ci dessous doivent se faire entant que ``root``, typiquement en préfixant toute les commandes avec ``sudo``.
 
 
 Python 2.7
@@ -44,7 +44,7 @@ Dans tous les cas, il faut installer les outils de développement python::
 Apache et mod-wsgi
 ------------------
 
-On utilise les versions distribuée avec la debian 7.
+On utilise les versions distribuées avec la debian 7.
 ::
 
     apt-get install apache2
@@ -74,7 +74,7 @@ Télécharger le paquet debian (deb) à l'adresse suivante : https://download.el
 Build tools
 ----------- 
 
-La création de l'environement virtuel nécessite l'installation des outils de base de compilation. ::
+La création de l'environnement virtuel nécessite l'installation des outils de base de compilation. ::
 
     apt-get install build-essential
 
@@ -87,27 +87,27 @@ L'installation d'un tel serveur est hors du scope de cette documentation.
 
 Une partie de l'application accède au serveur Sesame directement en javascript depuis le navigateur de l'utilisateur.
 Si le serveur Sesame est sur un autre domaine que l'application Back-Office (même si seulement le numéro de port change), 
-il est nécessaire qu'il supporte les en-têtes CORS (c.f. http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) en autorisant le domaine de l'application Back-Office. 
+il est nécessaire qu'il supporte les en-têtes CORS (cf. http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) en autorisant le domaine de l'application Back-Office. 
 
 
 
 Etapes de déploiement
 =====================
 
-L'ensemble des commandes suivantes ne nécessite pas d'être exécutées comme utilisateur prilivégié.
+L'ensemble des commandes suivantes ne nécessite pas d'être exécutées comme utilisateur privilégié.
 
 Organisation des sources / commandes Django
 -------------------------------------------
 
-Les fichiers du projets peuvent être organisés en 4 groupes correspondant à des sous-répertoires 
-  - ``src`` : contient l'ensemble du code, template et resources statiques
-  - ``virtualenv`` : script de création de l'environement virtuel et dépendances python
-  - ``web`` : répertoire de publication des resources statiques 
+Les fichiers du projet peuvent être organisés en 4 groupes correspondant à des sous-répertoires 
+  - ``src`` : contient l'ensemble du code, template et ressources statiques
+  - ``virtualenv`` : script de création de l'environnement virtuel et dépendances python
+  - ``web`` : répertoire de publication des ressources statiques 
   - ``run`` : répertoire contenant les logs de l'application
 
-Django fournit un utilitaire en ligne de commande permettant l'execution de tâche d'administration. La documentation se trouve à l'adresse suivante : https://docs.djangoproject.com/en/1.5/ref/django-admin/ .
+Django fournit un utilitaire en ligne de commande permettant l'exécution de tâche d'administration. La documentation se trouve à l'adresse suivante : https://docs.djangoproject.com/en/1.5/ref/django-admin/ .
 
-Les resources statiques sont tous les fichiers additionnels qui constituent un site web : images, javascript, css,... .
+Les ressources statiques sont tous les fichiers additionnels qui constituent un site web : images, javascript, css,... .
 
 
 .. _deployment-virtualenv:
@@ -115,21 +115,21 @@ Les resources statiques sont tous les fichiers additionnels qui constituent un s
 Virtualenv
 ----------
 
-L'environement d'execution python est isolé de l'environement du système par l'utilisation d'un environement virtuel ou ``virtualenv``.
+L'environnement d'exécution python est isolé de l'environnement du système par l'utilisation d'un environnement virtuel ou ``virtualenv``.
 Une documentation d'utilisation se trouve à l'adresse suivante : http://www.virtualenv.org/en/latest/ .
-Il faut en particulier noter la procédure d'activation de l'environement virtuel. Dans la suite, les commandes d'administration django devront être lancées après cette activation. 
+Il faut en particulier noter la procédure d'activation de l'environnement virtuel. Dans la suite, les commandes d'administration django devront être lancées après cette activation. 
 
-Un script permettant la création de l'environement virtuel et de l'installation de toutes les dépendances "python" est fourni dans le répertoire ``virtualenv``.
+Un script permettant la création de l'environnement virtuel et de l'installation de toutes les dépendances "python" est fourni dans le répertoire ``virtualenv``.
 
 .. code-block :: sh
 
     cd virtualenv/web/
     python create_python_env.py
-    python project-boot.py <chemin de l'environement virtuel>
+    python project-boot.py <chemin de l'environnement virtuel>
 
 
-Au cours de l'exploitation du serveur et en particulier lors des mise à jour du système d'exploitation, il faut être attentif aux mise à jour de la distribution python ayant servie à la création de l'environement virtuel.
-Si la version de python est mise à jour, l'environement virtuel devra lui aussi être mis à jour.
+Au cours de l'exploitation du serveur et en particulier lors des mise à jour du système d'exploitation, il faut être attentif aux mise à jour de la distribution python ayant servie à la création de l'environnement virtuel.
+Si la version de python est mise à jour, l'environnement virtuel devra lui aussi être mis à jour.
 
 Configuration
 -------------
@@ -158,33 +158,33 @@ La base est crée en plusieurs étapes. D'abord il faut créer la base de donné
 
 Tout autre méthode est correcte. Attention cependant d'utiliser un encoding "utf-8". 
 
-Le schema de la base est créé avec la commande django suivante (penser à préalablement activer l'environement virtuel)::
+Le schéma de la base est créé avec la commande Django suivante (penser à préalablement activer l'environnement virtuel)::
 
     python manage.py syncdb --migrate
 
-Enfin on crée un "super" utilisateur pouvant accéder à l'admininistration du site.:: 
+Enfin on crée un "super" utilisateur pouvant accéder à l'administration du site.:: 
 
     python manage.py createsuperuser
 
 
-Déploiement des resources statiques
------------------------------------
+Déploiement des ressources statiques
+------------------------------------
 
-Le déploiement des resources statiques du site se font à l'aide de la commande suivante:
+Le déploiement des ressources statiques du site se fait à l'aide de la commande suivante:
 ::
 
     python manage.py collecststatic
 
 
-configuration web
+Configuration web
 -----------------
 
 La configuration web (apache) est documentée à l'adresse suivante : https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/ .
-Comme cette configuration dépend de l'environement propre au serveur, nous n'en détaillerons pas les étapes. 
+Comme cette configuration dépend de l'environnement propre au serveur, nous n'en détaillerons pas les étapes. 
 
 Cependant, voici une liste des points notables:
 
 - Bien faire la séparation entre la partie dynamique servie par modwsgi, et la partie statique servie par apache.
-- le système utilise un environement virtuel. Pensez bien à renseigner le chemin du répertoire ``site-packages`` dans la directive ``WSGIPythonPath``
+- le système utilise un environnement virtuel. Pensez bien à renseigner le chemin du répertoire ``site-packages`` dans la directive ``WSGIPythonPath``
 - L'utilisation de ``mod_wsgi`` en mode démon (``daemon mode``) est fortement recommandée.
   
