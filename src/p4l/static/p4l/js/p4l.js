@@ -153,7 +153,7 @@ app.directive('objectList', function(RecordModel, context) {
                     $scope.list[$scope.editedIndex] = $scope.editedObj;
                 }
                 else {
-                    $scope.list.push($scope.editedObj);    
+                    $scope.list.push($scope.editedObj);
                 }
                 
                 $scope.setEditedObject(null, -1);
@@ -161,7 +161,7 @@ app.directive('objectList', function(RecordModel, context) {
             }
             
             $scope.onCancel = function() {
-                $scope.setEditedObject(null, -1);                
+                $scope.setEditedObject(null, -1);
             }
         }
     };
@@ -205,8 +205,10 @@ app.directive('addSemUri', function(RecordModel, context, $timeout){
 	    $scope.uriInDict = false;
 	    
 	    $scope.addUriToList = function() {
-	    	$scope.list.push($scope.addUriText);
-	        $scope.addUriText = '';
+	        if($scope.addUriText.match("^http://")) {
+	            $scope.list.push($scope.addUriText);
+	            $scope.addUriText = '';
+	        }
 	    };
 	    $scope.removeFromList = function(obj) {
             var i = $scope.list.indexOf(obj);
@@ -241,7 +243,7 @@ app.directive('simpleSemUri', function(RecordModel, context, $timeout) {
         link: function($scope, $element, $attrs) {
             // Get queries attributes from $scope listname and context query dict
             var attr_dict = context.query_dicts[$scope.listname];
-            angular.extend($scope, attr_dict);            
+            angular.extend($scope, attr_dict);
             $scope.formVisible = false;
             
             // initalize autocomplete and browse thesaurus events
@@ -259,7 +261,9 @@ app.directive('simpleSemUri', function(RecordModel, context, $timeout) {
     	    $scope.uriInDict = false;
 
             $scope.updateVal = function() {
-                $scope.val = $scope.addUriText;
+                if($scope.addUriText.match("^http://")) {
+                    $scope.val = $scope.addUriText;
+                }
             };
 
             $scope.updateUriLabelDict = function(k,v) {
