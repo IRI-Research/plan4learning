@@ -212,6 +212,10 @@ LOGGING = {
 }
 
 NB_RECORDS_BY_PAGE = 20
+#some control on the pagination appareance
+PAGINATOR_VISIBLE_RANGE = 5 #number of visible pages
+PAGINATOR_START_RANGE = 2 #number of pages kept at the beggining and at the end of the range
+
 
 HAYSTACK_CONNECTIONS = {
     'default': {
@@ -284,6 +288,7 @@ ADMIN_SCRIPT = {}
 
 SCRIPT_WAIT = .250
 SCRIPT_MAX_WAIT = 40 # * SCRIPT_WAIT = 10 sec
+
 
 from config import *  # @UnusedWildImport
 

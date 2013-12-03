@@ -161,6 +161,9 @@ REALTIME_INDEXING = True
 
 # pagination of the list of record
 NB_RECORDS_BY_PAGE = 20
+#some control on the pagination appareance
+PAGINATOR_VISIBLE_RANGE = 5 #number of pages
+PAGINATOR_START_RANGE = 2 #number of pages kept at the beggining and at the end of the range
 
 # url of the sesame repository containing all the rdf referentials
 SPARQL_QUERY_ENDPOINT = "http://localhost:8080/openrdf-sesame/repositories/plan4learning"
@@ -171,4 +174,5 @@ ADMIN_SCRIPT = {
     'cwd' : "/Users/ymh/dev/workspace/plan4learning/src",
     'env' : {'PYTHONPATH': '/Users/ymh/dev/venvs/p4l/lib/python2.7/site-packages'}
 }
+
 

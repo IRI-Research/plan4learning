@@ -25,19 +25,23 @@
 	  </form>
 	</div>
 </div>
- <div class="pagination pull-right">
- {% if page.has_previous or page.has_next %}
-    <span class="page-links">
-        {% if page.has_previous %}
-            <a href="?page={{ page.previous_page_number }}&q={{query}}">{% trans 'Previous' %}</a>
+<div class="pagination pull-right">
+  {% if page.has_previous or page.has_next %}
+    <ul class="pagination">
+        <li class="{% if page.number == 1 %}disabled{% endif %}"><a {% if page.number != 1 %}href="?page=1&q={{query}}"{% endif %}>&lt;&lt;</a></li>
+        <li class="{% if not page.has_previous %}disabled{% endif %}"><a {% if page.has_previous %}href="?page={{ page.previous_page_number }}&q={{query}}"{% endif %}>&lt;</a></li>
+        {% for p in page.visible_page_range %}
+        {% if p == 0 %}
+        <li class="disabled"><a>&hellip;</a></li>
+        {% elif p == page.number %}
+        <li class="active"><a>{{ page.number }}</a></li>
+        {% else %}
+        <li><a href="?page={{ p }}&q={{query}}">{{ p }}</a></li>
         {% endif %}
-        <span class="page-current">
-            {% trans 'Page' %} {{ page.number }} {% trans 'on' %} {{ paginator.num_pages }}
-        </span>
-        {% if page.has_next %}
-            <a href="?page={{ page.next_page_number }}&q={{query}}">{% trans 'Next' %}</a>
-        {% endif %}
-    </span>
+        {% endfor %}
+        <li class="{% if not page.has_next %}disabled{% endif %}"><a {% if page.has_next %}href="?page={{ page.next_page_number }}&q={{query}}"{% endif %}>&gt;</a></li>
+        <li class="{% if not page.has_next or page.number == paginator.num_pages %}disabled{% endif %}"><a {% if page.has_next and page.number != paginator.num_pages %}href="?page={{ paginator.num_pages }}&q={{query}}"{% endif %} >&gt;&gt;</a></li>
+    </ul>
 {% else %}
     <span>&nbsp;</span>
 {% endif %}    

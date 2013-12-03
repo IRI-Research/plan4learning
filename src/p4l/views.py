@@ -149,7 +149,7 @@ class RecordEditView(DetailView):
         context['languages_list'] = json.dumps(settings.LANGUAGES_LIST)
         
         context['is_create_view'] = json.dumps(self.is_create_view)
-                
+
         return context
 
 

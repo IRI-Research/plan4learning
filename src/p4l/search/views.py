@@ -33,11 +33,14 @@
 
 
 from django.conf import settings
+from django.core.paginator import InvalidPage
+from django.http.response import Http404
 from django.template.context import RequestContext
 from haystack.query import SearchQuerySet
 from haystack.views import SearchView, search_view_factory
 
 from p4l.search.forms import RecordSearchForm
+from p4l.utils import P4lPaginator
 
 
 class RecordSearchView(SearchView):
@@ -52,3 +55,32 @@ class RecordSearchView(SearchView):
     @classmethod
     def as_view(cls):
         return search_view_factory(view_class=cls)
+    
+    def build_page(self):
+        """
+        Paginates the results appropriately.
+
+        In case someone does not want to use Django's built-in pagination, it
+        should be a simple matter to override this method to do what they would
+        like.
+        """
+        try:
+            page_no = int(self.request.GET.get('page', 1))
+        except (TypeError, ValueError):
+            raise Http404("Not a valid number for page.")
+
+        if page_no < 1:
+            raise Http404("Pages should be 1 or greater.")
+
+        start_offset = (page_no - 1) * self.results_per_page
+        self.results[start_offset:start_offset + self.results_per_page]
+
+        paginator = P4lPaginator(self.results, self.results_per_page)
+
+        try:
+            page = paginator.page(page_no)
+        except InvalidPage:
+            raise Http404("No such page!")
+
+        return (paginator, page)
+

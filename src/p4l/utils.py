@@ -32,13 +32,14 @@
 #
 
 import codecs
+import hashlib
 import logging
 import math
-import hashlib
 import sys
 import unicodedata
 
 from django.conf import settings
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, Page
 from django.core.validators import URLValidator
 from django.utils.http import urlquote_plus
 import requests
@@ -245,5 +246,56 @@ def safe_cache_key(value):
     
     return hashlib.md5(value).hexdigest()
 
+
+class P4lPaginator(Paginator):
+
+    def validate_number(self, number):
+        "Validates the given 1-based page number."
+        try:
+            number = int(number)
+        except (TypeError, ValueError):
+            raise PageNotAnInteger('That page number is not an integer')
+        if number < 1:
+            return 1
+        if number > self.num_pages:
+            if number == 1 and self.allow_empty_first_page:
+                return 1
+            elif self.num_pages > 0: 
+                return self.num_pages
+            else:
+                raise EmptyPage('That page contains no results')
+        return number
+
+    
+    def page(self, number):        
+        page = super(P4lPaginator, self).page(number)
+        return P4lPage(page.object_list, page.number, self)
+
+
+class P4lPage(Page):
+    
+    visible_range = getattr(settings, 'PAGINATOR_VISIBLE_RANGE', 5)
+    start_range = getattr(settings, 'PAGINATOR_START_RANGE', visible_range/2)
+        
+    def __get_start_range(self):
+        return max(1,self.number-self.visible_range/2)
+    
+    def __get_end_range(self):
+        return min(self.paginator.num_pages, self.number+self.visible_range/2) + 1
+    
+    def visible_page_range(self):        
+        start = self.__get_start_range()
+        end = self.__get_end_range()
+                
+        ranges = set(range(1,self.start_range+1)) | set(range(start , end)) | set(range(self.paginator.num_pages - self.start_range +1, self.paginator.num_pages+1))
+        prev = None
+        res = []
+        for i in sorted(ranges):
+            if 1 <= i <= self.paginator.num_pages:
+                if prev and i-prev > 1:
+                    res.append(0)
+                res.append(i)
+                prev = i
+        return res
 
     
