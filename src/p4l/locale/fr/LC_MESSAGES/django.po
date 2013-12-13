@@ -194,11 +194,11 @@ msgstr "Valeur"
 
 #: templates/p4l/record_view.html:32
 msgid "added titles"
-msgstr "Contient"
+msgstr "Contient (added titles)"
 
 #: templates/p4l/record_view.html:36
 msgid "titles main document"
-msgstr "In"
+msgstr "In (titre doc. principal)"
 
 #: templates/p4l/record_view.html:40
 msgid "authors"
