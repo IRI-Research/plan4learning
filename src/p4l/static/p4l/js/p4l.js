@@ -3,10 +3,6 @@
 
 var app = angular.module("recordApp", ['ngResource', 'ngRoute', 'pascalprecht.translate']);
 
-app.constant('p4lConfig', {
-    routeEvent: ['$locationChangeStart', '$stateChangeStart']
-});
-
 app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
@@ -298,7 +294,7 @@ app.directive('languagesListInput', function(RecordModel, context) {
     };
 });
 
-app.controller("RecordCtrl", function($translate, $scope, $location, RecordModel, context, $log, p4lConfig, $window){
+app.controller("RecordCtrl", function($translate, $scope, $location, RecordModel, context, $log, $window){
     
     $scope.record = RecordModel.record;
     $scope.uriLabels = RecordModel.uriLabels;

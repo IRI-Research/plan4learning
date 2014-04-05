@@ -6,6 +6,7 @@
 
 {% block css_page %}
   <link rel="stylesheet" href="{% static 'p4l/lib/css/smoothness/jquery-ui.min.css' %}">
+  <link rel="stylesheet" href="{% static 'p4l/lib/themes/default/style.min.css' %}">
   <link rel="stylesheet" href="{% static 'p4l/css/semantictree.css' %}">
 {% endblock %}
 
@@ -17,10 +18,14 @@
 <script type="text/javascript" src="{% static 'p4l/lib/angular-mod/angular-translate.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/lib/jquery-1.11.0.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/lib/jquery-ui-1.10.4.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'p4l/lib/jquery.jstree.js' %}"></script>
+<script type="text/javascript" src="{% static 'p4l/lib/jstree.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/js/p4l.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/js/semantictree.js' %}"></script>
 <script type="text/javascript">
+    semantictree_config = {
+        cancel_button_text : "{% trans 'Cancel' %}",
+        ok_button_text : "{% trans 'Ok' %}",
+    }
     angular.module("recordApp")
         .value('context', {
             record: angular.fromJson('{{object_json | safe | addslashes}}'),

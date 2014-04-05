@@ -15,7 +15,7 @@
 	        <span id="dialog-link-container-{{ $id }}" class="dialog-link-container ui-state-default ui-corner-all">
 	            <a href="#" id="dialog-link-{{ $id }}" class="btn dialog-link thin-button" title="Browse" ng-class="{disabled: datarootquery==''}" >{{'Browse' | translate}}</a>
 	        </span>
-	        <span id="dialog-{{ $id }}" class="dialog" title="Select term"><span id="term-tree-{{ $id }}"></span></span>
+	        <span id="dialog-{{ $id }}" class="dialog" title="{{'Select term' | translate}}"><span id="term-tree-{{ $id }}"></span></span>
 	    </div>
 	    <div class="form-group">
 	        <button type="submit" class="btn btn-primary" ng-click="addUriToList()" ng-class="{disabled: !uriInDict }">{{'Add' | translate}}</button>

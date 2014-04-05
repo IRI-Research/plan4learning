@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-04 20:37-0500\n"
+"POT-Creation-Date: 2014-04-05 08:05-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,31 +148,36 @@ msgstr "Registro"
 msgid "View"
 msgstr "Ver"
 
-#: templates/p4l/record_update_form.html:56
-#: templates/p4l/record_update_form.html:244 templates/p4l/translations.html:4
-msgid "Save"
-msgstr "Guardar"
-
-#: templates/p4l/record_update_form.html:60
-#: templates/p4l/record_update_form.html:248 templates/p4l/record_view.html:13
+#: templates/p4l/record_update_form.html:26
+#: templates/p4l/record_update_form.html:65
+#: templates/p4l/record_update_form.html:253 templates/p4l/record_view.html:13
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: templates/p4l/record_update_form.html:64
-#: templates/p4l/record_update_form.html:252
+#: templates/p4l/record_update_form.html:27 templates/p4l/translations.html:26
+msgid "Ok"
+msgstr "Ok"
+
+#: templates/p4l/record_update_form.html:61
+#: templates/p4l/record_update_form.html:249 templates/p4l/translations.html:4
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/p4l/record_update_form.html:69
+#: templates/p4l/record_update_form.html:257
 #: templates/p4l/translations.html:20
 msgid "View the record"
 msgstr "Ver el registro"
 
-#: templates/p4l/record_update_form.html:65
-#: templates/p4l/record_update_form.html:253 templates/p4l/record_view.html:18
+#: templates/p4l/record_update_form.html:70
+#: templates/p4l/record_update_form.html:258 templates/p4l/record_view.html:18
 #: templates/p4l/record_view.html.py:244
 msgid ""
 "Are your sure you want to delete this record ? This action is irreversible."
 msgstr "¿Confirma la supresión? Es irreversible."
 
-#: templates/p4l/record_update_form.html:65
-#: templates/p4l/record_update_form.html:253 templates/p4l/record_view.html:18
+#: templates/p4l/record_update_form.html:70
+#: templates/p4l/record_update_form.html:258 templates/p4l/record_view.html:18
 #: templates/p4l/record_view.html.py:244
 msgid "Delete the record"
 msgstr "Suprimir el registro"
@@ -435,6 +440,10 @@ msgstr ""
 #: templates/p4l/translations.html:24
 msgid "Title"
 msgstr "Título"
+
+#: templates/p4l/translations.html:25
+msgid "Select term"
+msgstr "Seleccione término"
 
 #: templates/p4l/admin/confirm_run_script.html:14
 msgid "Run script"
