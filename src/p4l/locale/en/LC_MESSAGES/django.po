@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-11 14:34+0200\n"
+"POT-Creation-Date: 2014-04-04 20:37-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "English"
 msgid "Spanish"
 msgstr "Spanish"
 
-#: admin/components.py:50 admin/forms.py:62 templates/p4l/record_view.html:126
+#: admin/components.py:50 admin/forms.py:62 templates/p4l/record_view.html:132
 msgid "language"
 msgstr "language"
 
@@ -95,8 +95,7 @@ msgstr "login"
 msgid "Record List"
 msgstr "Record list"
 
-#: templates/p4l/home.html:6 templates/p4l/home.html.py:35
-#: templates/p4l/home.html:75
+#: templates/p4l/home.html:6 templates/p4l/home.html.py:79
 msgid "Page"
 msgstr "Page"
 
@@ -108,37 +107,37 @@ msgstr "Query"
 msgid "New record"
 msgstr "New record"
 
-#: templates/p4l/home.html:32 templates/p4l/home.html.py:72
-msgid "Previous"
-msgstr "Previous"
-
-#: templates/p4l/home.html:35 templates/p4l/home.html.py:75
-msgid "on"
-msgstr "on"
-
-#: templates/p4l/home.html:38 templates/p4l/home.html.py:78
-msgid "Next"
-msgstr "Next"
-
-#: templates/p4l/home.html:48 templates/p4l/record_view.html:24
+#: templates/p4l/home.html:52 templates/p4l/record_view.html:30
 msgid "identifier"
 msgstr "identifier"
 
-#: templates/p4l/home.html:48 templates/p4l/record_view.html:28
+#: templates/p4l/home.html:52 templates/p4l/record_view.html:34
 msgid "titles"
 msgstr "titles"
 
-#: templates/p4l/home.html:48
+#: templates/p4l/home.html:52
 msgid "dates"
 msgstr "dates"
 
-#: templates/p4l/home.html:48
+#: templates/p4l/home.html:52
 msgid "actions"
 msgstr "actions"
 
-#: templates/p4l/home.html:64
+#: templates/p4l/home.html:68
 msgid "No record"
 msgstr "No record"
+
+#: templates/p4l/home.html:76
+msgid "Previous"
+msgstr "Previous"
+
+#: templates/p4l/home.html:79
+msgid "on"
+msgstr "on"
+
+#: templates/p4l/home.html:82
+msgid "Next"
+msgstr "Next"
 
 #: templates/p4l/record_update_form.html:5 templates/p4l/record_view.html:7
 msgid "Record"
@@ -148,210 +147,212 @@ msgstr "Record"
 msgid "View"
 msgstr "View"
 
-#: templates/p4l/record_update_form.html:55 templates/p4l/translations.html:4
+#: templates/p4l/record_update_form.html:56
+#: templates/p4l/record_update_form.html:244 templates/p4l/translations.html:4
 msgid "Save"
 msgstr "Save"
 
-#: templates/p4l/record_update_form.html:59
+#: templates/p4l/record_update_form.html:60
+#: templates/p4l/record_update_form.html:248 templates/p4l/record_view.html:13
 msgid "Cancel"
 msgstr "Cancel"
 
-#: templates/p4l/record_update_form.html:63
-#: templates/p4l/record_update_form.html:251
+#: templates/p4l/record_update_form.html:64
+#: templates/p4l/record_update_form.html:252
 #: templates/p4l/translations.html:20
 msgid "View the record"
 msgstr "View the record"
 
-#: templates/p4l/record_update_form.html:64
-#: templates/p4l/record_update_form.html:252 templates/p4l/record_view.html:12
-#: templates/p4l/record_view.html.py:238
+#: templates/p4l/record_update_form.html:65
+#: templates/p4l/record_update_form.html:253 templates/p4l/record_view.html:18
+#: templates/p4l/record_view.html.py:244
 msgid ""
 "Are your sure you want to delete this record ? This action is irreversible."
 msgstr ""
 "Are your sure you want to delete this record ? This action is irreversible."
 
-#: templates/p4l/record_update_form.html:64
-#: templates/p4l/record_update_form.html:252 templates/p4l/record_view.html:12
-#: templates/p4l/record_view.html.py:238
+#: templates/p4l/record_update_form.html:65
+#: templates/p4l/record_update_form.html:253 templates/p4l/record_view.html:18
+#: templates/p4l/record_view.html.py:244
 msgid "Delete the record"
 msgstr "Delete the record"
 
-#: templates/p4l/record_view.html:11 templates/p4l/record_view.html.py:237
+#: templates/p4l/record_view.html:17 templates/p4l/record_view.html.py:243
 #: templates/p4l/translations.html:21
 msgid "Edit the record"
 msgstr "Edit the record"
 
-#: templates/p4l/record_view.html:16
+#: templates/p4l/record_view.html:22
 msgid "property"
 msgstr "property"
 
-#: templates/p4l/record_view.html:16
+#: templates/p4l/record_view.html:22
 msgid "value"
 msgstr "value"
 
-#: templates/p4l/record_view.html:32
+#: templates/p4l/record_view.html:38
 msgid "added titles"
 msgstr "Added titles"
 
-#: templates/p4l/record_view.html:36
+#: templates/p4l/record_view.html:42
 msgid "titles main document"
 msgstr "In (title main document)"
 
-#: templates/p4l/record_view.html:40
+#: templates/p4l/record_view.html:46
 msgid "authors"
 msgstr "Author(s)"
 
-#: templates/p4l/record_view.html:44
+#: templates/p4l/record_view.html:50
 msgid "corporate authors"
 msgstr "Institution(s)"
 
-#: templates/p4l/record_view.html:48
+#: templates/p4l/record_view.html:54
 msgid "corporate author label"
 msgstr "Institution(s) bibliographical label"
 
-#: templates/p4l/record_view.html:52
+#: templates/p4l/record_view.html:58
 msgid "meetings"
 msgstr "Meeting"
 
-#: templates/p4l/record_view.html:59 templates/p4l/record_view.html.py:96
-#: templates/p4l/record_view.html:180
+#: templates/p4l/record_view.html:65 templates/p4l/record_view.html.py:102
+#: templates/p4l/record_view.html:186
 msgid "Number"
 msgstr "Number"
 
-#: templates/p4l/record_view.html:60 templates/p4l/record_view.html.py:181
+#: templates/p4l/record_view.html:66 templates/p4l/record_view.html.py:187
 msgid "Place"
 msgstr "Place"
 
-#: templates/p4l/record_view.html:61 templates/p4l/record_view.html.py:113
-#: templates/p4l/record_view.html:182
+#: templates/p4l/record_view.html:67 templates/p4l/record_view.html.py:119
+#: templates/p4l/record_view.html:188
 msgid "Date"
 msgstr "Date"
 
-#: templates/p4l/record_view.html:62 templates/p4l/record_view.html.py:183
+#: templates/p4l/record_view.html:68 templates/p4l/record_view.html.py:189
 msgid "Year"
 msgstr "Year"
 
-#: templates/p4l/record_view.html:70
+#: templates/p4l/record_view.html:76
 msgid "series"
 msgstr "Series"
 
-#: templates/p4l/record_view.html:77 templates/p4l/record_view.html.py:95
+#: templates/p4l/record_view.html:83 templates/p4l/record_view.html.py:101
 msgid "Volume"
 msgstr "Volume"
 
-#: templates/p4l/record_view.html:85
+#: templates/p4l/record_view.html:91
 msgid "periodicals"
 msgstr "Periodical"
 
-#: templates/p4l/record_view.html:89
+#: templates/p4l/record_view.html:95
 msgid "volume issues"
 msgstr "Volume"
 
-#: templates/p4l/record_view.html:97 templates/p4l/record_view.html.py:114
+#: templates/p4l/record_view.html:103 templates/p4l/record_view.html.py:120
 msgid "Language"
 msgstr "Language"
 
-#: templates/p4l/record_view.html:105
+#: templates/p4l/record_view.html:111
 msgid "imprints"
 msgstr "Imprint"
 
-#: templates/p4l/record_view.html:111
+#: templates/p4l/record_view.html:117
 msgid "City"
 msgstr "Publisher city"
 
-#: templates/p4l/record_view.html:112
+#: templates/p4l/record_view.html:118
 msgid "Publisher"
 msgstr "Publisher"
 
-#: templates/p4l/record_view.html:122
+#: templates/p4l/record_view.html:128
 msgid "collations"
 msgstr "Pages"
 
-#: templates/p4l/record_view.html:130
+#: templates/p4l/record_view.html:136
 msgid "other languages"
 msgstr "Also available in"
 
-#: templates/p4l/record_view.html:134
+#: templates/p4l/record_view.html:140
 msgid "Urls"
 msgstr "URL"
 
-#: templates/p4l/record_view.html:140
+#: templates/p4l/record_view.html:146
 msgid "Address"
 msgstr "URL"
 
-#: templates/p4l/record_view.html:141
+#: templates/p4l/record_view.html:147
 msgid "Display"
 msgstr "Full text"
 
-#: templates/p4l/record_view.html:149
+#: templates/p4l/record_view.html:155
 msgid "abstracts"
 msgstr "Abstract"
 
-#: templates/p4l/record_view.html:153
+#: templates/p4l/record_view.html:159
 msgid "themes"
 msgstr "Themes"
 
-#: templates/p4l/record_view.html:157
+#: templates/p4l/record_view.html:163
 msgid "countries"
 msgstr "Countries"
 
-#: templates/p4l/record_view.html:161
+#: templates/p4l/record_view.html:167
 msgid "subjects"
 msgstr "Keywords"
 
-#: templates/p4l/record_view.html:165
+#: templates/p4l/record_view.html:171
 msgid "subject persons"
 msgstr "Personal name (subject)"
 
-#: templates/p4l/record_view.html:169
+#: templates/p4l/record_view.html:175
 msgid "subject corporate bodies"
 msgstr "Related institutions"
 
-#: templates/p4l/record_view.html:173
+#: templates/p4l/record_view.html:179
 msgid "subject meetings"
 msgstr "Related meetings"
 
-#: templates/p4l/record_view.html:191
+#: templates/p4l/record_view.html:197
 msgid "project names"
 msgstr "Projects"
 
-#: templates/p4l/record_view.html:195
+#: templates/p4l/record_view.html:201
 msgid "edition statement"
 msgstr "Edition"
 
-#: templates/p4l/record_view.html:199
+#: templates/p4l/record_view.html:205
 msgid "notes"
 msgstr "Notes"
 
-#: templates/p4l/record_view.html:203
+#: templates/p4l/record_view.html:209
 msgid "isbns"
 msgstr "ISBN"
 
-#: templates/p4l/record_view.html:207
+#: templates/p4l/record_view.html:213
 msgid "issns"
 msgstr "ISSN"
 
-#: templates/p4l/record_view.html:211
+#: templates/p4l/record_view.html:217
 msgid "document code"
 msgstr "Document Code"
 
-#: templates/p4l/record_view.html:215
+#: templates/p4l/record_view.html:221
 msgid "record type"
 msgstr "Type of document"
 
-#: templates/p4l/record_view.html:219
+#: templates/p4l/record_view.html:225
 msgid "audiences"
 msgstr "Audiences"
 
-#: templates/p4l/record_view.html:223
+#: templates/p4l/record_view.html:229
 msgid "is document part"
 msgstr "Is document part"
 
-#: templates/p4l/record_view.html:227
+#: templates/p4l/record_view.html:233
 msgid "is hidden"
 msgstr "Hidden record"
 
-#: templates/p4l/record_view.html:231
+#: templates/p4l/record_view.html:237
 msgid "is restricted"
 msgstr "Restricted access"
 
@@ -423,6 +424,18 @@ msgstr "name"
 msgid "An error occured. Somes datas may be incorrect or incomplete."
 msgstr "An error occured. Somes fields may be incorrect or incomplete."
 
+#: templates/p4l/translations.html:23
+msgid ""
+"This page is asking you to confirm that you want to leave - data you have "
+"entered may not be saved."
+msgstr ""
+"This page is asking you to confirm that you want to leave - data you have "
+"entered may not be saved."
+
+#: templates/p4l/translations.html:24
+msgid "Title"
+msgstr "Title"
+
 #: templates/p4l/admin/confirm_run_script.html:14
 msgid "Run script"
 msgstr "Run script"
@@ -474,6 +487,3 @@ msgstr "Username"
 #: templates/registration/login.html:20 templates/registration/login.html:22
 msgid "Password"
 msgstr "Password"
-
-#~ msgid "Title"
-#~ msgstr "Title"

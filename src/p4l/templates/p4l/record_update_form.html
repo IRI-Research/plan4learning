@@ -5,7 +5,7 @@
 {% block page_title %}{% trans 'Record' %} {{ params.identifier }} - {% trans 'View' %}{% endblock %}
 
 {% block css_page %}
-  <link rel="stylesheet" href="{% static 'p4l/lib/css/smoothness/jquery-ui-1.10.3.custom.css' %}">
+  <link rel="stylesheet" href="{% static 'p4l/lib/css/smoothness/jquery-ui.min.css' %}">
   <link rel="stylesheet" href="{% static 'p4l/css/semantictree.css' %}">
 {% endblock %}
 
@@ -15,8 +15,8 @@
 <script type="text/javascript" src="{% static 'p4l/lib/angular/angular-route.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/lib/angular/angular-resource.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/lib/angular-mod/angular-translate.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'p4l/lib/jquery-1.9.1.js' %}"></script>
-<script type="text/javascript" src="{% static 'p4l/lib/jquery-ui-1.10.3.custom.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'p4l/lib/jquery-1.11.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'p4l/lib/jquery-ui-1.10.4.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/lib/jquery.jstree.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/js/p4l.js' %}"></script>
 <script type="text/javascript" src="{% static 'p4l/js/semantictree.js' %}"></script>
@@ -39,7 +39,8 @@
             is_create_view: angular.fromJson('{{is_create_view | safe | addslashes}}')
         })
         .config(['$translateProvider', function($translateProvider) {
-            $translateProvider.translations(catalog); //catalog is declared in django.views.i18n.javascript_catalog
+            $translateProvider.translations('{{LANGUAGE_CODE}}',django.catalog); //django.catalog is declared in django.views.i18n.javascript_catalog
+            $translateProvider.preferredLanguage('{{LANGUAGE_CODE}}');
         }]);
     
 </script>
@@ -235,18 +236,18 @@
     </tr>
   </tbody>
 </table>
+{% endverbatim %}
 <div class="row">
   <div class="col-md-6">
 	<button type="submit" class="btn btn-primary" id="record-submit" ng-click="submitRecord()">
 	    <span ng-class="['glyphicon', saving?'spinner':'glyphicon-save']"></span>
-	    <span>{{ 'Save' | translate }}</span>
+	    <span>{% trans 'Save' %}</span>
 	</button>
-	<a class="btn btn-primary" id="record-back" href="{{getPreviousUrl()}}" target="_self">
+	<a class="btn btn-primary" id="record-back" href="{% templatetag openvariable %}getPreviousUrl(){% templatetag closevariable %}" target="_self">
 	    <span class="glyphicon glyphicon-arrow-left"></span>
-	    <span>{{ 'Cancel' | translate }}</span>
+	    <span>{% trans 'Cancel' %}</span>
 	</a>
   </div>
-{% endverbatim %}
   <div class="col-md-6 text-right">
     <a class="btn btn-default" href="{% url 'p4l_record_view' slug=record.identifier %}" target="_self">{% trans 'View the record' %} <i class="glyphicon glyphicon-eye-open"></i></a>
     <a class="btn btn-default" href="{% url 'p4l_record_delete' slug=record.identifier %}" onclick="return confirm('{% trans 'Are your sure you want to delete this record ? This action is irreversible.' %}')" target="_self">{% trans 'Delete the record' %} <i class="glyphicon glyphicon-trash"></i></a>

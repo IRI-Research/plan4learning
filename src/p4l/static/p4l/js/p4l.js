@@ -3,6 +3,10 @@
 
 var app = angular.module("recordApp", ['ngResource', 'ngRoute', 'pascalprecht.translate']);
 
+app.constant('p4lConfig', {
+    routeEvent: ['$locationChangeStart', '$stateChangeStart']
+});
+
 app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
@@ -294,12 +298,23 @@ app.directive('languagesListInput', function(RecordModel, context) {
     };
 });
 
-app.controller("RecordCtrl", function($translate, $scope, $location, RecordModel, context){
+app.controller("RecordCtrl", function($translate, $scope, $location, RecordModel, context, $log, p4lConfig, $window){
     
     $scope.record = RecordModel.record;
     $scope.uriLabels = RecordModel.uriLabels;
     
     $scope.saving = false;
+    $scope.contentLoaded = false;
+    $scope.recordDirty = false;
+    
+    $translate([
+        "An error occured. Somes datas may be incorrect or incomplete.",
+        "This page is asking you to confirm that you want to leave - data you have entered may not be saved."
+    ]).then(function(translations) {
+        $scope.translations = translations;
+    });
+    
+    $scope.$on('$includeContentLoaded', function(event) { event.currentScope.contentLoaded = true; });
         
     $scope.submitRecord = function() {
         $scope.saving = true;
@@ -311,16 +326,36 @@ app.controller("RecordCtrl", function($translate, $scope, $location, RecordModel
                     }
                 },
                 function(reason){
-                    alert($translate("An error occured. Somes datas may be incorrect or incomplete."));
+                    alert($scope.translations["An error occured. Somes datas may be incorrect or incomplete."]);
                 }
             )
             .finally(function() {
-                $scope.saving=false;
+                $scope.saving = false;
+                $scope.recordDirty = false;
             });
     }
     
     $scope.getPreviousUrl = function() {
         return context.urls.previous || context.urls.home;
+    }
+
+    $scope.$watch(
+        function(s) {
+            return context.record;
+        },
+        function(newValue, oldValue, s) {
+            if(s.contentLoaded) {
+                s.recordDirty = true;
+            }
+        },
+        true
+    );
+    
+    $window.onbeforeunload = function() {
+        if($scope.recordDirty) {
+            var msg = $scope.translations["This page is asking you to confirm that you want to leave - data you have entered may not be saved."]; 
+            return msg;
+        }
     }
     
 });
