@@ -30,12 +30,7 @@ INSTALLS = [ #(key,method, option_str, dict_extra_env)
 #      'WHOOSH'    
 ]
 
-if system_str == "Linux":
-    INSTALLS.insert(2, 'DISTRIBUTE')
-
-OPTIONS_TO_ADD = ['clear', 'type_install=local', 'unzip_setuptools']
-if system_str != 'Linux':
-    OPTIONS_TO_ADD.append('use_distribute')
+OPTIONS_TO_ADD = ['clear', 'type_install=local', "unzip_setuptools", "use_distribute"]
 
 def generate_install_methods(path_locations, src_base, run_base, Logger, call_subprocess):    
     return lib_generate_install_methods(path_locations, src_base, run_base, Logger, call_subprocess, INSTALLS, OPTIONS_TO_ADD)

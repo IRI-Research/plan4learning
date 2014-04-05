@@ -17,27 +17,27 @@ system_str = platform.system()
 URLS = {
     #'': {'setup': '', 'url':'', 'local':''},
     'DISTRIBUTE': {'setup': 'distribute', 'url':'http://pypi.python.org/packages/source/d/distribute/distribute-0.6.34.tar.gz', 'local':"distribute-0.6.34.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'DJANGO': {'setup': 'django', 'url': 'https://github.com/IRI-Research/django/archive/1.5.4+IRI.tar.gz', 'local':"django-1.5.4-IRI.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'SIX' : {'setup':'six', 'url':'https://pypi.python.org/packages/source/s/six/six-1.3.0.tar.gz', 'local': 'six-1.3.0.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
-    'DJANGO-EXTENSIONS': { 'setup': 'django-extensions', 'url':'https://github.com/django-extensions/django-extensions/archive/1.1.1.tar.gz', 'local':"django-extensions-1.1.1.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'SOUTH': { 'setup': 'South', 'url':'http://www.aeracode.org/releases/south/south-0.7.6.tar.gz', 'local':"south-0.7.6.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'RDFLIB' : {'setup':'rdflib', 'url':'https://github.com/RDFLib/rdflib/archive/4.0.1.tar.gz', 'local': 'rdflib-4.0.1.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
-    'REQUESTS': {'setup': 'requests', 'url':'https://github.com/kennethreitz/requests/archive/v1.2.3.tar.gz', 'local':'requests-1.2.3.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
-    'SIMPLEJSON': {'setup': 'simplejson','url':'https://github.com/simplejson/simplejson/archive/v3.3.0.tar.gz', 'local': 'simplejson-3.3.0.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
-    'ISODATE': {'setup': 'isodate','url':'https://pypi.python.org/packages/source/i/isodate/isodate-0.4.9.tar.gz', 'local': 'isodate-0.4.9.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
-    'PYPARSING': {'setup': 'pyparsing','url':'http://downloads.sourceforge.net/project/pyparsing/pyparsing/pyparsing-1.5.7/pyparsing-1.5.7.tar.gz', 'local': 'pyparsing-1.5.7.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
+    'DJANGO': {'setup': 'django', 'url': 'https://github.com/django/django/archive/1.6.2.tar.gz', 'local':"django-1.6.2.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'SIX' : {'setup':'six', 'url':'https://pypi.python.org/packages/source/s/six/six-1.6.1.tar.gz', 'local': 'six-1.6.1.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
+    'DJANGO-EXTENSIONS': { 'setup': 'django-extensions', 'url':'https://github.com/django-extensions/django-extensions/archive/1.3.3.tar.gz', 'local':"django-extensions-1.3.3.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'SOUTH': { 'setup': 'South', 'url':'http://www.aeracode.org/releases/south/south-0.8.4.tar.gz', 'local':"south-0.8.4.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'RDFLIB' : {'setup':'rdflib', 'url':'https://github.com/RDFLib/rdflib/archive/4.1.1.tar.gz', 'local': 'rdflib-4.1.1.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
+    'REQUESTS': {'setup': 'requests', 'url':'https://github.com/kennethreitz/requests/archive/v2.2.1.tar.gz', 'local':'requests-2.2.1.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
+    'SIMPLEJSON': {'setup': 'simplejson','url':'https://github.com/simplejson/simplejson/archive/v3.4.0.tar.gz', 'local': 'simplejson-3.4.0.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
+    'ISODATE': {'setup': 'isodate','url':'https://pypi.python.org/packages/source/i/isodate/isodate-0.5.0.tar.gz', 'local': 'isodate-0.5.0.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
+    'PYPARSING': {'setup': 'pyparsing','url':'https://pypi.python.org/packages/source/p/pyparsing/pyparsing-2.0.1.tar.gz', 'local': 'pyparsing-2.0.1.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
     'SPARQLWRAPPER': {'setup': 'sparqlwrapper','url':'http://downloads.sourceforge.net/project/sparql-wrapper/sparql-wrapper-python/1.5.2/SPARQLWrapper-1.5.2.tar.gz', 'local': 'SPARQLWrapper-1.5.2.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
-    'HTML5LIB': {'setup': 'html5lib','url':'https://github.com/html5lib/html5lib-python/archive/1.0b3.tar.gz', 'local': 'html5lib-1.0b3.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
-    'PSYCOPG2': {'setup': 'psycopg2','url': 'http://initd.org/psycopg/tarballs/PSYCOPG-2-5/psycopg2-2.5.tar.gz', 'local':"psycopg2-2.5.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'HTML5LIB': {'setup': 'html5lib','url':'https://github.com/html5lib/html5lib-python/archive/0.999.tar.gz', 'local': 'html5lib-0.999.tar.gz', 'install' : {'method':'pip', 'option_str': None, 'dict_extra_env': None}},
+    'PSYCOPG2': {'setup': 'psycopg2','url': 'http://initd.org/psycopg/tarballs/PSYCOPG-2-5/psycopg2-2.5.2.tar.gz', 'local':"psycopg2-2.5.2.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
     'DEFUSEDXML': {'setup': 'defusedxml','url': 'https://pypi.python.org/packages/source/d/defusedxml/defusedxml-0.4.1.tar.gz', 'local':"defusedxml-0.4.1.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'DJANGO-CORS-HEADERS': {'setup': 'django-cors-headers','url': 'https://pypi.python.org/packages/source/d/django-cors-headers/django-cors-headers-0.11.tar.gz', 'local':"django-cors-headers-0.11.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'DJANGO-CORS-HEADERS': {'setup': 'django-cors-headers','url': 'https://pypi.python.org/packages/source/d/django-cors-headers/django-cors-headers-0.12.tar.gz', 'local':"django-cors-headers-0.12.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
     'DJANGO-FILTER': {'setup': 'django-filter','url': 'https://github.com/alex/django-filter/archive/v0.7.tar.gz', 'local':"django-filter-0.7.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'DJANGO-REST-FRAMEWORK': {'setup': 'djangorestframework','url': 'https://pypi.python.org/packages/source/d/djangorestframework/djangorestframework-2.3.7.tar.gz', 'local':"djangorestframework-2.3.7.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'MARKDOWN': {'setup': 'markdown','url': 'https://pypi.python.org/packages/source/M/Markdown/Markdown-2.3.1.tar.gz', 'local':"Markdown-2.3.1.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'DJANGO-REST-FRAMEWORK': {'setup': 'djangorestframework','url': 'https://pypi.python.org/packages/source/d/djangorestframework/djangorestframework-2.3.13.tar.gz', 'local':"djangorestframework-2.3.13.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'MARKDOWN': {'setup': 'markdown','url': 'http://pypi.python.org/packages/source/M/Markdown/Markdown-2.4.tar.gz', 'local':"Markdown-2.4.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
     'WSGIREF': {'setup': 'wsgiref','url': 'https://pypi.python.org/packages/source/w/wsgiref/wsgiref-0.1.2.zip', 'local':"wsgiref-0.1.2.zip", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
     'HAYSTACK': {'setup': 'django-haystack','url': 'https://github.com/toastdriven/django-haystack/archive/v2.1.0.tar.gz', 'local':"django-haystack-2.1.0.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'PYELASTICSEARCH': {'setup': 'pyelasticsearch','url': 'https://pypi.python.org/packages/source/p/pyelasticsearch/pyelasticsearch-0.6.tar.gz', 'local':"pyelasticsearch-0.6.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
-    'WHOOSH': {'setup': 'whoosh','url': 'https://pypi.python.org/packages/source/W/Whoosh/Whoosh-2.5.3.tar.gz', 'local':"Whoosh-2.5.3.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'PYELASTICSEARCH': {'setup': 'pyelasticsearch','url': 'https://pypi.python.org/packages/source/p/pyelasticsearch/pyelasticsearch-0.6.1.tar.gz', 'local':"pyelasticsearch-0.6.1.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
+    'WHOOSH': {'setup': 'whoosh','url': 'https://pypi.python.org/packages/source/W/Whoosh/Whoosh-2.5.7.tar.gz', 'local':"Whoosh-2.5.7.tar.gz", 'install': {'method': 'pip', 'option_str': None, 'dict_extra_env': None}},
 }
 
 class ResourcesEnv(object):
@@ -64,7 +64,7 @@ class ResourcesEnv(object):
             if url_dict.get('install', {}).get('method','pip') == 'pip-req':
                 get_base_path = self.get_run_res_base_path
             else:
-                get_base_path = self.get_src_base_path                                
+                get_base_path = self.get_src_base_path
             if not url_dict['url'].startswith("http://"):
                 url_dict_copy['url'] = get_base_path(url_dict['url'])
             url_dict_copy['local'] = get_base_path(url_dict['local'])
@@ -193,7 +193,9 @@ def gen_install_comp_lib(lib_name, lib_key, configure_options=[]):
 
 install_libjpeg = gen_install_comp_lib("libjpeg", "LIBJPEG", ['--enable-shared'])
 install_zlib = gen_install_comp_lib("zlib", "ZLIB", [])
-    
+
+osx_extra_env = {'ARCHFLAGS': '-Wno-error=unused-command-line-argument-hard-error-in-future', 'CFLAGS': '-Qunused-arguments', 'CPPFLAGS': '-Qunused-arguments'}
+
 
 def lib_generate_install_methods(path_locations, src_base, run_base, Logger, call_subprocess, normal_installs, options_to_add=None, urls= None):
     
@@ -322,7 +324,14 @@ def lib_generate_install_methods(path_locations, src_base, run_base, Logger, cal
                     extra_env = {}
                     
                 if 'TMPDIR' not in extra_env:
-                    extra_env['TMPDIR'] = os.path.abspath(tmp_dir)          
+                    extra_env['TMPDIR'] = os.path.abspath(tmp_dir)
+                if system_str == 'Darwin':
+                    for flag_key, flag_value in iter(osx_extra_env.items()):
+                        flags = extra_env.get(flag_key, '')
+                        if flag_value not in flags:
+                            flags += " -Wno-error=unused-command-line-argument-hard-error-in-future"
+                            extra_env[flag_key] = flags.strip()
+                    
                 #isinstance(lst, (list, tuple))
                 if key not in ignore_packages:
                     logger.notify("install %s with method %s" % (key, repr(method)))
@@ -344,10 +353,11 @@ def lib_generate_install_methods(path_locations, src_base, run_base, Logger, cal
     
     def adjust_options(options, args):
         if not options_to_add:
-            pass
+            return
         for opt in options_to_add:
             test_opt = opt.split('=',1)[0]
             #if not hasattr(options,test_opt) or getattr(options, test_opt) is None:
             setattr(options, test_opt,opt.split('=',1)[1] if "=" in opt else True)
 
     return adjust_options, extend_parser, after_install
+

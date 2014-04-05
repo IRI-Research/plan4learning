@@ -5,17 +5,8 @@ refresh the project-boot.py script
 -prerequisite:
 
 - virtualenv
-- distribute
-- psycopg2 requires the PostgreSQL libpq libraries and the pg_config utility
 
-- python project-boot.py --distribute --no-site-packages --index-url=http://pypi.websushi.org/ --clear --type-install=local --ignore-packages=MYSQL <path_to_venv>
-- python project-boot.py --no-site-packages --clear --ignore-packages=MYSQL  --type-install=local <path_to_venv>
-- For Linux :
-python project-boot.py --unzip-setuptools --no-site-packages --index-url=http://pypi.websushi.org/ --clear --type-install=local <path_to_venv>
-
-Probleme avec mysql :
-
-sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib ~/dev/workspace/platform/virtualenv/web/env/venv_platform/lib/python2.7/site-packages/_mysql.so
+- python project-boot.py --unzip-setuptools --no-site-packages --clear --type-install=local <path_to_venv>
 
 """
 
