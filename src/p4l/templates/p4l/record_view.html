@@ -195,7 +195,7 @@
     </tr>
     <tr>
       <td>{% trans 'project names' %}</td>
-      <td><ul>{% for k in record.projects.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
+      <td><ul>{% for k in record.projectNames.all %}<li>{{ uri_labels | get_item:k.uri }} <small class="text-muted">({{ k.uri }})</small></li>{% endfor %}</ul></td>
     </tr>
     <tr>
       <td>{% trans 'edition statement' %}</td>
