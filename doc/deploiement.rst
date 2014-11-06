@@ -162,6 +162,8 @@ Le schéma de la base est créé avec la commande Django suivante (penser à pr�
 
     python manage.py syncdb --migrate
 
+Note: Cette commade doit être aussi lancée après toute installation d'une nouvelle version de l'application ou bien de ces dépendances (virtualenv).
+
 Enfin on crée un "super" utilisateur pouvant accéder à l'administration du site.:: 
 
     python manage.py createsuperuser
@@ -175,6 +177,7 @@ Le déploiement des ressources statiques du site se fait à l'aide de la command
 
     python manage.py collecststatic
 
+Note: Cette commade doit être aussi lancée après toute installation d'une nouvelle version de l'application ou bien de ces dépendances (virtualenv).
 
 Configuration web
 -----------------
